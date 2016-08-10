@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plant Cost &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Source Documentation" href="documentation.html" />
+    <link rel="next" title="Turbine" href="turbine.html" />
+    <link rel="prev" title="Plant Flow" href="plantflow.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Plant Cost</a><ul>
+<li><a class="reference internal" href="#turbine-capital-costs">Turbine Capital Costs</a></li>
+<li><a class="reference internal" href="#balance-of-station-costs">Balance of Station Costs</a></li>
+<li><a class="reference internal" href="#operational-expenditures">Operational Expenditures</a></li>
+<li><a class="reference internal" href="#finance">Finance</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plantflow.html" title="Previous Chapter: Plant Flow"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Plant Flow</span>
+    </a>
+  </li>
+  <li>
+    <a href="turbine.html" title="Next Chapter: Turbine"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Turbine &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="plant-cost">
+<h1>Plant Cost<a class="headerlink" href="#plant-cost" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="turbine-capital-costs">
+<h2>Turbine Capital Costs<a class="headerlink" href="#turbine-capital-costs" title="Permalink to this headline">¶</a></h2>
+<p>The turbine capital costs portion of FUSED-Wind specifies interfaces for wind turbine component cost models as well as configure methods to put together a full turbine cost model for a single wind turbine.</p>
+<span class="target" id="module-fusedwind.plant_cost.fused_tcc"></span><dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.BaseComponentCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">BaseComponentCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#BaseComponentCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.BaseComponentCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base component cost model class for an arbitrary wind turbine component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+Base turbine component cost.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.BaseSubAssemblyCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">BaseSubAssemblyCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#BaseSubAssemblyCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.BaseSubAssemblyCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base sub assembly cost aggregator for doing some auxiliary cost calculations needed to get a wind turbine component cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+Overall wind sub-assembly capial costs including transportation costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.BaseSubAssemblyCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">BaseSubAssemblyCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#BaseSubAssemblyCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.BaseSubAssemblyCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base sub assembly cost model class for an arbitrary wind turbine component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+Overall wind sub-assembly capial costs including transportation costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.BaseTCCAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">BaseTCCAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#BaseTCCAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.BaseTCCAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base turbine capital cost aggregator for doing some auxiliary cost calculations needed to get a full wind turbine cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>turbine_cost</strong> &#8211;
+Overall wind turbine capial costs including transportation costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.BaseTurbineCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">BaseTurbineCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#BaseTurbineCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.BaseTurbineCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base turbine capital cost assembly for coupling models to get a full wind turbine cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>turbine_cost</strong> &#8211;
+Overall wind turbine capial costs including transportation costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.ExtendedTCCAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">ExtendedTCCAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#ExtendedTCCAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.ExtendedTCCAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended turbine capital cost aggregator for doing some auxiliary cost calculations needed to get a full wind turbine cost.  It assume sub-models for rotor, nacelle and tower cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tower_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; tower cost.</li>
+<li><strong>rotor_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; rotor cost.</li>
+<li><strong>nacelle_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; nacelle cost.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>turbine_cost</strong> &#8211;
+Overall wind turbine capial costs including transportation costs.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedTCCAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseTCCAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.ExtendedTurbineCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">ExtendedTurbineCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#ExtendedTurbineCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.ExtendedTurbineCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended turbine capital cost assembly for coupling models to get a full wind turbine cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>turbine_cost</strong> &#8211;
+Overall wind turbine capial costs including transportation costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedTurbineCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseTurbineCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullHubSystemCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullHubSystemCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullHubSystemCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullHubSystemCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full hub system cost aggregator for aggregating hub component costs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>hub_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; hub component cost.</li>
+<li><strong>spinner_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; spinner component cost.</li>
+<li><strong>pitch_system_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; pitch system cost.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cost</strong> &#8211;
+overall hub system cost.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [USD]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullHubSystemCostAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullNacelleCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullNacelleCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullNacelleCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullNacelleCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full nacelle cost aggregator to aggregate costs of individual nacelle components.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lss_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+<li><strong>bearings_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+<li><strong>gearbox_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+<li><strong>yaw_system_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+<li><strong>bedplate_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+<li><strong>generator_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+<li><strong>hss_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cost</strong> &#8211;
+component cost.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [USD]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullNacelleCostAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullNacelleCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullNacelleCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullNacelleCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullNacelleCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full nacelle cost sub-assembly for bringing together individual nacelle component cost models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+component cost.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [USD]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullNacelleCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullRotorCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullRotorCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullRotorCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullRotorCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full rotor cost aggregator for aggregating rotor costs from blades and hub system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>hub_system_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; cost for hub system.</li>
+<li><strong>blade_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of rotor blades.</li>
+<li><strong>blade_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; individual blade cost.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cost</strong> &#8211;
+overall rotor cost.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [USD]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullRotorCostAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullRotorCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullRotorCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullRotorCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullRotorCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full rotor cost sub-assembly for aggregating rotor component costs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>blade_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of rotor blades.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+Overall wind sub-assembly capial costs including transportation costs.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullRotorCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullTCCAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullTCCAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullTCCAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullTCCAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full turbine capital cost aggregator for doing some auxiliary cost calculations needed to get a full wind turbine cost.  It assume sub-models for rotor, nacelle and tower cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tower_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; tower cost.</li>
+<li><strong>rotor_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; rotor cost.</li>
+<li><strong>nacelle_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; nacelle cost.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>turbine_cost</strong> &#8211;
+Overall wind turbine capial costs including transportation costs.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullTCCAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseTCCAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullTowerCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullTowerCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullTowerCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullTowerCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full tower cost aggregator to aggregate costs of individual tower components.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tower_cost</strong> (<em>Float, default=0.0, [USD]</em>) &#8211; component cost.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+component cost.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Float, [USD]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullTowerCostAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullTowerCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullTowerCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullTowerCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullTowerCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full tower cost sub-assembly for bringing together individual tower component cost models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>cost</strong> &#8211;
+component cost.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [USD]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullTowerCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseSubAssemblyCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_tcc.FullTurbineCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">FullTurbineCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#FullTurbineCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.FullTurbineCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full turbine capital cost assembly for coupling models to get a full wind turbine cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>turbine_cost</strong> &#8211;
+Overall wind turbine capial costs including transportation costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullTurbineCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">ExtendedTurbineCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_base_subassembly_cost">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_base_subassembly_cost</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_base_subassembly_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_base_subassembly_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure method for base sub assembly for cost models.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_base_tcc">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_base_tcc</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_base_tcc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_base_tcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base configure method for a turbine capital cost assembly for coupling models to get a full wind turbine cost.  It adds a default turbine capital cost aggregator component.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_extended_tcc">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_extended_tcc</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_extended_tcc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_extended_tcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended configure method for a turbine capital cost assembly for coupling models to get a full wind turbine cost.  It adds a default turbine capital cost aggregator component as well as default cost models for the rotor, nacelle and tower.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_full_ncc">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_full_ncc</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_full_ncc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_full_ncc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure method for a detailed nacelle cost model including cost models for each major nacelle system component.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_full_rcc">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_full_rcc</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_full_rcc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_full_rcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure method for a detailed rotor cost model including cost models for each major rotor system component.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_full_tcc">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_full_tcc</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_full_tcc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_full_tcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>full configure method for a turbine capital cost assembly for coupling models to get a full wind turbine cost.  It replaces cost models for the rotor, nacelle and tower with full sub-assembly cost models.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_tcc.configure_full_twcc">
+<tt class="descclassname">fusedwind.plant_cost.fused_tcc.</tt><tt class="descname">configure_full_twcc</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_tcc.html#configure_full_twcc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_tcc.configure_full_twcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure method for a detailed tower cost model including cost models for each major tower system component.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="balance-of-station-costs">
+<h2>Balance of Station Costs<a class="headerlink" href="#balance-of-station-costs" title="Permalink to this headline">¶</a></h2>
+<p>The balance of station costs portion of FUSED-Wind specifies interfaces for wind plant capital expenditures.  There are multiple interfaces for models of varying levels of complexity.</p>
+<span class="target" id="module-fusedwind.plant_cost.fused_bos_costs"></span><dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.BOSVarTree">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">BOSVarTree</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#BOSVarTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.BOSVarTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base balance of station cost variable tree based on the DOE/NREL system cost breakdown structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>assembly_and_installation_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Assembly and installation costs.</li>
+<li><strong>development_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Overall wind plant balance of station/system costs up to point of comissioning.</li>
+<li><strong>electrical_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Collection system, substation, transmission and interconnect costs.</li>
+<li><strong>foundation_and_substructure_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Foundation and substructure costs.</li>
+<li><strong>other_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Bucket for any other costs not captured above.</li>
+<li><strong>preparation_and_staging_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Site preparation and staging.</li>
+<li><strong>soft_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Contingencies, bonds, reserves, decommissioning, profits, and construction financing costs.</li>
+<li><strong>transportation_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Any transportation costs to site / staging site.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.BaseBOSCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">BaseBOSCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#BaseBOSCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.BaseBOSCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base balance of station cost aggregator for doing some auxiliary cost calculations needed to get a full wind plant balance of station cost estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>bos_costs</strong> &#8211;
+Overall wind plant balance of station/system costs up to point of comissioning.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.BaseBOSCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">BaseBOSCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#BaseBOSCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.BaseBOSCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>bos_costs</strong> &#8211;
+Overall wind plant balance of station/system costs up to point of comissioning.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.BaseCAPEXAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">BaseCAPEXAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#BaseCAPEXAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.BaseCAPEXAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bos_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Plant Balance of Station _cost Model.</li>
+<li><strong>turbine_cost</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Turbine Capital _cost.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of turbines at plant.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>capex</strong> &#8211;
+Overall wind plant capital expenditures including turbine and balance of station costs.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.ExtendedBOSCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">ExtendedBOSCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#ExtendedBOSCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.ExtendedBOSCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended balance of station cost aggregator for doing some auxiliary cost calculations needed to get a full wind plant balance of station cost estimate as well as a detailed cost breakdown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>bos_costs</strong> (<em>Float, [None]</em>) &#8211;
+Overall wind plant balance of station/system costs up to point of comissioning.</li>
+<li><strong>bos_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+BOS cost breakdown.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedBOSCostAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseBOSCostAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.ExtendedBOSCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">ExtendedBOSCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#ExtendedBOSCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.ExtendedBOSCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate as well as a detailed cost breakdown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>bos_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+BOS cost breakdown.</li>
+<li><strong>bos_costs</strong> (<em>Float, [None]</em>) &#8211;
+Overall wind plant balance of station/system costs up to point of comissioning.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedBOSCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseBOSCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.FullBOSCostAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">FullBOSCostAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#FullBOSCostAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.FullBOSCostAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full balance of station cost aggregator for doing some auxiliary cost calculations needed to get a full wind plant balance of station cost estimate as well as a detailed cost breakdown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>bos_costs</strong> (<em>Float, [None]</em>) &#8211;
+Output BOS cost elements.</li>
+<li><strong>bos_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+BOS cost breakdown.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullBOSCostAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseBOSCostAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.FullBOSCostModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">FullBOSCostModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#FullBOSCostModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.FullBOSCostModel" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>bos_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+BOS cost breakdown.</li>
+<li><strong>bos_costs</strong> (<em>Float, [None]</em>) &#8211;
+Output BOS cost elements.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullBOSCostModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseBOSCostModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_bos_costs.FullBOSVarTree">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">FullBOSVarTree</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#FullBOSVarTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.FullBOSVarTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full balance of station cost variable tree based on the DOE/NREL system cost breakdown structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>assembly_and_installation_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Assembly and installation costs.</li>
+<li><strong>collection_and_substation_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Collection system and onsite substation costs.</li>
+<li><strong>construction_financing_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Construction financing costs.</li>
+<li><strong>contingencies_and_insurance_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Contingencies, bonds, reserves for project.</li>
+<li><strong>decommissioning_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; _costs associated with plant decommissioning at end of life.</li>
+<li><strong>developer_profits</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Developer profits.</li>
+<li><strong>development_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Overall wind plant balance of station/system costs up to point of comissioning.</li>
+<li><strong>foundation_and_substructure_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Foundation and substructure costs.</li>
+<li><strong>management_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Project management costs.</li>
+<li><strong>other_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Bucket for any other costs not captured above.</li>
+<li><strong>preparation_and_staging_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Site preparation and staging.</li>
+<li><strong>transmission_and_interconnection_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Transmission and grid interconnection costs.</li>
+<li><strong>transportation_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Any transportation costs to site / staging site.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_bos_costs.configure_base_bos">
+<tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">configure_base_bos</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#configure_base_bos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.configure_base_bos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base configure method for a balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.  It adds a default balance of station cost aggregator component.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_bos_costs.configure_extended_bos">
+<tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">configure_extended_bos</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#configure_extended_bos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.configure_extended_bos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended configure method for a balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.  It replaces the base balance of station cost aggregator component with an extended version which contains the full balance of station variable tree.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_bos_costs.configure_full_bos">
+<tt class="descclassname">fusedwind.plant_cost.fused_bos_costs.</tt><tt class="descname">configure_full_bos</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_bos_costs.html#configure_full_bos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_bos_costs.configure_full_bos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full configure method for a balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.  It replaces the extended or base balance of station cost aggregator component with an full version which contains the full balance of station variable tree.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="operational-expenditures">
+<h2>Operational Expenditures<a class="headerlink" href="#operational-expenditures" title="Permalink to this headline">¶</a></h2>
+<p>The operational expenditures portion of FUSED-Wind specifies interfaces for wind plant operational expenditures.  There are multiple interfaces for models of varying levels of complexity.</p>
+<span class="target" id="module-fusedwind.plant_cost.fused_opex"></span><dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.BaseDECOMEXModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">BaseDECOMEXModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#BaseDECOMEXModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.BaseDECOMEXModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base decomissioning expenditures assembly for coupling models to get a full wind plant decomissioning expenditures estimate.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.BaseOPEXAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">BaseOPEXAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#BaseOPEXAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.BaseOPEXAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base operational expenditures aggregator for doing some auxiliary cost calculations needed to get a full wind plant operational expenditures estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>avg_annual_opex</strong> &#8211;
+Average annual Operating Expenditures for a wind plant over its lifetime.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.BaseOPEXModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">BaseOPEXModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#BaseOPEXModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.BaseOPEXModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>avg_annual_opex</strong> &#8211;
+Average annual Operating Expenditures for a wind plant over its lifetime.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Float, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.ExtendedOPEXAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">ExtendedOPEXAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#ExtendedOPEXAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.ExtendedOPEXAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended operational expenditures aggregator for doing some auxiliary cost calculations needed to get a full wind plant operational expenditures estimate as well as a detailed cost breakdown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>opex_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+None.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, [None]</em>) &#8211;
+Average annual Operating Expenditures for a wind plant over its lifetime.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedOPEXAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseOPEXAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.ExtendedOPEXModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">ExtendedOPEXModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#ExtendedOPEXModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.ExtendedOPEXModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate as well as a detailed cost breakdown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>opex_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+None.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, [None]</em>) &#8211;
+Average annual Operating Expenditures for a wind plant over its lifetime.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedOPEXModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseOPEXModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.FullOPEXAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">FullOPEXAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#FullOPEXAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.FullOPEXAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full operational expenditures aggregator for doing some auxiliary cost calculations needed to get a full wind plant operational expenditures estimate as well as a detailed cost breakdown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>opex_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+None.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, [None]</em>) &#8211;
+Average annual Operating Expenditures for a wind plant over its lifetime.</li>
+<li><strong>annual_opex</strong> (<em>Array, [None]</em>) &#8211;
+Array of annual Operating Expenditure estimates for each year of expected project operation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">FullOPEXAggregator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseOPEXAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_opex.OPEXVarTree">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">OPEXVarTree</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#OPEXVarTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.OPEXVarTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base operational expenditures variable tree based on the DOE/NREL system cost breakdown structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>corrective_opex</strong> (<em>Float, default=0.0, [None]</em>) &#8211; annual unscheduled maintenance costs (replacements) - BOP and turbines.</li>
+<li><strong>lease_opex</strong> (<em>Float, default=0.0, [None]</em>) &#8211; annual lease expenditures.</li>
+<li><strong>other_opex</strong> (<em>Float, default=0.0, [None]</em>) &#8211; other operational expenditures such as fixed costs.</li>
+<li><strong>preventative_opex</strong> (<em>Float, default=0.0, [None]</em>) &#8211; annual expenditures on preventative maintenance - BOP and turbines.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_opex.configure_base_opex">
+<tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">configure_base_opex</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#configure_base_opex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.configure_base_opex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base configure method for a operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate.  It adds a default operational expenditures aggregator component.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_opex.configure_extended_opex">
+<tt class="descclassname">fusedwind.plant_cost.fused_opex.</tt><tt class="descname">configure_extended_opex</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_opex.html#configure_extended_opex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_opex.configure_extended_opex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended configure method for a operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate.  It replaces the base operational expenditures aggregator component with an extended version which contains the full balance of station variable tree.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="finance">
+<h2>Finance<a class="headerlink" href="#finance" title="Permalink to this headline">¶</a></h2>
+<p>The finance portion of FUSED-Wind specifies interfaces for wind plant financial models.  There are multiple interfaces for models of varying levels of complexity as well as configure methods to put together a finance model that depends on multiple sub-models such as turbine capital costs, balance of station costs, operational expenditures and energy capture.</p>
+<span class="target" id="module-fusedwind.plant_cost.fused_finance"></span><dl class="class">
+<dt id="fusedwind.plant_cost.fused_finance.BaseFinancialAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">BaseFinancialAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#BaseFinancialAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.BaseFinancialAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base financial aggregator for doing some auxiliary cost calculations needed to get a full wind plant cost of energy estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>net_aep</strong> (<em>Float, default=0.0, [kW*h]</em>) &#8211; A Wind Plant Annual Energy Production Model.</li>
+<li><strong>bos_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Plant Balance of Station _cost Model.</li>
+<li><strong>turbine_cost</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Turbine Capital _cost.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Plant Operations Expenditures Model.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of turbines at plant.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>coe</strong> &#8211;
+Levelized cost of energy for the wind plant.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_finance.BaseFinancialAnalysis">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">BaseFinancialAnalysis</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#BaseFinancialAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.BaseFinancialAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base financial analysis assembly for coupling models to get a full wind plant cost of energy estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>turbine_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of turbines at plant.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+A Wind Plant Annual Energy Production Model.</li>
+<li><strong>bos_costs</strong> (<em>Float, [None]</em>) &#8211;
+A Wind Plant Balance of Station _cost Model.</li>
+<li><strong>turbine_cost</strong> (<em>Float, [None]</em>) &#8211;
+A Wind Turbine Capital _cost.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, [None]</em>) &#8211;
+A Wind Plant Operations Expenditures Model.</li>
+<li><strong>coe</strong> (<em>Float, [None]</em>) &#8211;
+Levelized cost of energy for the wind plant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_finance.BaseFinancialModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">BaseFinancialModel</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#BaseFinancialModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.BaseFinancialModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base financial assembly for coupling models to get a full wind plant cost of energy estimate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>net_aep</strong> (<em>Float, default=0.0, [kW*h]</em>) &#8211; A Wind Plant Annual Energy Production Model.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of turbines at plant.</li>
+<li><strong>bos_costs</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Plant Balance of Station _cost Model.</li>
+<li><strong>turbine_cost</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Turbine Capital _cost.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, default=0.0, [None]</em>) &#8211; A Wind Plant Operations Expenditures Model.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>coe</strong> &#8211;
+Levelized cost of energy for the wind plant.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Float, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_cost.fused_finance.ExtendedFinancialAnalysis">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">ExtendedFinancialAnalysis</tt><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#ExtendedFinancialAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.ExtendedFinancialAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended financial analysis assembly for coupling models to get a full wind plant cost of energy estimate as well as provides a detailed cost breakdown for the plant.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>turbine_number</strong> (<em>Int, default=0, [None]</em>) &#8211; number of turbines at plant.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+A Wind Plant Annual Energy Production Model.</li>
+<li><strong>bos_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+BOS cost breakdown.</li>
+<li><strong>bos_costs</strong> (<em>Float, [None]</em>) &#8211;
+A Wind Plant Balance of Station _cost Model.</li>
+<li><strong>turbine_cost</strong> (<em>Float, [None]</em>) &#8211;
+A Wind Turbine Capital _cost.</li>
+<li><strong>opex_breakdown</strong> (<em>VarTree, [None]</em>) &#8211;
+None.</li>
+<li><strong>avg_annual_opex</strong> (<em>Float, [None]</em>) &#8211;
+A Wind Plant Operations Expenditures Model.</li>
+<li><strong>coe</strong> (<em>Float, [None]</em>) &#8211;
+Levelized cost of energy for the wind plant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedFinancialAnalysis</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseFinancialAnalysis</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_finance.configure_base_finance">
+<tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">configure_base_finance</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#configure_base_finance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.configure_base_finance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base configure method for a financial assembly for coupling models to get a full wind plant cost of energy estimate.  It adds a default financial aggregator component.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_finance.configure_base_financial_analysis">
+<tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">configure_base_financial_analysis</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#configure_base_financial_analysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.configure_base_financial_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base configure method for a financial analysis assembly for coupling models to get a full wind plant cost of energy estimate.  It adds a default financial aggregator component as well as base cost models for each major financial sub-model.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_cost.fused_finance.configure_extended_financial_analysis">
+<tt class="descclassname">fusedwind.plant_cost.fused_finance.</tt><tt class="descname">configure_extended_financial_analysis</tt><big>(</big><em>assembly</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_cost/fused_finance.html#configure_extended_financial_analysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_cost.fused_finance.configure_extended_financial_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended configure method for a financial assembly for coupling models to get a full wind plant cost of energy estimate.  It replaces the base cost models with their extended versions for balance of station cost and operational expenditures.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

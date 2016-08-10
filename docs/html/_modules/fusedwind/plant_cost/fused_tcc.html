@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.plant_cost.fused_tcc &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.plant_cost.fused_tcc</h1><div class="highlight"><pre>
+<span class="c"># Turbine _cost Model Framework</span>
+<span class="c"># KLD 11/14/2013</span>
+
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Int</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span>
+
+<span class="kn">from</span> <span class="nn">fusedwind.interface</span> <span class="kn">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">implement_base</span>
+
+<span class="c">##############################################################</span>
+<span class="c"># Turbine _cost Models</span>
+
+<span class="c"># ------------------------------------------------------------</span>
+<span class="c"># Basic Turbine Captial _costs</span>
+
+<span class="c"># Basic Turbine Cost Model Building Blocks</span>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseComponentCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.BaseComponentCostModel">[docs]</a><span class="k">class</span> <span class="nc">BaseComponentCostModel</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base component cost model class for an arbitrary wind turbine component.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Base turbine component cost&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseSubAssemblyCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.BaseSubAssemblyCostModel">[docs]</a><span class="k">class</span> <span class="nc">BaseSubAssemblyCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base sub assembly cost model class for an arbitrary wind turbine component.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind sub-assembly capial costs including transportation costs&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="n">configure_base_subassembly_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseSubAssemblyCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.BaseSubAssemblyCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">BaseSubAssemblyCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base sub assembly cost aggregator for doing some auxiliary cost calculations needed to get a wind turbine component cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind sub-assembly capial costs including transportation costs&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_base_subassembly_cost"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_base_subassembly_cost">[docs]</a><span class="k">def</span> <span class="nf">configure_base_subassembly_cost</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Configure method for base sub assembly for cost models.&quot;&quot;&quot;</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bcc&#39;</span><span class="p">,</span><span class="n">BaseSubAssemblyCostAggregator</span><span class="p">())</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bcc.cost&#39;</span><span class="p">,</span><span class="s">&#39;cost&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseTCCAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.BaseTCCAggregator">[docs]</a><span class="k">class</span> <span class="nc">BaseTCCAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base turbine capital cost aggregator for doing some auxiliary cost calculations needed to get a full wind turbine cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind turbine capial costs including transportation costs&#39;</span><span class="p">)</span>
+
+<span class="c"># Basic Turbine _cost Model</span></div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseTurbineCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.BaseTurbineCostModel">[docs]</a><span class="k">class</span> <span class="nc">BaseTurbineCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base turbine capital cost assembly for coupling models to get a full wind turbine cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind turbine capial costs including transportation costs&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_base_tcc"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_base_tcc">[docs]</a><span class="k">def</span> <span class="nf">configure_base_tcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base configure method for a turbine capital cost assembly for coupling models to get a full wind turbine cost.  It adds a default turbine capital cost aggregator component.    &quot;&quot;&quot;</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;tcc&#39;</span><span class="p">,</span> <span class="n">BaseTCCAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s">&#39;tcc&#39;</span><span class="p">])</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;tcc.turbine_cost&#39;</span><span class="p">,</span><span class="s">&#39;turbine_cost&#39;</span><span class="p">)</span>
+
+<span class="c"># ------------------------------------------------------------</span>
+<span class="c"># Extended Turbine Capital Costs</span></div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseTCCAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedTCCAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.ExtendedTCCAggregator">[docs]</a><span class="k">class</span> <span class="nc">ExtendedTCCAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended turbine capital cost aggregator for doing some auxiliary cost calculations needed to get a full wind turbine cost.  It assume sub-models for rotor, nacelle and tower cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Variables</span>
+    <span class="n">rotor_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;rotor cost&#39;</span><span class="p">)</span>
+    <span class="n">nacelle_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;nacelle cost&#39;</span><span class="p">)</span>
+    <span class="n">tower_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;tower cost&#39;</span><span class="p">)</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind turbine capial costs including transportation costs&#39;</span><span class="p">)</span>
+
+<span class="c"># Extended Turbine Capital _cost Model Includes sub-assembly cost aggregation</span></div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseTurbineCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedTurbineCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.ExtendedTurbineCostModel">[docs]</a><span class="k">class</span> <span class="nc">ExtendedTurbineCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended turbine capital cost assembly for coupling models to get a full wind turbine cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind turbine capial costs including transportation costs&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_extended_tcc"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_extended_tcc">[docs]</a><span class="k">def</span> <span class="nf">configure_extended_tcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended configure method for a turbine capital cost assembly for coupling models to get a full wind turbine cost.  It adds a default turbine capital cost aggregator component as well as default cost models for the rotor, nacelle and tower.    &quot;&quot;&quot;</span>
+
+    <span class="n">configure_base_tcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">)</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;rotorCC&#39;</span><span class="p">,</span> <span class="n">BaseSubAssemblyCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;nacelleCC&#39;</span><span class="p">,</span> <span class="n">BaseSubAssemblyCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;towerCC&#39;</span><span class="p">,</span> <span class="n">BaseSubAssemblyCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;tcc&#39;</span><span class="p">,</span> <span class="n">ExtendedTCCAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s">&#39;rotorCC&#39;</span><span class="p">,</span> <span class="s">&#39;nacelleCC&#39;</span><span class="p">,</span> <span class="s">&#39;towerCC&#39;</span><span class="p">])</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;rotorCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;tcc.rotor_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;nacelleCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;tcc.nacelle_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;towerCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;tcc.tower_cost&#39;</span><span class="p">)</span>
+
+<span class="c"># ------------------------------------------------------------</span>
+<span class="c"># Full Turbine Capital _costs</span>
+
+<span class="c"># Full Sub-Assembly _cost Models</span></div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullRotorCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullRotorCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullRotorCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full rotor cost aggregator for aggregating rotor costs from blades and hub system.    &quot;&quot;&quot;</span>
+
+    <span class="c"># variables</span>
+    <span class="n">blade_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;individual blade cost&#39;</span><span class="p">)</span>
+    <span class="n">hub_system_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;cost for hub system&#39;</span><span class="p">)</span>
+    
+    <span class="c"># parameters</span>
+    <span class="n">blade_number</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;number of rotor blades&#39;</span><span class="p">)</span>
+    
+    <span class="c"># returns</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;overall rotor cost&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullHubSystemCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullHubSystemCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullHubSystemCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full hub system cost aggregator for aggregating hub component costs.    &quot;&quot;&quot;</span>
+
+    <span class="c"># variables</span>
+    <span class="n">hub_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;hub component cost&#39;</span><span class="p">)</span>
+    <span class="n">pitch_system_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;pitch system cost&#39;</span><span class="p">)</span>
+    <span class="n">spinner_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;spinner component cost&#39;</span><span class="p">)</span>
+    
+    <span class="c"># returns</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;overall hub system cost&#39;</span><span class="p">)</span>    
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="FullRotorCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullRotorCostModel">[docs]</a><span class="k">class</span> <span class="nc">FullRotorCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full rotor cost sub-assembly for aggregating rotor component costs.    &quot;&quot;&quot;</span>
+
+    <span class="c"># parameters</span>
+    <span class="n">blade_number</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;number of rotor blades&#39;</span><span class="p">)</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind sub-assembly capial costs including transportation costs&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_full_rcc"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_full_rcc">[docs]</a><span class="k">def</span> <span class="nf">configure_full_rcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Configure method for a detailed rotor cost model including cost models for each major rotor system component.    &quot;&quot;&quot;</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bladeCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;hubCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;pitchSysCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;spinnerCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;hubSysCC&#39;</span><span class="p">,</span> <span class="n">FullHubSystemCostAggregator</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;rcc&#39;</span><span class="p">,</span> <span class="n">FullRotorCostAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s">&#39;hubCC&#39;</span><span class="p">,</span> <span class="s">&#39;pitchSysCC&#39;</span><span class="p">,</span> <span class="s">&#39;spinnerCC&#39;</span><span class="p">,</span> <span class="s">&#39;hubSysCC&#39;</span><span class="p">,</span> <span class="s">&#39;bladeCC&#39;</span><span class="p">,</span> <span class="s">&#39;rcc&#39;</span><span class="p">])</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;blade_number&#39;</span><span class="p">,</span> <span class="s">&#39;rcc.blade_number&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;hubCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;hubSysCC.hub_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;pitchSysCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;hubSysCC.pitch_system_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;spinnerCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;hubSysCC.spinner_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;hubSysCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;rcc.hub_system_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bladeCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;rcc.blade_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;rcc.cost&#39;</span><span class="p">,</span> <span class="s">&#39;cost&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullNacelleCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullNacelleCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullNacelleCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full nacelle cost aggregator to aggregate costs of individual nacelle components.    &quot;&quot;&quot;</span>
+
+    <span class="c"># variables</span>
+    <span class="n">lss_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    <span class="n">bearings_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    <span class="n">gearbox_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    <span class="n">hss_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    <span class="n">generator_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    <span class="n">bedplate_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    <span class="n">yaw_system_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    
+    <span class="c"># returns</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="FullNacelleCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullNacelleCostModel">[docs]</a><span class="k">class</span> <span class="nc">FullNacelleCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full nacelle cost sub-assembly for bringing together individual nacelle component cost models.    &quot;&quot;&quot;</span>
+
+    <span class="c"># returns</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_full_ncc"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_full_ncc">[docs]</a><span class="k">def</span> <span class="nf">configure_full_ncc</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Configure method for a detailed nacelle cost model including cost models for each major nacelle system component.    &quot;&quot;&quot;</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;lssCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bearingsCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;gearboxCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;hssCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;generatorCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bedplateCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;yawSysCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;ncc&#39;</span><span class="p">,</span> <span class="n">FullNacelleCostAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s">&#39;lssCC&#39;</span><span class="p">,</span> <span class="s">&#39;bearingsCC&#39;</span><span class="p">,</span> <span class="s">&#39;gearboxCC&#39;</span><span class="p">,</span> <span class="s">&#39;hssCC&#39;</span><span class="p">,</span> <span class="s">&#39;generatorCC&#39;</span><span class="p">,</span> <span class="s">&#39;bedplateCC&#39;</span><span class="p">,</span> <span class="s">&#39;yawSysCC&#39;</span><span class="p">,</span> <span class="s">&#39;ncc&#39;</span><span class="p">])</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;lssCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.lss_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bearingsCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.bearings_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;gearboxCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.gearbox_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;hssCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.hss_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;generatorCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.generator_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bedplateCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.bedplate_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;yawSysCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;ncc.yaw_system_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;ncc.cost&#39;</span><span class="p">,</span> <span class="s">&#39;cost&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullTowerCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullTowerCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullTowerCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full tower cost aggregator to aggregate costs of individual tower components.    &quot;&quot;&quot;</span>
+
+    <span class="c"># variables</span>
+    <span class="n">tower_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>
+    
+    <span class="c"># returns</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>    
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseSubAssemblyCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="FullTowerCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullTowerCostModel">[docs]</a><span class="k">class</span> <span class="nc">FullTowerCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full tower cost sub-assembly for bringing together individual tower component cost models.    &quot;&quot;&quot;</span>
+
+    <span class="c"># returns</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;component cost&#39;</span><span class="p">)</span>    
+</div>
+<div class="viewcode-block" id="configure_full_twcc"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_full_twcc">[docs]</a><span class="k">def</span> <span class="nf">configure_full_twcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Configure method for a detailed tower cost model including cost models for each major tower system component.    &quot;&quot;&quot;</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;towerCC&#39;</span><span class="p">,</span> <span class="n">BaseComponentCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;twrcc&#39;</span><span class="p">,</span> <span class="n">FullTowerCostAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s">&#39;towerCC&#39;</span><span class="p">,</span> <span class="s">&#39;twrcc&#39;</span><span class="p">])</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;towerCC.cost&#39;</span><span class="p">,</span> <span class="s">&#39;twrcc.tower_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;twrcc.cost&#39;</span><span class="p">,</span> <span class="s">&#39;cost&#39;</span><span class="p">)</span>
+
+<span class="c"># Full Turbine Cost Model</span></div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseTCCAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullTCCAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullTCCAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullTCCAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full turbine capital cost aggregator for doing some auxiliary cost calculations needed to get a full wind turbine cost.  It assume sub-models for rotor, nacelle and tower cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Variables</span>
+    <span class="n">rotor_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;rotor cost&#39;</span><span class="p">)</span>
+    <span class="n">nacelle_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;nacelle cost&#39;</span><span class="p">)</span>
+    <span class="n">tower_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;USD&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;tower cost&#39;</span><span class="p">)</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind turbine capial costs including transportation costs&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">ExtendedTurbineCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="FullTurbineCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.FullTurbineCostModel">[docs]</a><span class="k">class</span> <span class="nc">FullTurbineCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full turbine capital cost assembly for coupling models to get a full wind turbine cost.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind turbine capial costs including transportation costs&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_full_tcc"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_tcc.configure_full_tcc">[docs]</a><span class="k">def</span> <span class="nf">configure_full_tcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; full configure method for a turbine capital cost assembly for coupling models to get a full wind turbine cost.  It replaces cost models for the rotor, nacelle and tower with full sub-assembly cost models.    &quot;&quot;&quot;</span>
+
+    <span class="n">configure_extended_tcc</span><span class="p">(</span><span class="n">assembly</span><span class="p">)</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;rotorCC&#39;</span><span class="p">,</span> <span class="n">FullRotorCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;nacelleCC&#39;</span><span class="p">,</span> <span class="n">FullNacelleCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;towerCC&#39;</span><span class="p">,</span> <span class="n">FullTowerCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;tcc&#39;</span><span class="p">,</span> <span class="n">FullTCCAggregator</span><span class="p">())</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.plant_cost.fused_opex &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.plant_cost.fused_opex</h1><div class="highlight"><pre>
+<span class="c"># KLD: _cost model for FUSED_Wind - most basic structure</span>
+
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">VarTree</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">VariableTree</span>
+
+<span class="kn">from</span> <span class="nn">fusedwind.interface</span> <span class="kn">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">implement_base</span>
+
+<span class="c">#####################################################################################</span>
+<span class="c"># Plant OPEX Models</span>
+
+<span class="c"># OPEX Model Variable Trees, Components and Assemblies</span>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseOPEXAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.BaseOPEXAggregator">[docs]</a><span class="k">class</span> <span class="nc">BaseOPEXAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base operational expenditures aggregator for doing some auxiliary cost calculations needed to get a full wind plant operational expenditures estimate.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">avg_annual_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Average annual Operating Expenditures for a wind plant over its lifetime&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseOPEXModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.BaseOPEXModel">[docs]</a><span class="k">class</span> <span class="nc">BaseOPEXModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">avg_annual_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Average annual Operating Expenditures for a wind plant over its lifetime&#39;</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="configure_base_opex"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.configure_base_opex">[docs]</a><span class="k">def</span> <span class="nf">configure_base_opex</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base configure method for a operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate.  It adds a default operational expenditures aggregator component.    &quot;&quot;&quot;</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;opex&#39;</span><span class="p">,</span> <span class="n">BaseOPEXAggregator</span><span class="p">())</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;opex&#39;</span><span class="p">)</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;opex.avg_annual_opex&#39;</span><span class="p">,</span><span class="s">&#39;avg_annual_opex&#39;</span><span class="p">)</span>
+
+<span class="c"># Extended Variable Trees, Components and Assemblies</span></div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="OPEXVarTree"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.OPEXVarTree">[docs]</a><span class="k">class</span> <span class="nc">OPEXVarTree</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base operational expenditures variable tree based on the DOE/NREL system cost breakdown structure.    &quot;&quot;&quot;</span>
+
+    <span class="n">preventative_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;annual expenditures on preventative maintenance - BOP and turbines&#39;</span><span class="p">)</span>
+    <span class="n">corrective_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;annual unscheduled maintenance costs (replacements) - BOP and turbines&#39;</span><span class="p">)</span>
+    <span class="n">lease_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;annual lease expenditures&#39;</span><span class="p">)</span>
+    <span class="n">other_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;other operational expenditures such as fixed costs&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseOPEXAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedOPEXAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.ExtendedOPEXAggregator">[docs]</a><span class="k">class</span> <span class="nc">ExtendedOPEXAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended operational expenditures aggregator for doing some auxiliary cost calculations needed to get a full wind plant operational expenditures estimate as well as a detailed cost breakdown.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">avg_annual_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Average annual Operating Expenditures for a wind plant over its lifetime&#39;</span><span class="p">)</span>
+    <span class="n">opex_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">OPEXVarTree</span><span class="p">(),</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseOPEXModel</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedOPEXModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.ExtendedOPEXModel">[docs]</a><span class="k">class</span> <span class="nc">ExtendedOPEXModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate as well as a detailed cost breakdown.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">avg_annual_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Average annual Operating Expenditures for a wind plant over its lifetime&#39;</span><span class="p">)</span>
+    <span class="n">opex_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">OPEXVarTree</span><span class="p">(),</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_extended_opex"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.configure_extended_opex">[docs]</a><span class="k">def</span> <span class="nf">configure_extended_opex</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended configure method for a operational expenditures assembly for coupling models to get a full wind plant operational expenditures estimate.  It replaces the base operational expenditures aggregator component with an extended version which contains the full balance of station variable tree.    &quot;&quot;&quot;</span>
+
+    <span class="n">configure_base_opex</span><span class="p">(</span><span class="n">assembly</span><span class="p">)</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;opex&#39;</span><span class="p">,</span> <span class="n">ExtendedOPEXAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;opex.opex_breakdown&#39;</span><span class="p">,</span><span class="s">&#39;opex_breakdown&#39;</span><span class="p">)</span>
+
+
+<span class="c"># Full OPEX Variable Trees, Components and Assemblies</span></div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseOPEXAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullOPEXAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.FullOPEXAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullOPEXAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full operational expenditures aggregator for doing some auxiliary cost calculations needed to get a full wind plant operational expenditures estimate as well as a detailed cost breakdown.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">avg_annual_opex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Average annual Operating Expenditures for a wind plant over its lifetime&#39;</span><span class="p">)</span>
+    <span class="n">opex_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">OPEXVarTree</span><span class="p">(),</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">)</span>
+    <span class="n">annual_opex</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Array of annual Operating Expenditure estimates for each year of expected project operation&#39;</span><span class="p">)</span>
+
+
+<span class="c">########################################################################################</span>
+<span class="c"># Plant Decommissioning Specific Models (usually part of CAPEX or OPEX)</span>
+
+<span class="c"># DECOMEX Model</span></div>
+<div class="viewcode-block" id="BaseDECOMEXModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_opex.BaseDECOMEXModel">[docs]</a><span class="k">class</span> <span class="nc">BaseDECOMEXModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base decomissioning expenditures assembly for coupling models to get a full wind plant decomissioning expenditures estimate.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">decomex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;General DECOMEX model produces Decomissioning Expenditures for a wind plant for the end of its life&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

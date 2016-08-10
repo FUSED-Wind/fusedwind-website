@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.turbine.structure_vt &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.turbine.structure_vt</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">VariableTree</span>
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">Bool</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">,</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">fusedwind.interface</span> <span class="kn">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">implement_base</span>
+
+
+
+<span class="c"># too aeroelastic code specific?!</span>
+<span class="nd">@base</span>
+<span class="k">class</span> <span class="nc">ConcentratedMass</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="ConcentratedMass"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.ConcentratedMass">[docs]</a>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Non-dimens the inertia is attached&#39;</span><span class="p">)</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;x, y, z offset relative to node&#39;</span><span class="p">)</span>
+    <span class="n">moment_of_inertia</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Ixx, Iyy, Izz moments of inertia&#39;</span><span class="p">)</span>
+    <span class="n">mass</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Concentrated mass&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;kg&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">MassProperties</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="MassProperties"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.MassProperties">[docs]</a>    <span class="sd">&quot;&quot;&quot;mass and mass moments of inertia of a component&quot;&quot;&quot;</span>
+
+    <span class="n">mass</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass of object&#39;</span><span class="p">)</span>
+    <span class="n">Ixx</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg*m**2&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass moment of inertia about x-axis&#39;</span><span class="p">)</span> <span class="c"># todo: arrary or not?</span>
+    <span class="n">Iyy</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg*m**2&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass moment of inertia about y-axis&#39;</span><span class="p">)</span>
+    <span class="n">Izz</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg*m**2&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass moment of inertia about z-axis&#39;</span><span class="p">)</span>
+    <span class="n">Ixy</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg*m**2&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass x-y product of inertia&#39;</span><span class="p">)</span>
+    <span class="n">Ixz</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg*m**2&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass x-z product of inertia&#39;</span><span class="p">)</span>
+    <span class="n">Iyz</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg*m**2&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;mass y-z product of inertia&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">BeamStructureVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="BeamStructureVT"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.BeamStructureVT">[docs]</a>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Running curve length of beam&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">dm</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Mass per unit length&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;kg/m&#39;</span><span class="p">)</span>
+    <span class="n">x_cg</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;x-distance from blade axis to center of mass&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">y_cg</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;y-distance from blade axis to center of mass&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">ri_x</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;radius of gyration relative to elastic center.&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">ri_y</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;radius of gyration relative to elastic center&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">x_sh</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;x-distance from blade axis to shear center&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">y_sh</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;y-distance from blade axis to shear center&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;modulus of elasticity&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;N/m**2&#39;</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;shear modulus of elasticity&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;N/m**2&#39;</span><span class="p">)</span>
+    <span class="n">I_x</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;area moment of inertia with respect to principal bending xe axis&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m**4&#39;</span><span class="p">)</span>
+    <span class="n">I_y</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;area moment of inertia with respect to principal bending ye axis&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m**4&#39;</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;torsional stiffness constant with respect to ze axis at the shear center&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m**4/rad&#39;</span><span class="p">)</span>
+    <span class="n">k_x</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;shear factor for force in principal bending xe direction&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">k_y</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;shear factor for force in principal bending ye direction&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;cross sectional area&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m**2&#39;</span><span class="p">)</span>
+    <span class="n">pitch</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;structural pitch relative to main axis.&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span>
+    <span class="n">x_e</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;x-distance from main axis to center of elasticity&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">y_e</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;y-distance from main axis to center of elasticity&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">MaterialProps</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="MaterialProps"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.MaterialProps">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Material properties </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">materialname</span> <span class="o">=</span> <span class="n">Str</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Material name&#39;</span><span class="p">)</span>
+
+    <span class="n">E1</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;GPa&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Youngs modulus in the radial direction&#39;</span><span class="p">)</span>
+    <span class="n">E2</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;GPa&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Youngs modulus in the tangential direction&#39;</span><span class="p">)</span>
+    <span class="n">E3</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;GPa&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Youngs modulus in the axial direction&#39;</span><span class="p">)</span>
+    <span class="n">nu12</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Poissons ratio in the radial-tangential direction&#39;</span><span class="p">)</span>
+    <span class="n">nu13</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Poissons ratio in the radial-axial direction&#39;</span><span class="p">)</span>
+    <span class="n">nu23</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Poissons ratio in the tangential-axial direction&#39;</span><span class="p">)</span>
+    <span class="n">G12</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;GPa&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Shear modulus in radial-tangential direction&#39;</span><span class="p">)</span>
+    <span class="n">G13</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;GPa&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Shear modulus in radial-axial direction&#39;</span><span class="p">)</span>
+    <span class="n">G23</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;GPa&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Shear modulus in tangential-axial direction&#39;</span><span class="p">)</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;kg/m**3&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Mass density&#39;</span><span class="p">)</span>
+
+    <span class="n">failure_criterium</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">&#39;maximum_strain&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;maximum_strain&#39;</span><span class="p">,</span> <span class="s">&#39;maximum_stress&#39;</span><span class="p">,</span> <span class="s">&#39;tsai_wu&#39;</span><span class="p">))</span>
+    <span class="n">s11_t</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;tensile strength in the 1 direction&#39;</span><span class="p">)</span>
+    <span class="n">s22_t</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;tensile strength in the 2 direction&#39;</span><span class="p">)</span>
+    <span class="n">s33_t</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;tensile strength in the 3 direction&#39;</span><span class="p">)</span>
+    <span class="n">s11_c</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;compressive strength in the 1 direction&#39;</span><span class="p">)</span>
+    <span class="n">s22_c</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;compressive strength in the 2 direction&#39;</span><span class="p">)</span>
+    <span class="n">s33_c</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;compressive strength in the 3 direction&#39;</span><span class="p">)</span>
+    <span class="n">t12</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;shear strength in the 12 plane&#39;</span><span class="p">)</span>
+    <span class="n">t13</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;shear strength in the 13 plane&#39;</span><span class="p">)</span>
+    <span class="n">t23</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;shear strength in the 23 plane&#39;</span><span class="p">)</span>
+    <span class="n">e11_c</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum tensile strain in the 1 direction&#39;</span><span class="p">)</span>
+    <span class="n">e22_c</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum tensile strain in the 2 direction&#39;</span><span class="p">)</span>
+    <span class="n">e33_c</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum tensile strain in the 3 direction&#39;</span><span class="p">)</span>
+    <span class="n">e11_t</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum compressive strain in the 1 direction&#39;</span><span class="p">)</span>
+    <span class="n">e22_t</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum compressive strain in the 2 direction&#39;</span><span class="p">)</span>
+    <span class="n">e33_t</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum compressive strain in the 3 direction&#39;</span><span class="p">)</span>
+    <span class="n">g12</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum shear strain in the 12 plane &#39;</span><span class="p">)</span>
+    <span class="n">g13</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum shear strain in the 13 plane&#39;</span><span class="p">)</span>
+    <span class="n">g23</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;maximum shear strain in the 23 plane&#39;</span><span class="p">)</span>
+
+    <span class="c"># Reduction factors for the material safety factor</span>
+    <span class="c"># computed as gMa = gM0 * sum(Cia) </span>
+    <span class="c"># gMa defaults to 1 so partials can be used directly in above material strengths</span>
+    <span class="n">gM0</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Material safety factor&#39;</span><span class="p">)</span>
+    <span class="n">C1a</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;influence of ageing&#39;</span><span class="p">)</span>
+    <span class="n">C2a</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;influence of temperature&#39;</span><span class="p">)</span>
+    <span class="n">C3a</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;influence of manufacturing technique&#39;</span><span class="p">)</span>
+    <span class="n">C4a</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;influence of curing technique&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">Layer</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="Layer"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.Layer">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A layer represents a stack of multidirectional plies and is assigned</span>
+<span class="sd">    an apparent set of material properties based on the </span>
+<span class="sd">    properties of the constituent materials, pre-computed using</span>
+<span class="sd">    simple micromechanics equations and classical lamination theory.</span>
+
+<span class="sd">    Layers are stacked in a region</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">thickness</span> <span class="o">=</span> <span class="n">Float</span><span class="p">()</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">Float</span><span class="p">()</span>
+    <span class="n">materialname</span> <span class="o">=</span> <span class="n">Str</span><span class="p">()</span>
+    <span class="n">plyname</span> <span class="o">=</span> <span class="n">Str</span><span class="p">()</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">Region</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="Region"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.Region">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A region covers a fraction of the curve length along the surface of</span>
+<span class="sd">    a cross section.</span>
+
+<span class="sd">    A region consists of a number of layers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">s0</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Chordwise curve fraction starting point&#39;</span><span class="p">)</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Chordwise curve fraction end point&#39;</span><span class="p">)</span>
+    <span class="n">thickness</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Total thickness of region&#39;</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Width of the region&#39;</span><span class="p">)</span>
+    <span class="n">layers</span> <span class="o">=</span> <span class="n">List</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">Layer</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">compute_thickness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">lname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lname</span><span class="p">)</span><span class="o">.</span><span class="n">thickness</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">CrossSectionStructureVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="CrossSectionStructureVT"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.CrossSectionStructureVT">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Container for a cross-sectional definition of the</span>
+<span class="sd">    internal structure of a blade.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Float</span><span class="p">()</span>
+    <span class="n">regions</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;List of names of regions in the cross section&#39;</span><span class="p">)</span>
+    <span class="n">webs</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;List of names of regions in the cross section&#39;</span><span class="p">)</span>
+    <span class="n">materials</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Dictionary of MaterialProps vartrees&#39;</span><span class="p">)</span>
+    <span class="n">airfoil</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Cross sectional shape&#39;</span><span class="p">)</span>
+    <span class="n">DPs</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Region division points (nregion + 1)&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">Region</span><span class="p">()))</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_web</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">Region</span><span class="p">()))</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">webs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">material</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">materials</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">material</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">materials</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">Layer3D</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="Layer3D"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.Layer3D">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Same as Layer, except for being a function of span</span>
+
+<span class="sd">    A layer thickness can go to zero if material disappears at</span>
+<span class="sd">    a certain spanwise location.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">thickness</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;layer thickness&#39;</span><span class="p">)</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;layup angle&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">Region3D</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="Region3D"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.Region3D">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Same as region except for being a function of span</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;spanwise discretization of section&#39;</span><span class="p">)</span>
+    <span class="n">thickness</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Total thickness distribution as function of span&#39;</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Width as function of span (for convenience)&#39;</span><span class="p">)</span>
+    <span class="n">layers</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;List of names of layers&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="n">dubl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_containers</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dubl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">lname</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s%02d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dubl</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lname</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">lname</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">Layer3D</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lname</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lname</span><span class="p">)</span>
+
+
+<span class="nd">@base</span></div>
+<span class="k">class</span> <span class="nc">BladeStructureVT3D</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+<div class="viewcode-block" id="BladeStructureVT3D"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.BladeStructureVT3D">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Variable tree for the structural definition of a blade.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;spanwise discretization of blade&#39;</span><span class="p">)</span>
+    <span class="n">regions</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;List of names of regions&#39;</span><span class="p">)</span>
+    <span class="n">webs</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;List of names of webs&#39;</span><span class="p">)</span>
+    <span class="n">iwebs</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;List of DP indices connecting webs to the surface&#39;</span><span class="p">)</span>
+    <span class="n">DPs</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Names of division point curves&#39;</span><span class="p">)</span>
+    <span class="n">materials</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">configure_regions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nr</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[]):</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;DP</span><span class="si">%02d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                                         <span class="n">low</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+                                         <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Region division point curves </span><span class="si">%i</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">DPs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;DP</span><span class="si">%02d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nr</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">rnames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;region</span><span class="si">%02d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_region</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">configure_webs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nw</span><span class="p">,</span> <span class="n">iwebs</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[]):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">iwebs</span> <span class="o">=</span> <span class="n">iwebs</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nw</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">wnames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;web</span><span class="si">%02d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_web</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">Region3D</span><span class="p">()))</span>
+        <span class="n">region</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="c"># self.nr = len(self.regions)</span>
+        <span class="k">return</span> <span class="n">region</span>
+
+    <span class="k">def</span> <span class="nf">add_web</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">Region3D</span><span class="p">()))</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">webs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="BladeStructureVT3D.add_material"><a class="viewcode-back" href="../../../turbine_structure.html#fusedwind.turbine.structure_vt.BladeStructureVT3D.add_material">[docs]</a>        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        add a material to the blade</span>
+<span class="sd">        </span>
+<span class="sd">        parameters</span>
+<span class="sd">        -----------</span>
+<span class="sd">        name: string</span>
+<span class="sd">            name of material to add</span>
+
+<span class="sd">        returns</span>
+<span class="sd">        --------</span>
+<span class="sd">        MaterialProps: object</span>
+<span class="sd">            VariableTree with material properties to set by user</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">MaterialProps</span><span class="p">()</span>
+        <span class="n">mat</span><span class="o">.</span><span class="n">materialname</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">mat</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">materials</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div></div></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

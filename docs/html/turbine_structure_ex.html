@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Airfoil and Blade Geometry Examples &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Turbine Tutorials" href="turbine_ex.html" />
+    <link rel="next" title="Aero-elastic Turbine Example" href="turbine_aeroelastic_ex.html" />
+    <link rel="prev" title="Turbine Tutorials" href="turbine_ex.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Airfoil and Blade Geometry Examples</a></li>
+<li><a class="reference internal" href="#blade-structure-example">Blade Structure Example</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="turbine_ex.html" title="Previous Chapter: Turbine Tutorials"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Turbine Tutorial...</span>
+    </a>
+  </li>
+  <li>
+    <a href="turbine_aeroelastic_ex.html" title="Next Chapter: Aero-elastic Turbine Example"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Aero-elastic Tur... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="airfoil-and-blade-geometry-examples">
+<span id="sec-blade-geometry-ex-label"></span><h1>Airfoil and Blade Geometry Examples<a class="headerlink" href="#airfoil-and-blade-geometry-examples" title="Permalink to this headline">¶</a></h1>
+<p>A class for airfoil geometries is provided in the <tt class="docutils literal"><span class="pre">fusedwind.turbine.geometry_vt.AirfoilShape</span></tt> class.
+The convention used for airfoil shapes is that the coordinates are defined as a continuous curve starting from the trailing edge pressure side, around the leading edge to the suction side trailing edge.
+The airfoil geometry can be oriented in any direction in the <em>x</em>-<em>y</em>-plane.
+The method <tt class="docutils literal"><span class="pre">computeLETE</span></tt> determines the trailing and leading edges.
+The trailing edge is defined as the mean of the first and last points on the airfoil and the leading edge is defined as the point along the curve with maximum distance to the trailing edge.
+The <tt class="docutils literal"><span class="pre">redistribute</span></tt> method can be used to redistribute the points on the airfoil with an arbitrary number of points.
+See the source docs for specific parameters for this method.</p>
+<p>In the simple example below, which is located in <tt class="docutils literal"><span class="pre">src/fusedwind/examples/turbine/fused_turbine_geom_example.py</span></tt>, we load in the FFA-W3-301 airfoil and distribute 200 points along its surface, letting the AirfoilShape class determine an appropriate leading edge cell size.
+Since the trailing edge is not closed, we do not need high clustering there, so we don&#8217;t have to specify any cell size.
+The easiest way to run the example and inspect the class is to run it inside iPython.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.geometry_vt</span> <span class="kn">import</span> <span class="n">AirfoilShape</span>
+
+<span class="k">def</span> <span class="nf">redistribute_airfoil_example</span><span class="p">():</span>
+
+    <span class="n">af</span> <span class="o">=</span> <span class="n">AirfoilShape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">&#39;data/ffaw3301.dat&#39;</span><span class="p">))</span>
+
+    <span class="k">print</span> <span class="s">&#39;number of points, ni: &#39;</span><span class="p">,</span> <span class="n">af</span><span class="o">.</span><span class="n">ni</span>
+    <span class="k">print</span> <span class="s">&#39;Airfoil leading edge (x, y): &#39;</span><span class="p">,</span> <span class="n">af</span><span class="o">.</span><span class="n">LE</span>
+    <span class="k">print</span> <span class="s">&#39;Airfoil leading edge curve fraction (s): &#39;</span><span class="p">,</span> <span class="n">af</span><span class="o">.</span><span class="n">sLE</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">af</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">af</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;original&#39;</span><span class="p">)</span>
+
+    <span class="c"># redistribute 200 points along the surface</span>
+    <span class="c"># and let the LE cell size be determined based on curvature</span>
+    <span class="n">aff</span> <span class="o">=</span> <span class="n">af</span><span class="o">.</span><span class="n">redistribute</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">dLE</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aff</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">aff</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s">&#39;-&lt;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;redistributed&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aff</span><span class="o">.</span><span class="n">LE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">aff</span><span class="o">.</span><span class="n">LE</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;LE&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The blade planform used in FUSED-Wind is described by spanwise distributions of <em>chord</em>, <em>twist</em>, <em>relative thickness</em>, and <em>pitch axis aft leading edge</em>, variables that are grouped in the <tt class="docutils literal"><span class="pre">fusedwind.turbine.geometry_vt.BladePlanformVT</span></tt> variable tree.
+A lofted shape is generated from this planform in combination with a series of airfoils covering the range of relative thicknesses used on the blade.
+The class <tt class="docutils literal"><span class="pre">fusedwind.turbine.geometry.LoftedBladeSurface</span></tt> can be used to generate to generate a smooth lofted shape, which uses method to interpolate in the airfoil family specified by the user is available available as a stand-alone class in <tt class="docutils literal"><span class="pre">fusedwind.turbine.airfoil_vt.BlendAirfoilShapes</span></tt>.
+The lofted blade surface is saved in the <tt class="docutils literal"><span class="pre">BladeSurfaceVT</span></tt> variable tree by the LoftedBladeSurface class.
+The configuration method <tt class="docutils literal"><span class="pre">configure_bladesurface</span></tt> configures an assembly with a splined blade planform and a lofted blade surface.
+In the example below we show how to use this method and plot some of the outputs. This example is also located in <tt class="docutils literal"><span class="pre">src/fusedwind/examples/turbine/fused_turbine_geom_example.py</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.configurations</span> <span class="kn">import</span> <span class="n">configure_bladesurface</span>
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.geometry</span> <span class="kn">import</span> <span class="n">read_blade_planform</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Assembly</span>
+
+<span class="k">def</span> <span class="nf">lofted_blade_shape_example</span><span class="p">():</span>
+
+    <span class="n">top</span> <span class="o">=</span> <span class="n">Assembly</span><span class="p">()</span>
+
+    <span class="n">configure_bladesurface</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">planform_nC</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+    <span class="c"># load the planform file</span>
+    <span class="n">top</span><span class="o">.</span><span class="n">pf_splines</span><span class="o">.</span><span class="n">pfIn</span> <span class="o">=</span> <span class="n">read_blade_planform</span><span class="p">(</span><span class="s">&#39;data/DTU_10MW_RWT_blade_axis_prebend.dat&#39;</span><span class="p">)</span>
+    <span class="n">top</span><span class="o">.</span><span class="n">blade_length</span> <span class="o">=</span> <span class="mf">86.366</span>
+    <span class="n">top</span><span class="o">.</span><span class="n">span_ni</span> <span class="o">=</span> <span class="mi">50</span>
+
+    <span class="k">print</span> <span class="s">&#39;planform variables: &#39;</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">pf_splines</span><span class="o">.</span><span class="n">pfOut</span><span class="o">.</span><span class="n">list_vars</span><span class="p">()</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">blade_surface</span>
+
+    <span class="c"># distribute 200 points evenly along the airfoil sections</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">chord_ni</span> <span class="o">=</span> <span class="mi">200</span>
+
+    <span class="c"># load the airfoil shapes defining the blade</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;data/ffaw3241.dat&#39;</span><span class="p">,</span>
+              <span class="s">&#39;data/ffaw3301.dat&#39;</span><span class="p">,</span>
+              <span class="s">&#39;data/ffaw3360.dat&#39;</span><span class="p">,</span>
+              <span class="s">&#39;data/ffaw3480.dat&#39;</span> <span class="p">,</span>
+              <span class="s">&#39;data/tc72.dat&#39;</span> <span class="p">,</span>
+              <span class="s">&#39;data/cylinder.dat&#39;</span><span class="p">]:</span>
+
+        <span class="n">b</span><span class="o">.</span><span class="n">base_airfoils</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+
+    <span class="n">b</span><span class="o">.</span><span class="n">blend_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.241</span><span class="p">,</span> <span class="mf">0.301</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+
+    <span class="n">top</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="n">pf</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">pf_splines</span><span class="o">.</span><span class="n">pfOut</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;chord&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pf</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">pf</span><span class="o">.</span><span class="n">chord</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;chord.eps&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;twist&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pf</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">pf</span><span class="o">.</span><span class="n">rot_z</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;twist.eps&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;relative thickness&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pf</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">pf</span><span class="o">.</span><span class="n">rthick</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;rthick.eps&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;pitch axis aft leading edge&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pf</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">pf</span><span class="o">.</span><span class="n">p_le</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;p_le.eps&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">span_ni</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">surfout</span><span class="o">.</span><span class="n">surface</span><span class="p">[:,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="o">.</span><span class="n">surfout</span><span class="o">.</span><span class="n">surface</span><span class="p">[:,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;lofted_blade.eps&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">top</span>
+</pre></div>
+</div>
+<blockquote id="bladesurface-planform-fig">
+<div><a class="reference internal image-reference" href="_images/chord.png"><img alt="_images/chord.png" src="_images/chord.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/twist.png"><img alt="_images/twist.png" src="_images/twist.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/rthick.png"><img alt="_images/rthick.png" src="_images/rthick.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/p_le.png"><img alt="_images/p_le.png" src="_images/p_le.png" style="width: 49%;" /></a>
+</div></blockquote>
+<div class="figure align-center" id="bladesurface-lofted-blade-fig">
+<a class="reference internal image-reference" href="_images/lofted_blade.png"><img alt="_images/lofted_blade.png" src="_images/lofted_blade.png" style="width: 70%;" /></a>
+<p class="caption">Figure 1: Lofted blade shape.</p>
+</div>
+</div>
+<div class="section" id="blade-structure-example">
+<h1>Blade Structure Example<a class="headerlink" href="#blade-structure-example" title="Permalink to this headline">¶</a></h1>
+<p>The blade structure parameterization is primarily aimed for conceptual analysis and optimization,
+where the geometric detail is fairly low to enable its use more efficiently in an optimization context.</p>
+<p>On a cross sectional level, the internal structure is defined in a <tt class="docutils literal"><span class="pre">CrossSectionStructureVT</span></tt> VariableTree object.
+A cross-section is divided into a number of <em>regions</em> that each cover a fraction of the cross-section, defined in a <tt class="docutils literal"><span class="pre">Region</span></tt> VariableTree object. Each region, contains a stack of materials contained in a list of <tt class="docutils literal"><span class="pre">Layer</span></tt> vartrees.
+In each layer, the material type, thickness and layup angle can be specified.
+The materials used in the blade are specified in the <tt class="docutils literal"><span class="pre">MaterialProps</span></tt> variable tree, which holds a set of apparent material properties based on the properties of the constituent materials, which need to be pre-computed using simple micromechanics equations and classical lamination theory.</p>
+<p>The figure below shows a blade cross section where the region division points (DPs) are indicated.
+The location of each DP is specified as a normalized arc length along the cross section
+starting at the trailing edge pressure side with a value of s=-1., and along the surface to the leading edge where s=0.,
+along the suction side to the trailing edge where s=1.
+Any number of regions can thus be specified, distributed arbitrarily along the surface.</p>
+<div class="figure align-center" id="bladestructure-cross-sec-fig">
+<a class="reference internal image-reference" href="_images/cross_sec_sdef13.png"><img alt="_images/cross_sec_sdef13.png" src="_images/cross_sec_sdef13.png" style="width: 80%;" /></a>
+<p class="caption">Figure 2: Blade cross section with region division points (DPs) indicated with red dots and shear webs drawn as green lines.</p>
+</div>
+<p>The spar caps are specified in the same way as other regions, which means that their widths and position along the chord are not default parameters.
+It is presently only possible to place shear webs at the location of a DP, which means that a single shear web topology would require the spar cap to be split into two regions.</p>
+<p>The full blade parameterization is a simple extrusion of the cross-sectional denition, where every region covers the entire span of the blade.
+The DP curves marked with red dots in the plot below are simple 1-D arrays as function of span that as in the cross-sectional definition take a value between -1. and 1.
+The distribution of material and their layup angles along the blade are also specified as simple 1-D arrays as function of span.
+Often, a specific composite will not cover the entire span, and in this case the thickness of this material is simply specified to be zero at that given spanwise location.</p>
+<div class="figure align-center" id="bladestructure-lofted-blade-fig">
+<a class="reference internal image-reference" href="_images/structural_cross_sections.png"><img alt="_images/structural_cross_sections.png" src="_images/structural_cross_sections.png" style="width: 15cm;" /></a>
+<p class="caption">Figure 3: Lofted blade with region division points indicated with red dots and shear webs drawn as green lines.</p>
+</div>
+<p>FUSED-Wind provides methods to easily parameterize and spline the structural definition of a wind turbine blade and build a list of cross-sectional definitions of the blade structure for use with cross-sectional structure codes such as PreComp or BECAS.
+The workflow contains a number of components:</p>
+<ul class="simple">
+<li>Blade planform spliner component</li>
+<li>Lofted blade surface component</li>
+<li>Blade structural data reader component</li>
+<li>Blade structural data spliner component</li>
+<li>Blade cross-sectional structure builder component</li>
+<li>Blade structural data writer component</li>
+</ul>
+<p>In the example below, we show how to hook up an assembly with a complete lofted shape and structural definition of the DTU 10MW RWT.
+The example and data is located in <tt class="docutils literal"><span class="pre">src/fusedwind/examples/turbine/turbine_structure_example.py</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">VarTree</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">Component</span>
+
+<span class="kn">from</span> <span class="nn">fusedwind.interface</span> <span class="kn">import</span> <span class="n">implement_base</span>
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.geometry</span> <span class="kn">import</span> <span class="n">read_blade_planform</span><span class="p">,</span> <span class="n">redistribute_blade_planform</span>
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.configurations</span> <span class="kn">import</span> <span class="n">configure_bladestructure</span>
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.blade_structure</span> <span class="kn">import</span> <span class="n">SplinedBladeStructure</span>
+<span class="kn">from</span> <span class="nn">fusedwind.turbine.structure_vt</span> <span class="kn">import</span> <span class="n">BladeStructureVT3D</span>
+
+<span class="n">top</span> <span class="o">=</span> <span class="n">Assembly</span><span class="p">()</span>
+
+<span class="n">configure_bladestructure</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="s">&#39;data/DTU10MW&#39;</span><span class="p">,</span> <span class="n">planform_nC</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">structure_nC</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">top</span><span class="o">.</span><span class="n">st_writer</span><span class="o">.</span><span class="n">filebase</span> <span class="o">=</span> <span class="s">&#39;st_test&#39;</span>
+
+<span class="n">top</span><span class="o">.</span><span class="n">blade_length</span> <span class="o">=</span> <span class="mf">86.366</span>
+
+<span class="n">top</span><span class="o">.</span><span class="n">pf_splines</span><span class="o">.</span><span class="n">pfIn</span> <span class="o">=</span> <span class="n">read_blade_planform</span><span class="p">(</span><span class="s">&#39;data/DTU_10MW_RWT_blade_axis_prebend.dat&#39;</span><span class="p">)</span>
+<span class="n">top</span><span class="o">.</span><span class="n">blade_surface</span><span class="o">.</span><span class="n">chord_ni</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;data/ffaw3241.dat&#39;</span><span class="p">,</span>
+          <span class="s">&#39;data/ffaw3301.dat&#39;</span><span class="p">,</span>
+          <span class="s">&#39;data/ffaw3360.dat&#39;</span><span class="p">,</span>
+          <span class="s">&#39;data/ffaw3480.dat&#39;</span><span class="p">,</span>
+          <span class="s">&#39;data/tc72.dat&#39;</span><span class="p">,</span>
+          <span class="s">&#39;data/cylinder.dat&#39;</span><span class="p">]:</span>
+
+    <span class="n">top</span><span class="o">.</span><span class="n">blade_surface</span><span class="o">.</span><span class="n">base_airfoils</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+
+<span class="n">top</span><span class="o">.</span><span class="n">blade_surface</span><span class="o">.</span><span class="n">blend_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.241</span><span class="p">,</span> <span class="mf">0.301</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+
+<span class="c"># spanwise distribution of planform spline DVs</span>
+<span class="n">top</span><span class="o">.</span><span class="n">pf_splines</span><span class="o">.</span><span class="n">Cx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]</span>
+
+<span class="c"># spanwise distribution of sptructural spline DVs</span>
+<span class="n">top</span><span class="o">.</span><span class="n">st_splines</span><span class="o">.</span><span class="n">Cx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]</span>
+
+<span class="c"># spanwise distribution of points where</span>
+<span class="c"># cross-sectional structure vartrees will be created</span>
+<span class="n">top</span><span class="o">.</span><span class="n">st_splines</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="n">top</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">configure_bladestructure</span></tt> method associates an FFD spline component to each of the material thickness and angle distributions and <em>DP</em> curves that defines the blade structure.
+The starting point of all the splines is zero, so if we add a pertubation to one of the splines, e.g. the spar cap uniax thickness, we can see how that changes the thickness distribution:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">&gt;</span> <span class="n">top</span><span class="o">.</span><span class="n">st_splines</span><span class="o">.</span><span class="n">r04uniaxT_C</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+=</span><span class="mf">0.01</span>
+<span class="o">&gt;</span> <span class="n">top</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="bladestructure-spline-fig">
+<a class="reference internal image-reference" href="_images/turbine_structure_uniax_perturb.png"><img alt="_images/turbine_structure_uniax_perturb.png" src="_images/turbine_structure_uniax_perturb.png" style="width: 80%;" /></a>
+<p class="caption">Figure 4: Blade spar cap uniax thickness pertubation.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

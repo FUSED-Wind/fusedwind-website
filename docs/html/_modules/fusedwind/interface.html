@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.interface &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.interface</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">openmdao.main.interfaces</span> <span class="kn">import</span> <span class="n">Interface</span><span class="p">,</span> <span class="n">implements</span>
+<span class="kn">from</span> <span class="nn">zope.interface</span> <span class="kn">import</span> <span class="n">implementer</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">VariableTree</span>
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">Instance</span>
+<span class="kn">from</span> <span class="nn">fused_helper</span> <span class="kn">import</span> <span class="n">fused_autodoc</span>
+
+
+<span class="c"># FUSED Framework ----------------------------------</span>
+<span class="k">def</span> <span class="nf">interface</span><span class="p">(</span><span class="n">comp_cls</span><span class="p">):</span>
+<div class="viewcode-block" id="interface"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.interface">[docs]</a>    <span class="sd">&quot;&quot;&quot;Returns the class ICompCls(Interface)&quot;&quot;&quot;</span>
+    <span class="k">class</span> <span class="nc">MyInterface</span><span class="p">(</span><span class="n">Interface</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="n">MyInterface</span><span class="o">.</span><span class="n">__name__</span> <span class="o">=</span> <span class="s">&#39;I&#39;</span> <span class="o">+</span> <span class="n">comp_cls</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">return</span> <span class="n">MyInterface</span>
+
+
+<span class="k">def</span> <span class="nf">base</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="base"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.base">[docs]</a>    <span class="sd">&quot;&quot;&quot;Decorator for a FUSED base class&quot;&quot;&quot;</span>
+    <span class="c"># desactivating the autodoc feature</span>
+    <span class="k">return</span> <span class="n">fused_autodoc</span><span class="p">(</span><span class="n">implementer</span><span class="p">(</span><span class="n">interface</span><span class="p">(</span><span class="n">cls</span><span class="p">))(</span><span class="n">cls</span><span class="p">))</span>
+    <span class="c"># return implementer(interface(cls))(cls)</span>
+
+
+<span class="k">def</span> <span class="nf">cls_list_vars</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="cls_list_vars"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.cls_list_vars">[docs]</a>    <span class="sd">&quot;&quot;&quot;Return a list of variables in a VariableTree class&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">VariableTree</span><span class="o">.</span><span class="n">__class_traits__</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">v</span><span class="o">.</span><span class="n">vartypename</span> <span class="o">==</span> <span class="bp">None</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">cls_list_outputs</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="cls_list_outputs"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.cls_list_outputs">[docs]</a>    <span class="sd">&quot;&quot;&quot;Return a list of outputs in a Component class&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">iotype</span> <span class="o">==</span> <span class="s">&#39;out&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Component</span><span class="o">.</span><span class="n">__class_traits__</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">v</span><span class="o">.</span><span class="n">vartypename</span> <span class="o">==</span> <span class="bp">None</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">cls_list_inputs</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="cls_list_inputs"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.cls_list_inputs">[docs]</a>    <span class="sd">&quot;&quot;&quot;Return a list of inputs in a Component class&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">iotype</span> <span class="o">==</span> <span class="s">&#39;in&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Component</span><span class="o">.</span><span class="n">__class_traits__</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">v</span><span class="o">.</span><span class="n">vartypename</span> <span class="o">==</span> <span class="bp">None</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">check_base_compliance</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="check_base_compliance"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.check_base_compliance">[docs]</a>    <span class="sd">&quot;&quot;&quot;Do some checks on the I/O compatibility of the class with its base:</span>
+
+<span class="sd">    parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    base    class</span>
+<span class="sd">            the base class to be satisfied</span>
+
+<span class="sd">    cls     class</span>
+<span class="sd">            the current class to check</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_vars</span><span class="p">(</span><span class="n">base</span><span class="p">))</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cls_list_vars</span><span class="p">(</span><span class="n">cls</span><span class="p">)))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Variables of the class </span><span class="si">%s</span><span class="s"> are different from base </span><span class="si">%s</span><span class="s">:&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cls_list_vars</span><span class="p">(</span><span class="n">base</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_vars</span><span class="p">(</span><span class="n">cls</span><span class="p">))))</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c"># Assuming it&#39;s a Component or Assembly</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_inputs</span><span class="p">(</span><span class="n">base</span><span class="p">))</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span>
+                <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_inputs</span><span class="p">(</span><span class="n">cls</span><span class="p">)))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Inputs of the class </span><span class="si">%s</span><span class="s"> are different from base </span><span class="si">%s</span><span class="s">.  The missing input(s) of </span><span class="si">%s</span><span class="s"> are: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cls_list_inputs</span><span class="p">(</span><span class="n">base</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_inputs</span><span class="p">(</span><span class="n">cls</span><span class="p">)))))</span>  <span class="c"># , cls_list_inputs(cls), cls_list_inputs(base))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_outputs</span><span class="p">(</span><span class="n">base</span><span class="p">))</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span>
+                <span class="n">cls_list_outputs</span><span class="p">(</span><span class="n">cls</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Outputs of the class </span><span class="si">%s</span><span class="s"> are different from base </span><span class="si">%s</span><span class="s">.  The missing output(s) of </span><span class="si">%s</span><span class="s"> are: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cls_list_outputs</span><span class="p">(</span><span class="n">base</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">cls_list_outputs</span><span class="p">(</span><span class="n">cls</span><span class="p">)))))</span>  <span class="c"># , cls_list_outputs(ob), cls_list_outputs(base))</span>
+
+
+<span class="k">class</span> <span class="nc">_implement_base</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></div>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    tag the curent class with the base class interface.</span>
+<span class="sd">    Add a check on the I/O.</span>
+
+<span class="sd">    Usage:</span>
+<span class="sd">    ------</span>
+
+<span class="sd">    @base</span>
+<span class="sd">    class BaseClass(object):</span>
+<span class="sd">        vi1 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi2 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vo1 = Float(iotype=&#39;out&#39;)</span>
+
+<span class="sd">    @_implement_base(BaseClass)</span>
+<span class="sd">    class MyClass(object):</span>
+<span class="sd">        vi1 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi2 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vo1 = Float(iotype=&#39;out&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Store the base calss in the object variable _base</span>
+
+<span class="sd">        parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cls     class</span>
+<span class="sd">                the base class to store</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">cls</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if the new class satisfy the requirements</span>
+<span class="sd">        of the base class and return the implementation of</span>
+<span class="sd">        the new class</span>
+
+<span class="sd">        parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cls     class</span>
+<span class="sd">                the new class to process</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="s">&#39;_fused_base&#39;</span><span class="p">):</span>
+            <span class="n">cls</span><span class="o">.</span><span class="n">_fused_base</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">_fused_base</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">base</span><span class="p">(</span><span class="n">implementer</span><span class="p">(</span><span class="n">interface</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span><span class="p">))(</span><span class="n">cls</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Do some checks on the I/O compatibility of the class with its base:</span>
+
+<span class="sd">        TODO:</span>
+<span class="sd">        -----</span>
+<span class="sd">            * Add test on variable type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">check_base_compliance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">implement_base</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="implement_base"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.implement_base">[docs]</a>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decorator to implements the bases. Can both be used for Components and Assemblies</span>
+
+<span class="sd">    Usage:</span>
+<span class="sd">    ------</span>
+
+<span class="sd">    @base</span>
+<span class="sd">    class BaseClass1(object):</span>
+<span class="sd">        vi1 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi2 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vo1 = Float(iotype=&#39;out&#39;)</span>
+
+<span class="sd">    @base</span>
+<span class="sd">    class BaseClass2(object):</span>
+<span class="sd">        vi3 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi4 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vo2 = Float(iotype=&#39;out&#39;)</span>
+
+<span class="sd">    @implement_base(BaseClass1, BaseClass2)</span>
+<span class="sd">    class MyClass(object):</span>
+<span class="sd">        vi1 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi2 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi3 = Float(iotype=&#39;in&#39;)</span>
+<span class="sd">        vi4 = Float(iotype=&#39;in&#39;)</span>
+
+<span class="sd">        vo1 = Float(iotype=&#39;out&#39;)</span>
+<span class="sd">        vo2 = Float(iotype=&#39;out&#39;)</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bases</span> <span class="o">=</span> <span class="n">args</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">cls</span>
+        <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bases</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">_implement_base</span><span class="p">(</span><span class="n">base</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">class</span> <span class="nc">configure_base</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></div>
+<div class="viewcode-block" id="configure_base"><a class="viewcode-back" href="../../interfaces.html#fusedwind.interface.configure_base">[docs]</a>    <span class="sd">&quot;&quot;&quot;decorator that enforces a check that the function first argument instance (i.e. self)</span>
+<span class="sd">    is in compliance with the base class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">base</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">new_func</span><span class="p">(</span><span class="n">_self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="c"># Check if _self satisfies the base class</span>
+            <span class="n">check_base_compliance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base</span><span class="p">,</span> <span class="n">_self</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">_self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c"># let it be a well-behaved decorator.</span>
+        <span class="n">new_func</span><span class="o">.</span><span class="n">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="n">new_func</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">__doc__</span>
+        <span class="n">new_func</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_func</span>
+
+
+<span class="k">def</span> <span class="nf">InterfaceInstance</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></div>
+    <span class="k">return</span> <span class="n">Instance</span><span class="p">(</span><span class="n">interface</span><span class="p">(</span><span class="n">cls</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">InterfaceSlot</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Slot</span><span class="p">(</span><span class="n">interface</span><span class="p">(</span><span class="n">cls</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">FUSEDAssembly</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="n">_debug</span> <span class="o">=</span> <span class="bp">False</span>
+
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FUSEDAssembly</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_containers</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">():</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="n">obj_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="c"># Check the previously added components compatibility with</span>
+        <span class="c"># the default component</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;default&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">check_compatibility_with_default</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj_name</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+    <span class="k">def</span> <span class="nf">_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method to replace components with other compatible components</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        self:    Assembly</span>
+<span class="sd">                 the assembly where the components are going to be added</span>
+
+<span class="sd">        name:     str</span>
+<span class="sd">                 The name of the component to add</span>
+
+<span class="sd">        obj:     Component instance</span>
+<span class="sd">                 The component to add to the self Assembly</span>
+
+<span class="sd">        replace: bool</span>
+<span class="sd">                 A flag to indicate if the object should replace a</span>
+<span class="sd">                 previously added component</span>
+
+
+<span class="sd">        Example</span>
+<span class="sd">        --------</span>
+
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_fused_components&#39;</span><span class="p">):</span>
+            <span class="c"># This is the first time that this method is run</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c"># Check the compatibility of the new object with the existing</span>
+        <span class="c"># classes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_compatibility_with_default</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+        <span class="n">name_id</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">name_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&#39;adding&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="n">name_id</span>
+            <span class="c"># Call the original add</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">FUSEDAssembly</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">replace</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">name_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&#39;replacing&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#39;with&#39;</span><span class="p">,</span> <span class="n">name_id</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">FUSEDAssembly</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">name_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&#39;not replacing&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#39;with&#39;</span><span class="p">,</span> <span class="n">name_id</span>
+            <span class="k">return</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">check_compatibility_with_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s">&#39;default&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                <span class="n">default</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fused_components</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">check_compatibility</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">check_compatibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if the obj2 is satisfying the same interface as obj1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;checking that&#39;</span><span class="p">,</span> <span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s">&#39;is compatible with&#39;</span><span class="p">,</span> <span class="n">obj1</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">list_vars</span><span class="p">())</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">list_vars</span><span class="p">()))</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Variables of the class </span><span class="si">%s</span><span class="s"> are different from base </span><span class="si">%s</span><span class="s">:&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">obj1</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span> <span class="n">obj2</span><span class="o">.</span><span class="n">list_vars</span><span class="p">(),</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">list_vars</span><span class="p">()))</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c"># Assuming it&#39;s a Component or Assembly</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">())</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span>
+                    <span class="nb">set</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">()))</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Inputs of the class </span><span class="si">%s</span><span class="s"> are different from base </span><span class="si">%s</span><span class="s">.  The missing input(s) of </span><span class="si">%s</span><span class="s"> are: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">obj1</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">()))))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">())</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">())</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Outputs of the class </span><span class="si">%s</span><span class="s"> are different from base </span><span class="si">%s</span><span class="s">.  The missing output(s) of </span><span class="si">%s</span><span class="s"> are: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">obj1</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">obj2</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">()))))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debug</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;--&gt; OK&#39;</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

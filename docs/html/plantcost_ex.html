@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plant Cost and Financial Analysis Tutorials &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Tutorials" href="tutorial.html" />
+    <link rel="next" title="Energy Production Tutorials" href="plantflow_ex.html" />
+    <link rel="prev" title="Tutorials" href="tutorial.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Plant Cost and Financial Analysis Tutorials</a><ul>
+<li><a class="reference internal" href="#turbine-cost-models">Turbine Cost Models</a></li>
+<li><a class="reference internal" href="#balance-of-station-cost-models">Balance of Station Cost Models</a></li>
+<li><a class="reference internal" href="#operational-expenditures-models">Operational Expenditures Models</a></li>
+<li><a class="reference internal" href="#finance-models">Finance Models</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="tutorial.html" title="Previous Chapter: Tutorials"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Tutorials</span>
+    </a>
+  </li>
+  <li>
+    <a href="plantflow_ex.html" title="Next Chapter: Energy Production Tutorials"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Energy Productio... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="plant-cost-and-financial-analysis-tutorials">
+<h1>Plant Cost and Financial Analysis Tutorials<a class="headerlink" href="#plant-cost-and-financial-analysis-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial covers how to use FUSED-Wind&#8217;s financial analysis capabilities with a simple set of cost models for a wind turbine and plant.</p>
+<p>First, the necessary modules are imported; in this case we import the example models that draw upon the FUSED-Wind financial analysis framework.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fusedwind.examples.fused_cost_example</span> <span class="kn">import</span> <span class="n">BaseTurbineCostModel_Example</span><span class="p">,</span> <span class="n">ExtendedTurbineCostModel_Example</span><span class="p">,</span> <span class="n">FullTurbineCostModel_Example</span><span class="p">,</span> \
+                                 <span class="n">BaseBOSCostModel_Example</span><span class="p">,</span> <span class="n">ExtendedBOSCostModel_Example</span><span class="p">,</span> <span class="n">FullBOSCostModel_Example</span><span class="p">,</span> \
+                                 <span class="n">BaseOPEXModel_Example</span><span class="p">,</span> <span class="n">ExtendedOPEXModel_Example</span><span class="p">,</span> \
+                                 <span class="n">BaseFinancialModel_Example</span><span class="p">,</span> <span class="n">BaseFinancialAnalysis_Example</span><span class="p">,</span> <span class="n">ExtendedFinancialAnalysis_Example</span>
+</pre></div>
+</div>
+<p>We will perform a set up of each of the base, extended and full models for analysis of turbine and balance of station costs as well as operational expenditures and overall financial analysis.</p>
+<div class="section" id="turbine-cost-models">
+<h2>Turbine Cost Models<a class="headerlink" href="#turbine-cost-models" title="Permalink to this headline">¶</a></h2>
+<p>We begin with the turbine cost models and the most basic of them which simple allows you to have a turbine assembly consisting of whatever sub-models necessary and a simple cost aggregator model for the turbine.  We set up the model, run it and print out the turbine cost results.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Base Turbine Capital Cost Model uses a simple aggregator</span>
+<span class="n">baseTCC</span> <span class="o">=</span> <span class="n">BaseTurbineCostModel_Example</span><span class="p">()</span>
+
+<span class="n">baseTCC</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s">&quot;Turbine capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">baseTCC</span><span class="o">.</span><span class="n">turbine_cost</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Turbine capital cost is: $9000000 USD
+</pre></div>
+</div>
+<p>Next, we used an extended version of the turbine cost model where separate cost modules are explicitly used for the rotor, nacelle and tower.  The simple models in this example have no inputs and just output respective costs.  Therefor it is necessary to explicitly run them to update their cost outputs.  We set up the model, run it for a first configuration, then run the sub-models, run the model again and print out the turbine and sub-assembly cost results to screen.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Extended Turbine Capital Cost Model uses a simple aggregator along with separate models for rotor, nacelle and tower costs and all sub-components</span>
+<span class="n">extendedTCC</span> <span class="o">=</span> <span class="n">ExtendedTurbineCostModel_Example</span><span class="p">()</span>
+
+<span class="n">extendedTCC</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">extendedTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">bcc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">extendedTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">bcc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">extendedTCC</span><span class="o">.</span><span class="n">towerCC</span><span class="o">.</span><span class="n">bcc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">extendedTCC</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Turbine capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedTCC</span><span class="o">.</span><span class="n">turbine_cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Rotor capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Nacelle capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Tower capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedTCC</span><span class="o">.</span><span class="n">towerCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Turbine capital cost is: $9000000 USD
+&gt;&gt;&gt; Rotor capital cost is: $3000000 USD
+&gt;&gt;&gt; Nacelle capital cost is: $3000000 USD
+&gt;&gt;&gt; Tower capital cost is: $3000000 USD
+</pre></div>
+</div>
+<p>Finally, the full version of the turbine cost model includes individual cost models for each major wind turbine component.  The same process is used as for the extended model.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Full Turbine Capital Cost Model uses a simple aggregator along with separate models for rotor, nacelle and tower costs and all sub-components</span>
+<span class="n">fullTCC</span> <span class="o">=</span> <span class="n">FullTurbineCostModel_Example</span><span class="p">()</span>
+
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">bladeCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">hubCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">pitchSysCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">spinnerCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">lssCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">bearingsCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">gearboxCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">hssCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">generatorCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">bedplateCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">yawSysCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">towerCC</span><span class="o">.</span><span class="n">towerCC</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">fullTCC</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Turbine capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">turbine_cost</span><span class="p">)</span>
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Rotor capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Blade capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">bladeCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Hub capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">hubCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Pitch System capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">pitchSysCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Spinner capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">rotorCC</span><span class="o">.</span><span class="n">spinnerCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Nacelle capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Low speed shaft capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">lssCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>     
+<span class="k">print</span> <span class="s">&quot;Bearings shaft capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">bearingsCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Gearbox shaft capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">gearboxCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Generator capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">generatorCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>     
+<span class="k">print</span> <span class="s">&quot;High speed shaft capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">hssCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Bedplate shaft capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">bedplateCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Yaw System shaft capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">nacelleCC</span><span class="o">.</span><span class="n">yawSysCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Tower capital cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullTCC</span><span class="o">.</span><span class="n">towerCC</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Turbine capital cost is: $9000000 USD
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Rotor capital cost is: $1000000 USD
+&gt;&gt;&gt; Blade capital cost is: $350000 USD
+&gt;&gt;&gt; Hub capital cost is: $300000 USD
+&gt;&gt;&gt; Pitch System capital cost is: $300000 USD
+&gt;&gt;&gt; Spinner capital cost is: $400000 USD
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Nacelle capital cost is: $4000000 USD
+&gt;&gt;&gt; Low speed shaft capital cost is: $500000 USD
+&gt;&gt;&gt; Bearings shaft capital cost is: $500000 USD
+&gt;&gt;&gt; Gearbox shaft capital cost is: $1000000 USD
+&gt;&gt;&gt; Generator capital cost is: $500000 USD
+&gt;&gt;&gt; High speed shaft capital cost is: $500000 USD
+&gt;&gt;&gt; Bedplate shaft capital cost is: $500000 USD
+&gt;&gt;&gt; Yaw System shaft capital cost is: $500000 USD
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Tower capital cost is: $4000000 USD
+</pre></div>
+</div>
+</div>
+<div class="section" id="balance-of-station-cost-models">
+<h2>Balance of Station Cost Models<a class="headerlink" href="#balance-of-station-cost-models" title="Permalink to this headline">¶</a></h2>
+<p>The basic balance of station model includes an assembly consisting of whatever sub-models are necessary and a simple cost aggregator.  We set up the model, run it and print out the balance of station cost results.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Base Balance of Station Cost Model uses a simple aggregator</span>
+<span class="n">baseBOS</span> <span class="o">=</span> <span class="n">BaseBOSCostModel_Example</span><span class="p">()</span>
+
+<span class="n">baseBOS</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">baseBOS</span><span class="o">.</span><span class="n">bos_costs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Balance of station cost is: $1800000000 USD
+</pre></div>
+</div>
+<p>The extended balance of station model is similar but requires a more specific breakdown of balance of station costs.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Extended Balance of Station Cost Model uses a simple aggregator</span>
+<span class="n">extendedBOS</span> <span class="o">=</span> <span class="n">ExtendedBOSCostModel_Example</span><span class="p">()</span>
+
+<span class="n">extendedBOS</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station development cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">development_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station preparation and staging cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">preparation_and_staging_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station transportation cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">transportation_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station foundation and substructure cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">foundation_and_substructure_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station electrical cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">electrical_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station assemlby and installation cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">assembly_and_installation_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station soft cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">soft_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station other cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">other_costs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Balance of station cost is: $1800000000 USD
+&gt;&gt;&gt; Balance of station development cost is: $90000000 USD
+&gt;&gt;&gt; Balance of station preparation and staging cost is: $180000000 USD
+&gt;&gt;&gt; Balance of station transportation cost is: $360000000 USD
+&gt;&gt;&gt; Balance of station foundation and substructure cost is: $360000000 USD
+&gt;&gt;&gt; Balance of station electrical cost is: $270000000 USD
+&gt;&gt;&gt; Balance of station assemlby and installation cost is: $270000000 USD
+&gt;&gt;&gt; Balance of station soft cost is: $180000000 USD
+&gt;&gt;&gt; Balance of station other cost is: $90000000 USD
+</pre></div>
+</div>
+<p>The full version of the balance of station model requires even higher resolution on balance of station cost estimates.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Full Balance of Station Cost Model uses a simple aggregator</span>
+<span class="n">fullBOS</span> <span class="o">=</span> <span class="n">FullBOSCostModel_Example</span><span class="p">()</span>
+
+<span class="n">fullBOS</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">management_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">development_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">preparation_and_staging_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">transportation_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">foundation_and_substructure_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">collection_and_substation_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">transmission_and_interconnection_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">assembly_and_installation_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">contingencies_and_insurance_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">decommissioning_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">construction_financing_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">other_costs</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Balance of station cost is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fullBOS</span><span class="o">.</span><span class="n">bos_breakdown</span><span class="o">.</span><span class="n">developer_profits</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Balance of station cost is: $1800000000 USD
+&gt;&gt;&gt; Balance of station cost is: $45000000 USD
+&gt;&gt;&gt; Balance of station cost is: $45000000 USD
+&gt;&gt;&gt; Balance of station cost is: $180000000 USD
+&gt;&gt;&gt; Balance of station cost is: $180000000 USD
+&gt;&gt;&gt; Balance of station cost is: $270000000 USD
+&gt;&gt;&gt; Balance of station cost is: $270000000 USD
+&gt;&gt;&gt; Balance of station cost is: $180000000 USD
+&gt;&gt;&gt; Balance of station cost is: $270000000 USD
+&gt;&gt;&gt; Balance of station cost is: $90000000 USD
+&gt;&gt;&gt; Balance of station cost is: $90000000 USD
+&gt;&gt;&gt; Balance of station cost is: $90000000 USD
+&gt;&gt;&gt; Balance of station cost is: $45000000 USD
+&gt;&gt;&gt; Balance of station cost is: $45000000 USD
+</pre></div>
+</div>
+</div>
+<div class="section" id="operational-expenditures-models">
+<h2>Operational Expenditures Models<a class="headerlink" href="#operational-expenditures-models" title="Permalink to this headline">¶</a></h2>
+<p>The basic operational expenditures model includes an assembly consisting of whatever sub-models are necessary and a simple cost aggregator.  We set up the model, run it and print out the operational expenditures results.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Base Operational Expenditures Model uses a simple aggregator</span>
+<span class="n">baseOPEX</span> <span class="o">=</span> <span class="n">BaseOPEXModel_Example</span><span class="p">()</span>
+
+<span class="n">baseOPEX</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Operational expenditures is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">baseOPEX</span><span class="o">.</span><span class="n">avg_annual_opex</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Operational expenditures is: $50000000 USD
+</pre></div>
+</div>
+<p>The extended operational expenditures model is similar but requires a more specific breakdown of operational expenditures.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Extended Operational Expenditures Model uses a simple aggregator</span>
+<span class="n">extendedOPEX</span> <span class="o">=</span> <span class="n">ExtendedOPEXModel_Example</span><span class="p">()</span>
+
+<span class="n">extendedOPEX</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Operational expenditures is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedOPEX</span><span class="o">.</span><span class="n">avg_annual_opex</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Preventative operational expenditures is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedOPEX</span><span class="o">.</span><span class="n">opex_breakdown</span><span class="o">.</span><span class="n">preventative_opex</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Corrective operational expenditures is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedOPEX</span><span class="o">.</span><span class="n">opex_breakdown</span><span class="o">.</span><span class="n">corrective_opex</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Lease operational expenditures is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedOPEX</span><span class="o">.</span><span class="n">opex_breakdown</span><span class="o">.</span><span class="n">lease_opex</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Other operational expenditures is: ${0:.0f} USD&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedOPEX</span><span class="o">.</span><span class="n">opex_breakdown</span><span class="o">.</span><span class="n">other_opex</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Operational expenditures is: $50000000 USD
+&gt;&gt;&gt; Preventative operational expenditures is: $12500000 USD
+&gt;&gt;&gt; Corrective operational expenditures is: $25000000 USD
+&gt;&gt;&gt; Lease operational expenditures is: $12500000 USD
+&gt;&gt;&gt; Other operational expenditures is: $0 USD
+</pre></div>
+</div>
+</div>
+<div class="section" id="finance-models">
+<h2>Finance Models<a class="headerlink" href="#finance-models" title="Permalink to this headline">¶</a></h2>
+<p>The basic finance model includes an assembly consisting of whatever sub-models are necessary and a simple cost aggregator.  We set up the model, run it and print out the finance results.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Base Financial Model uses a simple aggregator</span>
+<span class="n">baseCOE</span> <span class="o">=</span> <span class="n">BaseFinancialModel_Example</span><span class="p">()</span>
+
+<span class="n">baseCOE</span><span class="o">.</span><span class="n">turbine_cost</span> <span class="o">=</span> <span class="mf">9000000.0</span> <span class="c">#Float(iotype=&#39;in&#39;, desc = &#39;A Wind Turbine Capital _cost&#39;)</span>
+<span class="n">baseCOE</span><span class="o">.</span><span class="n">turbine_number</span> <span class="o">=</span> <span class="mi">100</span> <span class="c">#Int(iotype = &#39;in&#39;, desc = &#39;number of turbines at plant&#39;)</span>
+<span class="n">baseCOE</span><span class="o">.</span><span class="n">bos_costs</span> <span class="o">=</span> <span class="mf">1800000000.0</span> <span class="c">#Float(iotype=&#39;in&#39;, desc=&#39;A Wind Plant Balance of Station _cost Model&#39;)</span>
+<span class="n">baseCOE</span><span class="o">.</span><span class="n">avg_annual_opex</span> <span class="o">=</span> <span class="mf">50000000.0</span> <span class="c">#Float(iotype=&#39;in&#39;, desc=&#39;A Wind Plant Operations Expenditures Model&#39;)</span>
+<span class="n">baseCOE</span><span class="o">.</span><span class="n">net_aep</span> <span class="o">=</span> <span class="mf">1752000000.0</span> <span class="c">#Float(iotype=&#39;in&#39;, desc=&#39;A Wind Plant Annual Energy Production Model&#39;, units=&#39;kW*h&#39;)</span>
+<span class="n">baseCOE</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>
+<span class="k">print</span> <span class="s">&quot;Financial analysis COE result is: ${0:.4f}/kWh&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">baseCOE</span><span class="o">.</span><span class="n">coe</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Financial analysis COE result is: $0.1655/kWh
+</pre></div>
+</div>
+<p>The basic financial analysis model includes sub-assembly for turbine costs, balance of station costs, operational expenditures and energy production.  Models for energy production must be based on the FUSED-Wind energy production model.  The financial model has a global input, turbine number, which must be set.  It can then be run and the results printed out.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Base Financial Analysis model integrates base models of underlying cost sub-assemblies</span>
+<span class="n">baseFinance</span> <span class="o">=</span> <span class="n">BaseFinancialAnalysis_Example</span><span class="p">()</span>
+<span class="n">baseFinance</span><span class="o">.</span><span class="n">turbine_number</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">baseFinance</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>    
+<span class="k">print</span> <span class="s">&quot;Financial analysis COE result is: ${0:.4f}/kWh&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">baseFinance</span><span class="o">.</span><span class="n">coe</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Financial analysis COE result is: $0.1655/kWh
+</pre></div>
+</div>
+<p>The extended financial analysis model includes sub-assembly for turbine costs, balance of station costs, operational expenditures and energy production with extended models for balance of station and operational expenditures.  Models for energy production must be based on the FUSED-Wind energy production model.  The financial model has a global input, turbine number, which must be set.  It can then be run and the results printed out.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Extended financial model integrates base models for turbine, aep and finance with the extended bos and opex models</span>
+<span class="n">extendedFinance</span> <span class="o">=</span> <span class="n">ExtendedFinancialAnalysis_Example</span><span class="p">()</span>
+<span class="n">extendedFinance</span><span class="o">.</span><span class="n">turbine_number</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">extendedFinance</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">print</span>    
+<span class="k">print</span> <span class="s">&quot;Financial analysis COE result is: ${0:.4f}/kWh&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extendedFinance</span><span class="o">.</span><span class="n">coe</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; Financial analysis COE result is: $0.1655/kWh
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

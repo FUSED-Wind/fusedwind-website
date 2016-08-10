@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.plant_flow.vt &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.plant_flow.vt</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">loadtxt</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">arccos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">nonzero</span><span class="p">,</span> <span class="n">argsort</span><span class="p">,</span> <span class="n">NaN</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">ones</span><span class="p">,</span> <span class="n">vstack</span><span class="p">,</span> <span class="n">linspace</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">arctan</span><span class="p">,</span> <span class="n">arange</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">diff</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="kn">import</span> <span class="n">assert_equal</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span>  <span class="n">Bool</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">,</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Str</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Driver</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">,</span> <span class="n">Container</span>  <span class="c"># , IOInterface</span>
+<span class="kn">from</span> <span class="nn">openmdao.lib.casehandlers.api</span> <span class="kn">import</span> <span class="n">ListCaseIterator</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.interfaces</span> <span class="kn">import</span> <span class="n">implements</span><span class="p">,</span> <span class="n">ICaseRecorder</span><span class="p">,</span> <span class="n">ICaseIterator</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.case</span> <span class="kn">import</span> <span class="n">Case</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fusedwind.interface</span> <span class="kn">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">implement_base</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c"># ---------------------------------------------------------</span>
+<span class="c"># Variable Tree Containers</span>
+
+<span class="nd">@base</span>
+<div class="viewcode-block" id="GenericWindTurbineVT"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindTurbineVT">[docs]</a><span class="k">class</span> <span class="nc">GenericWindTurbineVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="n">hub_height</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine hub height&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">rotor_diameter</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine rotor diameter&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">power_rating</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power rating&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;W&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">GenericWindTurbineVT</span><span class="p">)</span>
+<div class="viewcode-block" id="GenericWindTurbinePowerCurveVT"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT">[docs]</a><span class="k">class</span> <span class="nc">GenericWindTurbinePowerCurveVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="c"># GenericWindTurbineVT</span>
+    <span class="n">hub_height</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine hub height&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">rotor_diameter</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine rotor diameter&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">power_rating</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power rating&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;W&#39;</span><span class="p">)</span>
+
+    <span class="n">c_t_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine thrust coefficients by wind speed at hub&#39;</span><span class="p">)</span>
+    <span class="n">power_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power output [W] by wind speed at hub&#39;</span><span class="p">)</span>
+    <span class="n">cut_in_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">4.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The cut-in wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">cut_out_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">25.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The cut-out wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">rated_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The rated wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">air_density</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The air density the power curve are valid for&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;kg/(m*m*m)&#39;</span><span class="p">)</span>
+
+    <span class="c"># def df(self):</span>
+    <span class="c">#     &quot;&quot;&quot;</span>
+    <span class="c">#     Create a pandas dataframe containing the power_curve and c_t_curve.</span>
+    <span class="c">#     If the power_curve and c_t_curve do not use the same wind_speed bins, they will be concatenated with NaN.</span>
+    <span class="c">#     See pandas.concat function for more info.</span>
+    <span class="c">#</span>
+    <span class="c">#     Returns</span>
+    <span class="c">#     -------</span>
+    <span class="c">#     df:     pandas.DataFrame</span>
+    <span class="c">#             wind_speed:          float</span>
+    <span class="c">#                                 The hub height wind speed [m/s]</span>
+    <span class="c">#</span>
+    <span class="c">#             power:               float</span>
+    <span class="c">#                                 The wind turbine power [W]</span>
+    <span class="c">#</span>
+    <span class="c">#             c_t:                 float</span>
+    <span class="c">#                                 The wind turbine thrust coefficient [-]</span>
+    <span class="c">#     &quot;&quot;&quot;</span>
+    <span class="c">#     df = pd.DataFrame(self.power_curve, columns=[&#39;wind_speed&#39;, &#39;power&#39;])</span>
+    <span class="c">#     df = df.join(pd.DataFrame(self.c_t_curve, columns=[&#39;wind_speed&#39;, &#39;c_t&#39;]), on=&#39;wind_speed&#39;, lsuffix=&#39;c_t&#39;)</span>
+    <span class="c">#     df = df.join(pd.DataFrame(self.c_p_curve, columns=[&#39;wind_speed&#39;, &#39;c_p&#39;]), on=&#39;wind_speed&#39;, lsuffix=&#39;c_p&#39;)</span>
+    <span class="c">#     return df</span>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="GenericWindTurbinePowerCurveVT.rotor_area"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT.rotor_area">[docs]</a>    <span class="k">def</span> <span class="nf">rotor_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The rotor area&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rotor_diameter</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">c_p_curve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">power_curve</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">power_curve</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">air_density</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotor_area</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">power_curve</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mf">3.</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="k">def</span> <span class="nf">test_consistency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c">## Test rotor hitting the ground</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotor_diameter</span> <span class="o">/</span> <span class="mf">2.</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">hub_height</span>
+        <span class="c">## Test hoover effect</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_t_curve</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">1.</span>
+        <span class="c">## Test power_rating</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">power_curve</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">power_rating</span><span class="p">)</span>
+        <span class="c">## Test c_p under Betz limit</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_p_curve</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.6</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Wind turbine power rating violates Betz law&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">c_p_curve</span><span class="p">)</span>
+
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">GenericWindTurbineVT</span><span class="p">,</span> <span class="n">GenericWindTurbinePowerCurveVT</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedWindTurbinePowerCurveVT"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.ExtendedWindTurbinePowerCurveVT">[docs]</a><span class="k">class</span> <span class="nc">ExtendedWindTurbinePowerCurveVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="c"># GenericWindTurbineVT</span>
+    <span class="n">hub_height</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine hub height&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">rotor_diameter</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine rotor diameter&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">power_rating</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power rating&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;W&#39;</span><span class="p">)</span>
+
+    <span class="c"># GenericWindTurbinePowerCurveVT</span>
+    <span class="n">c_t_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine thrust coefficients by wind speed at hub&#39;</span><span class="p">)</span>
+    <span class="n">power_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power output [W] by wind speed at hub&#39;</span><span class="p">)</span>
+    <span class="n">cut_in_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The cut-in wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">cut_out_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The cut-out wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">rated_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The rated wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">air_density</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The air density the power curve are valid for&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;kg/(m*m*m)&#39;</span><span class="p">)</span>
+
+    <span class="n">rpm_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine rpm [rpm] by wind speed at hub&#39;</span><span class="p">)</span> <span class="c"># KLD: used by OpenWind but may not want to include it here</span>
+    <span class="n">pitch_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The wind turbine pitch curve&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span> <span class="c"># P-E: It goes hand in hand with RPM curve usually</span>
+    <span class="c">#dB_curve = Array(desc=&#39;Machine decibal output [dB] by wind speed at hub&#39;) # KLD: important but perhaps not for generic analysis #P-E: I have never seen these types of curves, but if you have these as data inputs, why not</span>
+
+
+</div>
+<div class="viewcode-block" id="weibull2freq_array"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.weibull2freq_array">[docs]</a><span class="k">def</span> <span class="nf">weibull2freq_array</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">,</span> <span class="n">wind_speeds</span><span class="p">,</span> <span class="n">weibull_array</span><span class="p">,</span> <span class="n">cut_in</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">cut_out</span><span class="o">=</span><span class="mf">25.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the frequency_array using a weibull distribution</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wind_directions = List(iotype=&#39;in&#39;, units=&#39;deg&#39;,</span>
+<span class="sd">        desc=&#39;Direction sectors angles [n_wd]&#39;)</span>
+<span class="sd">    wind_speeds = List(iotype=&#39;in&#39;, units=&#39;m/s&#39;,</span>
+<span class="sd">        desc=&#39;wind speeds sectors [n_ws]&#39;)</span>
+<span class="sd">    weibull_array = Array([], iotype=&#39;in&#39;, units=&#39;m/s&#39;,</span>
+<span class="sd">        desc=&#39;Windrose array [wind_directions, frequency, weibull_A, weibull_k]&#39;)</span>
+<span class="sd">    cut_in = Float(4.0, iotype=&#39;in&#39;,</span>
+<span class="sd">        desc=&#39;The cut-in wind speed of the wind turbine&#39;)</span>
+<span class="sd">    cut_out = Float(25.0, iotype=&#39;in&#39;,</span>
+<span class="sd">        desc=&#39;The cut-out wind speed of the wind turbine&#39;)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wind_rose = frequency array [n_wd, n_ws]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># TODO: optimize this function. It&#39;s very slow.</span>
+
+    <span class="n">n_wd</span><span class="p">,</span> <span class="n">n_ws</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_speeds</span><span class="p">)</span>
+
+    <span class="c"># Calculate the new wind_rose&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">weibull_array</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c">#Test the consistency of the inputs. This will be optimized away in production&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">weibull_array</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>\
+        <span class="s">&#39;wind_rose_array is empty: </span><span class="si">%r</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">weibull_array</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_speeds</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>\
+        <span class="s">&#39;wind_speeds is empty: </span><span class="si">%r</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">wind_speeds</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>\
+        <span class="s">&#39;wind_directions is empty: </span><span class="si">%r</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">wind_directions</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">weibull_array</span><span class="p">,</span> <span class="n">ndarray</span><span class="p">),</span>\
+        <span class="s">&#39;The wind rose array is a ndarray of 4 columns&#39;</span>
+    <span class="k">assert</span> <span class="n">weibull_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span>\
+        <span class="s">&#39;wind_rose_array = array([wind_directions, frequency, weibull_A, weibull_k])&#39;</span>
+    <span class="k">assert</span> <span class="n">mean</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">20.0</span><span class="p">,</span>\
+        <span class="s">&#39;Wind direction should be given in degrees&#39;</span>
+    <span class="k">assert</span> <span class="n">weibull_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">20.0</span><span class="p">,</span>\
+        <span class="s">&#39;The first column of wind_rose should be in degrees&#39;</span>
+    <span class="k">assert</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">weibull_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1.0E-3</span><span class="p">,</span>\
+        <span class="s">&#39;The second column of wind_rose_array should sum to 1.0&#39;</span>
+
+
+    <span class="n">_directions</span> <span class="o">=</span> <span class="n">weibull_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">_direction_frequency</span> <span class="o">=</span> <span class="n">weibull_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">_weibull_A</span> <span class="o">=</span> <span class="n">weibull_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">_weibull_k</span> <span class="o">=</span> <span class="n">weibull_array</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+
+    <span class="c"># Creating the interpolation functions</span>
+    <span class="n">indis</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">weibull_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">indis</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">_d_wd</span> <span class="o">=</span> <span class="n">_directions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">_directions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">diff_dir</span> <span class="o">=</span> <span class="n">_direction_frequency</span><span class="p">[</span><span class="n">indis</span><span class="p">]</span> <span class="o">/</span> <span class="n">_d_wd</span>
+    <span class="n">directions</span> <span class="o">=</span> <span class="n">_directions</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span><span class="mf">360.0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">corr_dir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span> <span class="o">+</span> <span class="mf">360.0</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;=</span> <span class="mf">360.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span> <span class="o">-</span> <span class="mf">360.0</span>
+        <span class="k">return</span> <span class="n">d</span>
+    <span class="n">pdf_wd</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">directions</span><span class="p">,</span> <span class="n">diff_dir</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">)</span>
+    <span class="n">pdf_wd_ext</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pdf_wd</span><span class="p">(</span><span class="n">corr_dir</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+    <span class="n">weibull_A</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">directions</span><span class="p">,</span> <span class="n">_weibull_A</span><span class="p">[</span><span class="n">indis</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">)</span>
+    <span class="n">weibull_k</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">directions</span><span class="p">,</span> <span class="n">_weibull_k</span><span class="p">[</span><span class="n">indis</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">)</span>
+
+
+    <span class="c"># Statistical functions</span>
+    <span class="n">pdf_ws</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">u</span><span class="p">:</span> <span class="n">k</span> <span class="o">/</span> <span class="n">A</span> <span class="o">*</span> \
+        <span class="p">(</span><span class="n">u</span> <span class="o">/</span> <span class="n">A</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">u</span> <span class="o">/</span> <span class="n">A</span><span class="p">)</span> <span class="o">**</span> <span class="n">k</span><span class="p">)</span>
+    <span class="c">#cdf_ws = lambda A,k,u, bin=1.0: exp(-(max(0.0, u-bin/2.0)/A)**k) - exp(-((u+bin/2.0)/A)**k)</span>
+    <span class="n">cdf_ws</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">u1</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">u0</span> <span class="o">/</span> <span class="n">A</span><span class="p">)</span> <span class="o">**</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">u1</span> <span class="o">/</span> <span class="n">A</span><span class="p">)</span> <span class="o">**</span> <span class="n">k</span><span class="p">)</span>
+    <span class="c"># TODO: Fine tune this epsrel</span>
+    <span class="n">cdf_wd</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">wd0</span><span class="p">,</span> <span class="n">wd1</span><span class="p">:</span> <span class="n">quad</span><span class="p">(</span><span class="n">pdf_wd_ext</span><span class="p">,</span> <span class="n">wd0</span><span class="p">,</span> <span class="n">wd1</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c"># Create the array</span>
+    <span class="n">frequency_array</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">n_wd</span><span class="p">,</span> <span class="n">n_ws</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">iwd</span><span class="p">,</span> <span class="n">wd</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">):</span>
+
+        <span class="n">A</span> <span class="o">=</span> <span class="n">weibull_A</span><span class="p">(</span><span class="n">wd</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">weibull_k</span><span class="p">(</span><span class="n">wd</span><span class="p">)</span>
+
+        <span class="c"># We include all the wind directions between each wind directions</span>
+        <span class="k">if</span> <span class="n">iwd</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">wd0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">wind_directions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">wd</span> <span class="o">+</span> <span class="mi">360</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wd0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">wind_directions</span><span class="p">[</span><span class="n">iwd</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">wd</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">iwd</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">wd1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">wind_directions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">wd</span> <span class="o">+</span> <span class="mi">360</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wd1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">wind_directions</span><span class="p">[</span><span class="n">iwd</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">wd</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">wd0</span> <span class="o">&gt;</span> <span class="n">wd1</span><span class="p">:</span>  <span class="c"># deal with the 360-0 issue</span>
+            <span class="n">p_dir</span> <span class="o">=</span> <span class="n">cdf_wd</span><span class="p">(</span><span class="n">wd0</span><span class="p">,</span> <span class="mf">359.99</span><span class="p">)</span> <span class="o">+</span> <span class="n">cdf_wd</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">wd1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p_dir</span> <span class="o">=</span> <span class="n">cdf_wd</span><span class="p">(</span><span class="n">wd0</span><span class="p">,</span> <span class="n">wd1</span><span class="p">)</span>
+        <span class="c"># print &#39;between&#39;, wd0, wd1, p_dir</span>
+        <span class="k">for</span> <span class="n">iws</span><span class="p">,</span> <span class="n">ws</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wind_speeds</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">iws</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c"># We include all the cases from cut_in</span>
+                <span class="n">ws0</span> <span class="o">=</span> <span class="n">cut_in</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ws0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">wind_speeds</span><span class="p">[</span><span class="n">iws</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ws</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">iws</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_speeds</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">ws1</span> <span class="o">=</span> <span class="n">cut_out</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ws1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">wind_speeds</span><span class="p">[</span><span class="n">iws</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ws</span><span class="p">)</span>
+            <span class="n">ws0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cut_out</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">cut_in</span><span class="p">,</span> <span class="n">ws0</span><span class="p">))</span>
+            <span class="n">ws1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cut_out</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">cut_in</span><span class="p">,</span> <span class="n">ws1</span><span class="p">))</span>
+
+            <span class="n">frequency_array</span><span class="p">[</span><span class="n">iwd</span><span class="p">,</span> <span class="n">iws</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_dir</span> <span class="o">*</span> <span class="n">cdf_ws</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">ws0</span><span class="p">,</span> <span class="n">ws1</span><span class="p">)</span>
+
+    <span class="c">#Test the consistency of the outputs. This will be optimized away in production&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">sum</span><span class="p">(</span><span class="n">frequency_array</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="mf">1.0E-3</span><span class="p">,</span> \
+        <span class="s">&#39;The frequency array should never reach 1.0, because there are some high wind speeds not considered in the array.&#39;</span>
+
+    <span class="k">return</span> <span class="n">frequency_array</span>
+
+
+
+</div>
+<span class="k">class</span> <span class="nc">WeibullWindRoseVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="n">wind_directions</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Direction sectors angles [n_wd]&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Weibull exponent k [n_wd]&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Weibull parameter A [n_wd]&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Frequency of wind direction [n_wd]&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns a pandas.DataFrame object&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_weibull_array</span><span class="p">(),</span>
+                            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="s">&#39;frequency&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">to_weibull_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns a weibull array [wind_direction, frequency, A, k]&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="c">## TODO: Fix circular import issue with WeibullWindRose</span>
+    <span class="c">#def to_wind_rose(self, wind_directions=None, wind_speeds=None):</span>
+    <span class="c">#    if wind_speeds == None:</span>
+    <span class="c">#        wind_speeds = np.linspace(4., 25., 22)</span>
+    <span class="c">#    if wind_directions == None:</span>
+    <span class="c">#        wind_directions = self.wind_directions</span>
+    <span class="c">#    wwr = WeibullWindRose()</span>
+    <span class="c">#    return wwr(wind_directions=wind_directions,</span>
+    <span class="c">#               wind_speeds=wind_speeds,</span>
+    <span class="c">#               wind_rose_array=self.to_weibull_array()).wind_rose</span>
+
+<span class="k">class</span> <span class="nc">GenericWindRoseVT</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="n">wind_directions</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Direction sectors angles [n_wd]&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;deg&#39;</span><span class="p">)</span>
+    <span class="n">wind_speeds</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;wind speeds sectors [n_ws]&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">frequency_array</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Frequency by direction sectors and by wind speed sectors [n_wd, n_ws]&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wind_directions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">wind_speeds</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">frequency_array</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weibull_array</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise the wind rose with frequency_array or a weibull distribution [optional]</span>
+<span class="sd">        :param wind_directions: list[nwd]</span>
+<span class="sd">        :param wind_speeds: list[nws]</span>
+<span class="sd">        :param frequency_array: numpy.ndarray[nwd, nws]</span>
+<span class="sd">        :param weibull_array: numpy.ndarray[nwd, 4]</span>
+<span class="sd">                              The weibull distribution</span>
+<span class="sd">        :return: self</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericWindRoseVT</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">weibull_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">weibull_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">),</span> <span class="s">&#39;weibull_array should be a ndarray&#39;</span>
+            <span class="k">assert</span> <span class="n">weibull_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&#39;weibull_array.shape should be [nwd, 4]&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weibull_array</span> <span class="o">=</span> <span class="n">weibull_array</span>
+
+        <span class="k">if</span> <span class="n">wind_speeds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">wind_speeds</span><span class="p">,</span> <span class="nb">list</span><span class="p">),</span> <span class="s">&#39;wind_speed should be a list&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span> <span class="o">=</span> <span class="n">wind_speeds</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c">#default value = [4., 5., ...,25.]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">wind_directions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">,</span> <span class="nb">list</span><span class="p">),</span> <span class="s">&#39;wind_directions should be a list&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span> <span class="o">=</span> <span class="n">wind_directions</span>
+        <span class="k">elif</span> <span class="n">weibull_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c"># Using the wind direction defined in the weibull array</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span> <span class="o">=</span> <span class="n">weibull_array</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">frequency_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">frequency_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">),</span> \
+                    <span class="s">&#39;frequency_array should be a ndarray&#39;</span>
+            <span class="k">assert</span> <span class="n">frequency_array</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">wind_directions</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">wind_speeds</span><span class="p">)],</span> \
+                    <span class="s">&#39;frequency_array.shape should be [nwd, nws]&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">frequency_array</span> <span class="o">=</span> <span class="n">frequency_array</span>
+
+        <span class="k">if</span> <span class="n">weibull_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">change_resolution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">change_resolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wind_directions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">wind_speeds</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Change the resolution of the wind rose on the basis of existing the weibull_array</span>
+<span class="sd">        :param wind_directions: list[nwd], optional</span>
+<span class="sd">        :param wind_speeds: list[nws], optional</span>
+<span class="sd">        :param force: Bool, forces to change the resolution</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">changed</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">wind_directions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span><span class="p">,</span> <span class="n">wind_directions</span><span class="p">):</span>
+                <span class="n">changed</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span> <span class="o">=</span> <span class="n">wind_directions</span>
+
+        <span class="k">if</span> <span class="n">wind_speeds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span><span class="p">,</span> <span class="n">wind_speeds</span><span class="p">):</span>
+                <span class="n">changed</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span> <span class="o">=</span> <span class="n">wind_speeds</span>
+
+        <span class="k">if</span> <span class="n">changed</span> <span class="ow">or</span> <span class="n">force</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">frequency_array</span> <span class="o">=</span> <span class="n">weibull2freq_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weibull_array</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">contourf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Plot a contour of the wind rose &quot;&quot;&quot;</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">mirror</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="mf">90.0</span> <span class="o">-</span> <span class="n">d</span>
+            <span class="k">if</span> <span class="n">out</span> <span class="o">&lt;</span><span class="mf">0.0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mf">360.0</span> <span class="o">+</span> <span class="n">out</span>
+            <span class="k">return</span> <span class="n">out</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s">u&#39;</span><span class="si">%d</span><span class="se">\xb0</span><span class="s">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">mirror</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">360.0</span><span class="p">,</span><span class="mi">9</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="n">dirs</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span><span class="o">+</span><span class="p">[</span><span class="mf">360.0</span><span class="p">])</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency_array</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_directions</span><span class="p">))</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],:]</span>
+        <span class="n">c</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="o">-</span><span class="n">dirs</span><span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mf">180.</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">wind_speeds</span><span class="p">,</span> <span class="n">freq</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gist_ncar_r</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Flatten a wind rose and return an array containing the wind direction, wind speed and frequency</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        self        GenericWindRoseVT</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        flat_arr    numpy.ndarray([n_wd*n_ws,3])</span>
+<span class="sd">                    array containing the [wind direction, wind speed, frequency]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">array</span><span class="p">([[</span><span class="n">wd</span><span class="p">,</span> <span class="n">ws</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency_array</span><span class="p">[</span><span class="n">iwd</span><span class="p">,</span> <span class="n">iws</span><span class="p">]]</span> <span class="k">for</span> <span class="n">iwd</span><span class="p">,</span> <span class="n">wd</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_direction</span><span class="p">)</span>
+                                                                <span class="k">for</span> <span class="n">iws</span><span class="p">,</span> <span class="n">ws</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wind_speed</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a pandas.DataFrame containing the flatten array (using self.flatten() function)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        self        GenericWindRoseVT</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        df          pandas.DataFrame([n_wd*n_ws,3])</span>
+<span class="sd">                    dataframe containing the [wind direction, wind speed, frequency]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="s">&#39;wind_speed&#39;</span><span class="p">,</span> <span class="s">&#39;frequency&#39;</span><span class="p">])</span>
+
+
+<span class="c"># @base</span>
+<span class="c"># class old_GenericWindFarmTurbineLayout(VariableTree):</span>
+<span class="c">#     wt_list = List(GenericWindTurbinePowerCurveVT(), desc=&#39;The wind turbine list of descriptions [n_wt]&#39;)</span>
+<span class="c">#     wt_names = List(desc=&#39;The wind turbine list of names [n_wt]&#39;)</span>
+<span class="c">#     wt_positions = Array(units=&#39;m&#39;, desc=&#39;Array of wind turbines attached to particular positions [n_wt, 2]&#39;)</span>
+<span class="c">#     wt_wind_roses = List(desc=&#39;wind rose for each wind turbine position [n_wt]&#39;)</span>
+<span class="c">#     single_wind_turbine = Bool(False, desc=&#39;Define if the layout has only one type of turbine or more&#39;)</span>
+<span class="c">#     wind_turbine = VarTree(GenericWindTurbinePowerCurveVT(), desc=&#39;wind turbine power curve&#39;)</span>
+<span class="c">#</span>
+<span class="c">#     @property</span>
+<span class="c">#     def n_wt(self):</span>
+<span class="c">#         return self.wt_positions.shape[0]</span>
+<span class="c">#</span>
+<span class="c">#     def test_consistency(self):</span>
+<span class="c">#         if len(self.wt_list) &gt; 0:</span>
+<span class="c">#             assert len(self.wt_list) == self.n_wt</span>
+<span class="c">#</span>
+<span class="c">#         if len(self.wt_names) &gt; 0:</span>
+<span class="c">#             assert len(self.wt_names) == self.n_wt</span>
+<span class="c">#</span>
+<span class="c">#         if len(self.wt_wind_roses) &gt; 0:</span>
+<span class="c">#             assert len(self.wt_wind_roses) == self.n_wt</span>
+<span class="c">#</span>
+<span class="c">#     def configure_single(self):</span>
+<span class="c">#         &quot;&quot;&quot;</span>
+<span class="c">#         Modify the class to adapt for single wind turbine codes.</span>
+<span class="c">#         You can directly use self.wind_turbine instead of self.wt_list[0] .</span>
+<span class="c">#         Note that when this function has been run there is a link between</span>
+<span class="c">#         self.wind_turbine and self.wt_list[:]. So changing one will change</span>
+<span class="c">#         all the other ones.</span>
+<span class="c">#         In your code you can check if single_wind_turbine is set to True.</span>
+<span class="c">#         &quot;&quot;&quot;</span>
+<span class="c">#</span>
+<span class="c">#         if len(self.wt_list) &gt; 0:</span>
+<span class="c">#             self.wind_turbine = self.wt_list[0]</span>
+<span class="c">#         self.wt_list = [self.wind_turbine] * self.n_wt</span>
+<span class="c">#         self.single_wind_turbine = True</span>
+<span class="c">#</span>
+<span class="c">#     def create_dict(self, n):</span>
+<span class="c">#         &quot;&quot;&quot;</span>
+<span class="c">#         Returns a dictionary containing the information of the n&#39;th turbine</span>
+<span class="c">#</span>
+<span class="c">#         Parameters</span>
+<span class="c">#         ----------</span>
+<span class="c">#         n:   int [0, self.n_wt]</span>
+<span class="c">#             The index of the n&#39;th turbine</span>
+<span class="c">#</span>
+<span class="c">#         Returns</span>
+<span class="c">#         -------</span>
+<span class="c">#         di:  dict</span>
+<span class="c">#             name:            str, optional</span>
+<span class="c">#                             the name of the turbine contained in wt_names</span>
+<span class="c">#</span>
+<span class="c">#             rotor_diameter:  GenericWindTurbinePowerCurveVT keys, optional</span>
+<span class="c">#             hub_height:      ...</span>
+<span class="c">#             ...</span>
+<span class="c">#</span>
+<span class="c">#             x:               float</span>
+<span class="c">#                             x position [m] from wt_positions</span>
+<span class="c">#</span>
+<span class="c">#             y:               float</span>
+<span class="c">#                             y position [m] from wt_positions</span>
+<span class="c">#</span>
+<span class="c">#             wind_rose:       GenericWindRoseVT, optional</span>
+<span class="c">#                             the wind rose of the turbine at hub height contained in wt_wind_roses</span>
+<span class="c">#         &quot;&quot;&quot;</span>
+<span class="c">#         di = {}</span>
+<span class="c">#         if len(self.wt_names) &gt; 0:</span>
+<span class="c">#             di[&#39;name&#39;] = self.wt_names[n]</span>
+<span class="c">#         if len(self.wt_list) &gt; 0:</span>
+<span class="c">#             for k,v in self.wt_list[n].items():</span>
+<span class="c">#                 di[k] = v</span>
+<span class="c">#         di[&#39;x&#39;] = self.wt_positions[n,0]</span>
+<span class="c">#         di[&#39;y&#39;] = self.wt_positions[n,1]</span>
+<span class="c">#         if len(self.wt_wind_roses) &gt; 0:</span>
+<span class="c">#             di[&#39;wind_rose&#39;] = self.wt_wind_roses[n]</span>
+<span class="c">#</span>
+<span class="c">#         return di</span>
+<span class="c">#</span>
+<span class="c">#     def df(self):</span>
+<span class="c">#         &quot;&quot;&quot;</span>
+<span class="c">#         create a pandas dataframe containing all the information flatten, using the `create_dict` function</span>
+<span class="c">#</span>
+<span class="c">#         Example:</span>
+<span class="c">#         --------</span>
+<span class="c">#         &gt;&gt;&gt; df = generate_random_wt_layout().df</span>
+<span class="c">#         &gt;&gt;&gt; scatter(df.x, df.y, s=df.hub_height, c=df.power_rating)</span>
+<span class="c">#         &gt;&gt;&gt; colorbar()</span>
+<span class="c">#         &quot;&quot;&quot;</span>
+<span class="c">#</span>
+<span class="c">#         return pd.DataFrame([self.create_dict(n) for n in range(self.n_wt)])</span>
+<span class="c">#</span>
+<span class="c"># @implement_base(GenericWindFarmTurbineLayout)</span>
+<span class="c"># class ExtendedWindFarmTurbineLayout(GenericWindFarmTurbineLayout):</span>
+<span class="c">#     wt_list = List(ExtendedWindTurbinePowerCurveVT(), desc=&#39;The wind turbine list of descriptions [n_wt]&#39;)</span>
+<span class="c">#     wt_names = List(desc=&#39;The wind turbine list of names [n_wt]&#39;)</span>
+<span class="c">#     wt_positions = Array(units=&#39;m&#39;, desc=&#39;Array of wind turbines attached to particular positions [n_wt, 2]&#39;)</span>
+<span class="c">#     wt_wind_roses = List(desc=&#39;wind rose for each wind turbine position [n_wt]&#39;)</span>
+<span class="c">#     single_wind_turbine = Bool(False, desc=&#39;Define if the layout has only one type of turbine or more&#39;)</span>
+<span class="c">#     wind_turbine = VarTree(ExtendedWindTurbinePowerCurveVT(), desc=&#39;wind turbine power curve&#39;)</span>
+
+    
+<span class="n">implement_base</span><span class="p">(</span><span class="n">GenericWindTurbineVT</span><span class="p">,</span> <span class="n">GenericWindTurbinePowerCurveVT</span><span class="p">)</span>
+<div class="viewcode-block" id="WTPC"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.WTPC">[docs]</a><span class="k">class</span> <span class="nc">WTPC</span><span class="p">(</span><span class="n">GenericWindTurbinePowerCurveVT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A GenericWindTurbinePowerCurveVT with a name, position and wind rose</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># GenericWindTurbineVT</span>
+    <span class="n">hub_height</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine hub height&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">rotor_diameter</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine rotor diameter&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">power_rating</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power rating&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;W&#39;</span><span class="p">)</span>
+
+    <span class="c"># GenericWindTurbinePowerCurveVT</span>
+    <span class="n">c_t_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine thrust coefficients by wind speed at hub&#39;</span><span class="p">)</span>
+    <span class="n">power_curve</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Machine power output [W] by wind speed at hub&#39;</span><span class="p">)</span>
+    <span class="n">cut_in_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">4.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The cut-in wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">cut_out_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">25.</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The cut-out wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">rated_wind_speed</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The rated wind speed of the wind turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">)</span>
+    <span class="n">air_density</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The air density the power curve are valid for&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;kg/(m*m*m)&#39;</span><span class="p">)</span>
+
+    <span class="c"># WTPC</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Str</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;The wind turbine name&#39;</span><span class="p">)</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The UTM position of the turbine&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">wind_rose</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">GenericWindRoseVT</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The wind turbine wind rose&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialise the variable tree with the right inputs&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">WTPC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_vars</span><span class="p">():</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout">[docs]</a><span class="k">class</span> <span class="nc">GenericWindFarmTurbineLayout</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="n">wt_names</span> <span class="o">=</span> <span class="n">List</span><span class="p">([],</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;The wind turbine list of names [n_wt]&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wt_list</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="sd">&quot;&quot;&quot;Initialise the leafes of the GenericWindFarmTurbineLayout based on the wt_list</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            wt_list:    list(WTPC)</span>
+<span class="sd">                        list of Wind turbine object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericWindFarmTurbineLayout</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">wt</span> <span class="ow">in</span> <span class="n">wt_list</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_wt</span><span class="p">(</span><span class="n">wt</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.add_wt"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.add_wt">[docs]</a>    <span class="k">def</span> <span class="nf">add_wt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wt</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Add a turbine to the layout tree, append the name at the end of wt_names</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            wt: WTPC</span>
+<span class="sd">                Wind turbine object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">wt</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">,</span><span class="s">&#39;_&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">wt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">wt</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wt_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wt</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_wt_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get a list of leafs</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            attr:   str, default=None</span>
+<span class="sd">                    The attribute of the leaf to list</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">attr</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wtn</span><span class="p">),</span> <span class="n">attr</span><span class="p">)</span> <span class="k">for</span> <span class="n">wtn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_names</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wtn</span><span class="p">)</span> <span class="k">for</span> <span class="n">wtn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_names</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.wt_list"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_list">[docs]</a>    <span class="k">def</span> <span class="nf">wt_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;backward compatibility access to wt_list</span>
+<span class="sd">        :returns a list of wind turbine object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wt_list</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.wt_array"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_array">[docs]</a>    <span class="k">def</span> <span class="nf">wt_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get an array of attributes of the leafs</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            attr:   str, default=None</span>
+<span class="sd">                    The attribute of the leaf to list</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">         numpy.ndarray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wt_list</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
+
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">n_wt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wt_names</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">wt_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;backward compatibility access to wt_positions &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_array</span><span class="p">(</span><span class="n">attr</span><span class="o">=</span><span class="s">&#39;position&#39;</span><span class="p">)</span>
+
+    <span class="nd">@wt_positions.setter</span>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.wt_positions"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_positions">[docs]</a>    <span class="k">def</span> <span class="nf">wt_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;backward compatibility access to wt_positions</span>
+<span class="sd">        update the position of the wind farm layout</span>
+<span class="sd">        :param value: ndarray([nwt, 2])</span>
+<span class="sd">        :return: nothing</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n_wt</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">iwt</span><span class="p">,</span> <span class="n">wt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wt_list</span><span class="p">):</span>
+            <span class="n">wt</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">iwt</span><span class="p">,:]</span>
+</div>
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.wt_wind_roses"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_wind_roses">[docs]</a>    <span class="k">def</span> <span class="nf">wt_wind_roses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;backward compatibility access to wt_wind_roses: wind rose for each wind turbine position list[n_wt]&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wt_list</span><span class="p">(</span><span class="n">attr</span><span class="o">=</span><span class="s">&#39;wind_rose&#39;</span><span class="p">)</span>
+
+
+    <span class="c"># def test_consistency(self):</span>
+    <span class="c">#     if len(self.wt_list) &gt; 0:</span>
+    <span class="c">#         assert len(self.wt_list()) == self.n_wt</span>
+    <span class="c">#</span>
+    <span class="c">#     if len(self.wt_names) &gt; 0:</span>
+    <span class="c">#         assert len(self.wt_names) == self.n_wt</span>
+    <span class="c">#</span>
+    <span class="c">#     if len(self.wt_wind_roses) &gt; 0:</span>
+    <span class="c">#         assert len(self.wt_wind_roses) == self.n_wt</span>
+
+    <span class="c"># def configure_single(self):</span>
+    <span class="c">#     &quot;&quot;&quot;</span>
+    <span class="c">#     Modify the class to adapt for single wind turbine codes.</span>
+    <span class="c">#     You can directly use self.wind_turbine instead of self.wt_list[0] .</span>
+    <span class="c">#     Note that when this function has been run there is a link between</span>
+    <span class="c">#     self.wind_turbine and self.wt_list[:]. So changing one will change</span>
+    <span class="c">#     all the other ones.</span>
+    <span class="c">#     In your code you can check if single_wind_turbine is set to True.</span>
+    <span class="c">#     &quot;&quot;&quot;</span>
+    <span class="c">#</span>
+    <span class="c">#     if len(self.wt_list) &gt; 0:</span>
+    <span class="c">#         self.wind_turbine = self.wt_list[0]</span>
+    <span class="c">#     self.wt_list = [self.wind_turbine] * self.n_wt</span>
+    <span class="c">#     self.single_wind_turbine = True</span>
+</div>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.create_dict"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.create_dict">[docs]</a>    <span class="k">def</span> <span class="nf">create_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a dictionary containing the information of the n&#39;th turbine</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        n:   int [0, self.n_wt]</span>
+<span class="sd">            The index of the n&#39;th turbine</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        di:  dict</span>
+<span class="sd">            name:            str, optional</span>
+<span class="sd">                            the name of the turbine contained in wt_names</span>
+
+<span class="sd">            rotor_diameter:  GenericWindTurbinePowerCurveVT keys, optional</span>
+<span class="sd">            hub_height:      ...</span>
+<span class="sd">            ...</span>
+
+<span class="sd">            x:               float</span>
+<span class="sd">                            x position [m] from wt_positions</span>
+
+<span class="sd">            y:               float</span>
+<span class="sd">                            y position [m] from wt_positions</span>
+
+<span class="sd">            wind_rose:       GenericWindRoseVT, optional</span>
+<span class="sd">                            the wind rose of the turbine at hub height contained in wt_wind_roses</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">di</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wt_names</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">di</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_names</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_wt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_list</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">di</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="n">di</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_positions</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">di</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_positions</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wt_wind_roses</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">di</span><span class="p">[</span><span class="s">&#39;wind_rose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wt_wind_roses</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">di</span>
+</div>
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="GenericWindFarmTurbineLayout.df"><a class="viewcode-back" href="../../../plantflow.html#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.df">[docs]</a>    <span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        create a pandas dataframe containing all the information flatten, using the `create_dict` function</span>
+
+<span class="sd">        :rtype : pandas.DataFrame</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; df = generate_random_wt_layout().df</span>
+<span class="sd">        &gt;&gt;&gt; scatter(df.x, df.y, s=df.hub_height, c=df.power_rating)</span>
+<span class="sd">        &gt;&gt;&gt; colorbar()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">create_dict</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_wt</span><span class="p">)])</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

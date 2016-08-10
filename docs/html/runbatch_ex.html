@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Run Batch Tutorials &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Tutorials" href="tutorial.html" />
+    <link rel="next" title="Turbine Tutorials" href="turbine_ex.html" />
+    <link rel="prev" title="Energy Production Tutorials" href="plantflow_ex.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Run Batch Tutorials</a><ul>
+<li><a class="reference internal" href="#module-fusedwind.runSuite.runCaseGenerator">Run Case Generator</a></li>
+<li><a class="reference internal" href="#module-fusedwind.runSuite.runBatch">Case Runner</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plantflow_ex.html" title="Previous Chapter: Energy Production Tutorials"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Energy Productio...</span>
+    </a>
+  </li>
+  <li>
+    <a href="turbine_ex.html" title="Next Chapter: Turbine Tutorials"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Turbine Tutorial... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="run-batch-tutorials">
+<h1>Run Batch Tutorials<a class="headerlink" href="#run-batch-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-fusedwind.runSuite.runCaseGenerator" title="fusedwind.runSuite.runCaseGenerator"><tt class="xref py py-mod docutils literal"><span class="pre">fusedwind.runSuite.runCaseGenerator</span></tt></a> and <a class="reference internal" href="#module-fusedwind.runSuite.runBatch" title="fusedwind.runSuite.runBatch"><tt class="xref py py-mod docutils literal"><span class="pre">fusedwind.runSuite.runBatch</span></tt></a> modules facilitate high throughput aeroelastic simulation via a generic
+interface that can accomodate a variety of specifc wind codes.  The philosophy of the tool is illustrated in
+the following figure (<a class="pageref" href="#batchrunner-fig">Figure  1</a>):</p>
+<div class="figure align-center" id="batchrunner-fig">
+<a class="reference internal image-reference" href="_images/batchrunner.png"><img alt="_images/batchrunner.png" src="_images/batchrunner.png" style="height: 1.5in;" /></a>
+<p class="caption">Figure 1: The separation of case generation and case execution implementated by fusedwind&#8217;s runCaseGenerator and runBatch classes.</p>
+</div>
+<div class="section" id="module-fusedwind.runSuite.runCaseGenerator">
+<span id="run-case-generator"></span><h2>Run Case Generator<a class="headerlink" href="#module-fusedwind.runSuite.runCaseGenerator" title="Permalink to this headline">¶</a></h2>
+<p>This module allows for sampling of distributions encountered in wind energy research using a flexible
+text input file specification.  The distributions currently available are:</p>
+<ul class="simple">
+<li>Weibull</li>
+<li>Gamma</li>
+<li>vonMises</li>
+<li>uniform</li>
+<li>normal</li>
+<li>bivariate normal</li>
+</ul>
+<p>In addition, we allow for &#8220;enumeration&#8221; of sets of variables, and their cartesian product.</p>
+<p>The impetus is the desire for a generic representation of rows in Table 1 of IEC document 88_329
+describing design standards for loads analysis, where what is being represented are the
+distributions of wind/wave environment parameters.
+We can assume these all boil down to distributions of _numerical_ (rather than discrete) parameters.
+A twist is that some of the parameters depend on eachother, that is, the distributions are conditional distributions.</p>
+<p>In principle all we need to say is  <span class="math">\(\{v_i\} \sim D_k (\{p_j(v)\})\)</span>
+where <span class="math">\(\{v_i\}\)</span> are the random variables we&#8217;re defining (including multivariate distributions),
+<span class="math">\(D_k\)</span> are distributions, and <span class="math">\(\{p_j\}\)</span> are parameters to these distributions.
+Currently <span class="math">\(p_j\)</span> can only depend on <span class="math">\(v_i\)</span> for <span class="math">\(i&lt;j\)</span>, but otherwise
+the dependence can be expressed as an arbitrary python math expression.</p>
+<p>An example of the input this system can handle is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#--WW4Ddist--</span>
+<span class="n">Vhub</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="mf">2.120</span><span class="p">,</span> <span class="mf">9.767</span><span class="p">)</span>
+<span class="n">WaveDir</span> <span class="o">=</span> <span class="n">VM</span><span class="p">(</span><span class="mf">0.029265</span> <span class="o">+</span> <span class="mf">0.119759</span> <span class="o">*</span> <span class="n">Vhub</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.620138</span> <span class="o">+</span> <span class="mf">0.030709</span> <span class="o">*</span> <span class="n">Vhub</span><span class="p">)</span>
+<span class="n">Hs</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="mf">4.229440</span> <span class="o">+</span> <span class="mf">0.222745</span> <span class="o">*</span> <span class="n">WaveDir</span>  <span class="o">+</span> <span class="mf">0.328602</span> <span class="o">*</span> <span class="n">Vhub</span><span class="p">,</span> <span class="mf">0.145621</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.006188</span> <span class="o">*</span> <span class="n">WaveDir</span>  <span class="o">+</span> <span class="mf">0.007561</span> <span class="o">*</span> <span class="n">Vhub</span><span class="p">)</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="mf">19.677865</span> <span class="o">+</span> <span class="mf">6.617868</span> <span class="o">*</span> <span class="n">Hs</span>  <span class="o">+</span> <span class="o">-</span><span class="mf">0.532952</span> <span class="o">*</span> <span class="n">Vhub</span><span class="p">,</span> <span class="mf">0.202077</span> <span class="o">+</span> <span class="mf">0.286631</span> <span class="o">/</span> <span class="n">Hs</span>  <span class="o">+</span> <span class="o">-</span><span class="mf">0.004321</span> <span class="o">*</span> <span class="n">Vhub</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which causes the code to sample the joint distribution of hub height wind speed (Weibull), wave direction (von Mises),
+wave height (Gamma), and wave period (Gamma) for a recent study.</p>
+<p>Or:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#--WW4Ddist--</span>
+<span class="n">Vhub</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">25</span><span class="p">}</span>
+<span class="n">Hs</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>which causes the code to generate the cartesian product {(5,1),(5,5),(15,1),(15,1),(25,1),(25,5)}.</p>
+<dl class="class">
+<dt id="fusedwind.runSuite.runCaseGenerator.EnumDistn">
+<em class="property">class </em><tt class="descclassname">fusedwind.runSuite.runCaseGenerator.</tt><tt class="descname">EnumDistn</tt><big>(</big><em>vstr</em>, <em>items</em>, <em>ctx</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runCaseGenerator.html#EnumDistn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runCaseGenerator.EnumDistn" title="Permalink to this definition">¶</a></dt>
+<dd><p>class for distributions that are just list of numbers or single numbers,
+&#8216;sampling&#8217; is just going to return all values</p>
+<dl class="method">
+<dt id="fusedwind.runSuite.runCaseGenerator.EnumDistn.get_bounds">
+<tt class="descname">get_bounds</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runCaseGenerator.html#EnumDistn.get_bounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runCaseGenerator.EnumDistn.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>assumes numbers</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.runSuite.runCaseGenerator.FnDistn">
+<em class="property">class </em><tt class="descclassname">fusedwind.runSuite.runCaseGenerator.</tt><tt class="descname">FnDistn</tt><big>(</big><em>vstr</em>, <em>fn</em>, <em>args</em>, <em>ctx</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runCaseGenerator.html#FnDistn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runCaseGenerator.FnDistn" title="Permalink to this definition">¶</a></dt>
+<dd><p>class for &#8216;real&#8217; distributions like Gaussians, etc.
+the keys in &#8216;items&#8217; are the names of the distributions, assumed to be known
+and sample-able. items = e.g. {&#8220;N&#8221;: [&#8220;2x&#8221;,&#8221;sig1&#8221;}</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fusedwind.runSuite.runBatch">
+<span id="case-runner"></span><h2>Case Runner<a class="headerlink" href="#module-fusedwind.runSuite.runBatch" title="Permalink to this headline">¶</a></h2>
+<p>Here we will construct a cleaner version of openruniec.py.  It will simply read a table of run cases and run them.</p>
+<dl class="class">
+<dt id="fusedwind.runSuite.runBatch.CaseAnalyzer">
+<em class="property">class </em><tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">CaseAnalyzer</tt><big>(</big><em>params</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#CaseAnalyzer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.CaseAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>main driver of whole show, after input is read  wraps an openmdao CaseIteratorDriver,
+which has an openAeroCode assembly in its workflow, and whose cases are perhaps
+aero-code specific Case() objects that are sent into the aerocode via a slot variable</p>
+<dl class="method">
+<dt id="fusedwind.runSuite.runBatch.CaseAnalyzer.setup_cases">
+<tt class="descname">setup_cases</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#CaseAnalyzer.setup_cases"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.CaseAnalyzer.setup_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>setup the cases</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.runSuite.runBatch.FUSEDIECCaseIterator">
+<em class="property">class </em><tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">FUSEDIECCaseIterator</tt><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#FUSEDIECCaseIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.FUSEDIECCaseIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>main driver of whole show, after input is read  wraps an openmdao CaseIteratorDriver,
+which has an openAeroCode assembly in its workflow, and whose cases are perhaps
+aero-code specific Case() objects that are sent into the aerocode via a slot variable</p>
+<dl class="method">
+<dt id="fusedwind.runSuite.runBatch.FUSEDIECCaseIterator.configure">
+<tt class="descname">configure</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#FUSEDIECCaseIterator.configure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.FUSEDIECCaseIterator.configure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures an assembly for running with the CaseIteratorDriver</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fusedwind.runSuite.runBatch.FUSEDIECCaseIterator.setup_cases">
+<tt class="descname">setup_cases</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#FUSEDIECCaseIterator.setup_cases"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.FUSEDIECCaseIterator.setup_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>setup the cases to run</p>
+<p>This method has to be called after instantiation of the class, once the <tt class="docutils literal"><span class="pre">cases</span></tt>
+list has been set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.runSuite.runBatch.PostprocessIECCasesBase">
+<em class="property">class </em><tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">PostprocessIECCasesBase</tt><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#PostprocessIECCasesBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.PostprocessIECCasesBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Postprocess list of cases returned by a case recorder</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.runSuite.runBatch.RunControlInput">
+<em class="property">class </em><tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">RunControlInput</tt><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#RunControlInput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.RunControlInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>class to modularize the input</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.runSuite.runBatch.create_aerocode_wrapper">
+<tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">create_aerocode_wrapper</tt><big>(</big><em>aerocode_params</em>, <em>output_params</em>, <em>options</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#create_aerocode_wrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.create_aerocode_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>create  wind code wrapper</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.runSuite.runBatch.create_dlc_dispatcher">
+<tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">create_dlc_dispatcher</tt><big>(</big><em>dispatch_params</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#create_dlc_dispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.create_dlc_dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>create dispatcher
+dispatcher originally meant to signify role as handling _how_ the computations are done
+E.g., we could have a parallel dispatcher, etc. For now this just handled by a flag, all the work is done
+in openmdao, ie ## so far there is actually only one type of dispatcher.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.runSuite.runBatch.create_turbine">
+<tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">create_turbine</tt><big>(</big><em>turbine_params</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#create_turbine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.create_turbine" title="Permalink to this definition">¶</a></dt>
+<dd><p>create turbine object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.runSuite.runBatch.parse_input">
+<tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">parse_input</tt><big>(</big><em>options</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#parse_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.parse_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>input comes in a lot of categories, roughly broken into:
+&#8211; the turbine to simulate (formerly a FAST template file)
+&#8211; the design load cases to simulate
+&#8211; the wind code to use
+&#8211; the manner in which to simulate them
+&#8211; where to find the inputs and
+&#8211; what to put in the outputs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.runSuite.runBatch.parse_key_val_file_all">
+<tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">parse_key_val_file_all</tt><big>(</big><em>fname</em><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#parse_key_val_file_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.parse_key_val_file_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse key/value file, some entries might be _lists_ of strings</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.runSuite.runBatch.rundlcs">
+<tt class="descclassname">fusedwind.runSuite.runBatch.</tt><tt class="descname">rundlcs</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/runSuite/runBatch.html#rundlcs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.runSuite.runBatch.rundlcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>run the whole process, including startup and shutdown
+to do:
+parse input
+create load cases
+create app assembly
+create dispatcher
+send cases and app to dispatcher
+run cases
+collect and save output</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

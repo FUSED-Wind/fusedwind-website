@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Utilities and Interfaces &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Source Documentation" href="documentation.html" />
+    <link rel="next" title="Plant Flow" href="plantflow.html" />
+    <link rel="prev" title="Source Documentation" href="documentation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Utilities and Interfaces</a><ul>
+<li><a class="reference internal" href="#interface-py">interface.py</a></li>
+<li><a class="reference internal" href="#fused-helper-py">fused_helper.py</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="documentation.html" title="Previous Chapter: Source Documentation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Source Documenta...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plantflow.html" title="Next Chapter: Plant Flow"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Plant Flow &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="utilities-and-interfaces">
+<h1>Utilities and Interfaces<a class="headerlink" href="#utilities-and-interfaces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interface-py">
+<span id="index-0"></span><span id="id1"></span><h2>interface.py<a class="headerlink" href="#interface-py" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-fusedwind.interface"></span><dl class="function">
+<dt id="fusedwind.interface.base">
+<tt class="descclassname">fusedwind.interface.</tt><tt class="descname">base</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for a FUSED base class</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.interface.check_base_compliance">
+<tt class="descclassname">fusedwind.interface.</tt><tt class="descname">check_base_compliance</tt><big>(</big><em>base</em>, <em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#check_base_compliance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.check_base_compliance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do some checks on the I/O compatibility of the class with its base:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>class</strong> (<em>cls</em>) &#8211; the base class to be satisfied</li>
+<li><strong>class</strong> &#8211; the current class to check</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.interface.cls_list_inputs">
+<tt class="descclassname">fusedwind.interface.</tt><tt class="descname">cls_list_inputs</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#cls_list_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.cls_list_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of inputs in a Component class</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.interface.cls_list_outputs">
+<tt class="descclassname">fusedwind.interface.</tt><tt class="descname">cls_list_outputs</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#cls_list_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.cls_list_outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of outputs in a Component class</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.interface.cls_list_vars">
+<tt class="descclassname">fusedwind.interface.</tt><tt class="descname">cls_list_vars</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#cls_list_vars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.cls_list_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of variables in a VariableTree class</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.interface.configure_base">
+<em class="property">class </em><tt class="descclassname">fusedwind.interface.</tt><tt class="descname">configure_base</tt><big>(</big><em>base</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#configure_base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.configure_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
+<p>decorator that enforces a check that the function first argument instance (i.e. self)
+is in compliance with the base class.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.interface.implement_base">
+<em class="property">class </em><tt class="descclassname">fusedwind.interface.</tt><tt class="descname">implement_base</tt><big>(</big><em>*args</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#implement_base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.implement_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
+<p>Decorator to implements the bases. Can both be used for Components and Assemblies</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.interface.interface">
+<tt class="descclassname">fusedwind.interface.</tt><tt class="descname">interface</tt><big>(</big><em>comp_cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/interface.html#interface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.interface.interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the class ICompCls(Interface)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="fused-helper-py">
+<span id="index-1"></span><span id="id2"></span><h2>fused_helper.py<a class="headerlink" href="#fused-helper-py" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-fusedwind.fused_helper"></span><dl class="class">
+<dt id="fusedwind.fused_helper.defaultdictree">
+<em class="property">class </em><tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">defaultdictree</tt><a class="reference internal" href="_modules/fusedwind/fused_helper.html#defaultdictree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.defaultdictree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/collections.html#collections.defaultdict" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">collections.defaultdict</span></tt></a>, <a class="reference internal" href="#fusedwind.fused_helper.dictree" title="fusedwind.fused_helper.dictree"><tt class="xref py py-class docutils literal"><span class="pre">fusedwind.fused_helper.dictree</span></tt></a></p>
+<p>Same as dictree, but with defaultdict as a base</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.fused_helper.dictree">
+<em class="property">class </em><tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">dictree</tt><a class="reference internal" href="_modules/fusedwind/fused_helper.html#dictree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.dictree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a></p>
+<p>Transform a dictionary into a tree</p>
+<dl class="method">
+<dt id="fusedwind.fused_helper.dictree.VariableTree">
+<tt class="descname">VariableTree</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#dictree.VariableTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.dictree.VariableTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an openMDAO VariableTree and fills it with the dic content</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fusedwind.fused_helper.dictree.df">
+<tt class="descname">df</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#dictree.df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.dictree.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a flatten pandas DataFrame of the dictree</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.disp">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">disp</tt><big>(</big><em>comp</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#disp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.disp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a Container</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.draw_graph">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">draw_graph</tt><big>(</big><em>self</em>, <em>name='Graph'</em>, <em>value=False</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#draw_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.draw_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the SVG dot_graph of an OpenMDAO Component/Driver/Assembly instance</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.flatten">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">flatten</tt><big>(</big><em>t</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#flatten"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flatten a nested dictionary</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.fused_autodoc">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">fused_autodoc</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#fused_autodoc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.fused_autodoc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to automatically document the inputs and outputs of an Assembly / Component</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.init_container">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">init_container</tt><big>(</big><em>self</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#init_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.init_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise a container with a dictionary of inputs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.interactive_graph">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">interactive_graph</tt><big>(</big><em>self</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#interactive_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.interactive_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an interative graph using Ipython widgets</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.interactive_output">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">interactive_output</tt><big>(</big><em>self</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#interactive_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.interactive_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an interative graph using Ipython widgets</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.interactive_plot">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">interactive_plot</tt><big>(</big><em>self</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#interactive_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.interactive_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an interative plot using Ipython widgets</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.lconnect">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">lconnect</tt><big>(</big><em>self</em>, <em>a</em>, <em>b</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#lconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.lconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>lazy_connect function.
+try to connect the outputs of a to the inputs of b that have the same name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>Assembly</strong> (<em>self</em>) &#8211; The assembly containing the components to connect</li>
+<li><strong>str</strong> (<em>b</em>) &#8211; The name of the component output a to connect.
+If a == &#8216;&#8217;, then self.inputs is used</li>
+<li><strong>str</strong> &#8211; The name of the component inputs a to connect.
+If b == &#8216;&#8217;, then self.outputs is used</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.list_ios">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">list_ios</tt><big>(</big><em>self</em>, <em>iotype=None</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#list_ios"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.list_ios" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only list the I/Os that are not in the base Assembly class</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.make_graph">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">make_graph</tt><big>(</big><em>self</em>, <em>name='Graph'</em>, <em>value=False</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#make_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.make_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make the dot_graph of an OpenMDAO Component/Driver/Assembly instance</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.my_call">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">my_call</tt><big>(</big><em>self</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#my_call"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.my_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partial function of the Component/Assembly
+Returns a tree dictionary containing the inputs, outputs and nested result dictionaries from the containers</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.my_str">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">my_str</tt><big>(</big><em>var</em>, <em>parent=''</em>, <em>value=False</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#my_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.my_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>String representation for generating graphs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.out_graph_assembly">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">out_graph_assembly</tt><big>(</big><em>self</em>, <em>graph</em>, <em>value=False</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#out_graph_assembly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.out_graph_assembly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the dot_graph for an Assembly</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.out_graph_component">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">out_graph_component</tt><big>(</big><em>self</em>, <em>graph</em>, <em>value=False</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#out_graph_component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.out_graph_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the dot_graph for a component</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.out_graph_driver">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">out_graph_driver</tt><big>(</big><em>self</em>, <em>graph</em>, <em>value=False</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#out_graph_driver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.out_graph_driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the dot_graph for a driver</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.fused_helper.pandasMDAO">
+<em class="property">class </em><tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">pandasMDAO</tt><big>(</big><em>a</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#pandasMDAO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.pandasMDAO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
+<p>Create a pandas memorizer to a component or an Assembly.
+Each time the memorizer is run, it will look in the DataFrame if the inputs are already there,
+if they are it will update the component or assembly with the corresponding outputs, otherwise
+it will run the component or assembly and append the results to the DataFrame</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.fused_helper.pandas_memoized">
+<tt class="descclassname">fusedwind.fused_helper.</tt><tt class="descname">pandas_memoized</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="_modules/fusedwind/fused_helper.html#pandas_memoized"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.fused_helper.pandas_memoized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to add a pandas memorizer to a component or an assembly</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

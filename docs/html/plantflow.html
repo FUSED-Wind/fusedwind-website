@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plant Flow &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Source Documentation" href="documentation.html" />
+    <link rel="next" title="Plant Cost" href="plantcost.html" />
+    <link rel="prev" title="Utilities and Interfaces" href="interfaces.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Plant Flow</a><ul>
+<li><a class="reference internal" href="#module-fusedwind.plant_flow.vt">Variable Trees</a></li>
+<li><a class="reference internal" href="#module-fusedwind.plant_flow.comp">Components</a></li>
+<li><a class="reference internal" href="#module-fusedwind.plant_flow.asym">Assemblies</a></li>
+<li><a class="reference internal" href="#basic-aep-module">Basic AEP Module</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="interfaces.html" title="Previous Chapter: Utilities and Interfaces"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Utilities and In...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plantcost.html" title="Next Chapter: Plant Cost"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Plant Cost &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="plant-flow">
+<h1>Plant Flow<a class="headerlink" href="#plant-flow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-fusedwind.plant_flow.vt">
+<span id="variable-trees"></span><h2>Variable Trees<a class="headerlink" href="#module-fusedwind.plant_flow.vt" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="fusedwind.plant_flow.vt.ExtendedWindTurbinePowerCurveVT">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.vt.</tt><tt class="descname">ExtendedWindTurbinePowerCurveVT</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#ExtendedWindTurbinePowerCurveVT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.ExtendedWindTurbinePowerCurveVT" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>air_density</strong> (<em>Float, default=0.0, [kg/(m*m*m)]</em>) &#8211; The air density the power curve are valid for.</li>
+<li><strong>c_t_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine thrust coefficients by wind speed at hub.</li>
+<li><strong>cut_in_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The cut-in wind speed of the wind turbine.</li>
+<li><strong>cut_out_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The cut-out wind speed of the wind turbine.</li>
+<li><strong>hub_height</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine hub height.</li>
+<li><strong>pitch_curve</strong> (<em>Array, default=&lt;undefined&gt;, [deg]</em>) &#8211; The wind turbine pitch curve.</li>
+<li><strong>power_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine power output [W] by wind speed at hub.</li>
+<li><strong>power_rating</strong> (<em>Float, default=0.0, [W]</em>) &#8211; Machine power rating.</li>
+<li><strong>rated_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The rated wind speed of the wind turbine.</li>
+<li><strong>rotor_diameter</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine rotor diameter.</li>
+<li><strong>rpm_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine rpm [rpm] by wind speed at hub.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedWindTurbinePowerCurveVT</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWindTurbineVT</span></tt></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>air_density</strong> (<em>Float, default=0.0, [kg/(m*m*m)]</em>) &#8211; The air density the power curve are valid for.</li>
+<li><strong>c_t_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine thrust coefficients by wind speed at hub.</li>
+<li><strong>cut_in_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The cut-in wind speed of the wind turbine.</li>
+<li><strong>cut_out_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The cut-out wind speed of the wind turbine.</li>
+<li><strong>hub_height</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine hub height.</li>
+<li><strong>pitch_curve</strong> (<em>Array, default=&lt;undefined&gt;, [deg]</em>) &#8211; The wind turbine pitch curve.</li>
+<li><strong>power_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine power output [W] by wind speed at hub.</li>
+<li><strong>power_rating</strong> (<em>Float, default=0.0, [W]</em>) &#8211; Machine power rating.</li>
+<li><strong>rated_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The rated wind speed of the wind turbine.</li>
+<li><strong>rotor_diameter</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine rotor diameter.</li>
+<li><strong>rpm_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine rpm [rpm] by wind speed at hub.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ExtendedWindTurbinePowerCurveVT</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWindTurbineVT</span></tt>, <tt class="docutils literal"><span class="pre">GenericWindTurbinePowerCurveVT</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.vt.</tt><tt class="descname">GenericWindFarmTurbineLayout</tt><big>(</big><em>wt_list=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>df</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+<li><strong>n_wt</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+<li><strong>wt_list</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+<li><strong>wt_names</strong> (<em>List, default=[], [None]</em>) &#8211; The wind turbine list of names [n_wt].</li>
+<li><strong>wt_positions</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+<li><strong>wt_wind_roses</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Initialise the leafes of the GenericWindFarmTurbineLayout based on the wt_list
+:param wt_list: list of Wind turbine object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+</tbody>
+</table>
+<dl class="method">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.add_wt">
+<tt class="descname">add_wt</tt><big>(</big><em>wt</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.add_wt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.add_wt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a turbine to the layout tree, append the name at the end of wt_names
+:param wt: Wind turbine object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.create_dict">
+<tt class="descname">create_dict</tt><big>(</big><em>n</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.create_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.create_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary containing the information of the n&#8217;th turbine</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int [0, self.n_wt]</em>) &#8211; The index of the n&#8217;th turbine</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>di</strong> &#8211;
+name:            str, optional<blockquote>
+<div>the name of the turbine contained in wt_names</div></blockquote>
+<p>rotor_diameter:  GenericWindTurbinePowerCurveVT keys, optional
+hub_height:      ...
+...</p>
+<dl class="docutils">
+<dt>x:               float</dt>
+<dd>x position [m] from wt_positions</dd>
+<dt>y:               float</dt>
+<dd>y position [m] from wt_positions</dd>
+<dt>wind_rose:       GenericWindRoseVT, optional</dt>
+<dd>the wind rose of the turbine at hub height contained in wt_wind_roses</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.df">
+<tt class="descname">df</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a pandas dataframe containing all the information flatten, using the <cite>create_dict</cite> function</p>
+<p>:rtype : pandas.DataFrame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_array">
+<tt class="descname">wt_array</tt><big>(</big><em>attr=None</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.wt_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an array of attributes of the leafs
+:param attr: The attribute of the leaf to list
+:type attr: str, default=None</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numpy.ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_list">
+<tt class="descname">wt_list</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.wt_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>backward compatibility access to wt_list
+:returns a list of wind turbine object</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_positions">
+<tt class="descname">wt_positions</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.wt_positions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>backward compatibility access to wt_positions</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_wind_roses">
+<tt class="descname">wt_wind_roses</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindFarmTurbineLayout.wt_wind_roses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout.wt_wind_roses" title="Permalink to this definition">¶</a></dt>
+<dd><p>backward compatibility access to wt_wind_roses: wind rose for each wind turbine position list[n_wt]</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.vt.</tt><tt class="descname">GenericWindTurbinePowerCurveVT</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindTurbinePowerCurveVT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>air_density</strong> (<em>Float, default=0.0, [kg/(m*m*m)]</em>) &#8211; The air density the power curve are valid for.</li>
+<li><strong>c_p_curve</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+<li><strong>c_t_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine thrust coefficients by wind speed at hub.</li>
+<li><strong>cut_in_wind_speed</strong> (<em>Float, default=4.0, [m/s]</em>) &#8211; The cut-in wind speed of the wind turbine.</li>
+<li><strong>cut_out_wind_speed</strong> (<em>Float, default=25.0, [m/s]</em>) &#8211; The cut-out wind speed of the wind turbine.</li>
+<li><strong>hub_height</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine hub height.</li>
+<li><strong>power_curve</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Machine power output [W] by wind speed at hub.</li>
+<li><strong>power_rating</strong> (<em>Float, default=0.0, [W]</em>) &#8211; Machine power rating.</li>
+<li><strong>rated_wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; The rated wind speed of the wind turbine.</li>
+<li><strong>rotor_area</strong> (<em>type, default=None, [None]</em>) &#8211; None.</li>
+<li><strong>rotor_diameter</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine rotor diameter.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GenericWindTurbinePowerCurveVT</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWindTurbineVT</span></tt></p>
+</div>
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT.rotor_area">
+<tt class="descname">rotor_area</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindTurbinePowerCurveVT.rotor_area"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT.rotor_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rotor area</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.vt.GenericWindTurbineVT">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.vt.</tt><tt class="descname">GenericWindTurbineVT</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#GenericWindTurbineVT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.GenericWindTurbineVT" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hub_height</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine hub height.</li>
+<li><strong>power_rating</strong> (<em>Float, default=0.0, [W]</em>) &#8211; Machine power rating.</li>
+<li><strong>rotor_diameter</strong> (<em>Float, default=0.0, [m]</em>) &#8211; Machine rotor diameter.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.vt.WTPC">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.vt.</tt><tt class="descname">WTPC</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#WTPC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.WTPC" title="Permalink to this definition">¶</a></dt>
+<dd><p>A GenericWindTurbinePowerCurveVT with a name, position and wind rose</p>
+<p>Initialise the variable tree with the right inputs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.plant_flow.vt.weibull2freq_array">
+<tt class="descclassname">fusedwind.plant_flow.vt.</tt><tt class="descname">weibull2freq_array</tt><big>(</big><em>wind_directions</em>, <em>wind_speeds</em>, <em>weibull_array</em>, <em>cut_in=4.0</em>, <em>cut_out=25.0</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/vt.html#weibull2freq_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.vt.weibull2freq_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frequency_array using a weibull distribution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>= List(iotype=&#8217;in&#8217;, units=&#8217;deg&#8217;,</strong> (<em>wind_directions</em>) &#8211; desc=&#8217;Direction sectors angles [n_wd]&#8217;)</li>
+<li><strong>= List(iotype=&#8217;in&#8217;, units=&#8217;m/s&#8217;,</strong> (<em>wind_speeds</em>) &#8211; desc=&#8217;wind speeds sectors [n_ws]&#8217;)</li>
+<li><strong>= Array([], iotype=&#8217;in&#8217;, units=&#8217;m/s&#8217;,</strong> (<em>weibull_array</em>) &#8211; desc=&#8217;Windrose array [wind_directions, frequency, weibull_A, weibull_k]&#8217;)</li>
+<li><strong>= Float(4.0, iotype=&#8217;in&#8217;,</strong> (<em>cut_in</em>) &#8211; desc=&#8217;The cut-in wind speed of the wind turbine&#8217;)</li>
+<li><strong>= Float(25.0, iotype=&#8217;in&#8217;,</strong> (<em>cut_out</em>) &#8211; desc=&#8217;The cut-out wind speed of the wind turbine&#8217;)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">wind_rose = frequency array [n_wd, n_ws]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fusedwind.plant_flow.comp">
+<span id="components"></span><h2>Components<a class="headerlink" href="#module-fusedwind.plant_flow.comp" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.BaseAEPAggregator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">BaseAEPAggregator</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#BaseAEPAggregator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.BaseAEPAggregator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assumes implementing component provides overall plant energy output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.BaseAEPAggregator_NoFlow">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">BaseAEPAggregator_NoFlow</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#BaseAEPAggregator_NoFlow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.BaseAEPAggregator_NoFlow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assumes implementing component takes individual turbine output and combines with loss factors and turbine number to get plant energy output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>array_losses</strong> (<em>Float, default=0.059, [None]</em>) &#8211; energy losses due to turbine interactions - across entire plant.</li>
+<li><strong>availability</strong> (<em>Float, default=0.94, [None]</em>) &#8211; average annual availbility of wind turbines at plant.</li>
+<li><strong>other_losses</strong> (<em>Float, default=0.0, [None]</em>) &#8211; energy losses due to blade soiling, electrical, etc.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=100, [None]</em>) &#8211; total number of wind turbines at the plant.</li>
+<li><strong>machine_rating</strong> (<em>Float, default=5000.0, [None]</em>) &#8211; machine rating of turbine.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">BaseAEPAggregator_NoFlow</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPAggregator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.CDFBase">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">CDFBase</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#CDFBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.CDFBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>cumulative distribution function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; input curve.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>F</strong> &#8211;
+None.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Array, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericFlowModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericFlowModel</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericFlowModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericFlowModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Framework for a flow model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ws_positions</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; the positions of the wind speeds in the global frame of reference [n,3] (x,y,z).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>ws_array</strong> &#8211;
+an array of wind speed to find wind speed.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Array, [None]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericHubWindSpeed">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericHubWindSpeed</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericHubWindSpeed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericHubWindSpeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic class for calculating the wind turbine hub wind speed.
+Typically used as an input to a wind turbine power curve / thrust coefficient curve.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ws_array</strong> (<em>Array, default=&lt;undefined&gt;, [m/s]</em>) &#8211; an array of wind speed on the rotor.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>hub_wind_speed</strong> &#8211;
+hub wind speed.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Float, [m/s]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericInflowGenerator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericInflowGenerator</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericInflowGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericInflowGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Framework for an inflow model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; the reference wind speed.</li>
+<li><strong>ws_positions</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; the positions of the wind speeds in the global frame of reference [n,3] (x,y,z).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ws_array</strong> &#8211;
+an array of wind speed to find wind speed.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GenericInflowGenerator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericFlowModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericPostProcessWindRose">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericPostProcessWindRose</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericPostProcessWindRose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericPostProcessWindRose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using the same wind rose for all the wind turbines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>frequencies</strong> (<em>List, default=[], [None]</em>) &#8211; The different wind directions to run [nWD*nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+<li><strong>powers</strong> (<em>List, default=[], [kW*h]</em>) &#8211; The different wind directions to run [nWD*nWS].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Annual Energy Production.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericWSPosition">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericWSPosition</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericWSPosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericWSPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the positions where we should calculate the wind speed on the rotor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wt_xy</strong> (<em>List, default=[0.0, 0.0], [m]</em>) &#8211; The x,y position of the wind turbine.</li>
+<li><strong>wt_desc</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindTurbineVT object at 0x0806FE10&gt;, [None]</em>) &#8211; None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ws_positions</strong> &#8211;
+the position [n,3] of the ws_array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array, [m]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericWakeModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericWakeModel</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericWakeModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericWakeModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Framework for a wake model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_direction</strong> (<em>Float, default=0.0, [deg]</em>) &#8211; The inflow wind direction.</li>
+<li><strong>ws_array_inflow</strong> (<em>Array, default=&lt;undefined&gt;, [m/s]</em>) &#8211; The inflow velocity at the ws_positions.</li>
+<li><strong>wt_xy</strong> (<em>List, default=[0.0, 0.0], [m]</em>) &#8211; The x,y position of the current wind turbine.</li>
+<li><strong>ws_positions</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; the positions of the wind speeds in the global frame of reference [n,3] (x,y,z).</li>
+<li><strong>c_t</strong> (<em>Float, default=0.0, [None]</em>) &#8211; the thrust coefficient of the wind turbine.</li>
+<li><strong>wt_desc</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindTurbineVT object at 0x08084B40&gt;, [None]</em>) &#8211; the geometrical description of the current turbine.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ws_array</strong> (<em>Array, [None]</em>) &#8211;
+an array of wind speed to find wind speed.</li>
+<li><strong>du_array</strong> (<em>Array, [m/s]</em>) &#8211;
+The deficit in m/s. Empty if only zeros.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GenericWakeModel</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericFlowModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericWakeSum">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericWakeSum</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericWakeSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericWakeSum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic class for calculating the wake accumulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ws_array_inflow</strong> (<em>Array, default=&lt;undefined&gt;, [m/s]</em>) &#8211; inflow contributions to rotor wind speed [n].</li>
+<li><strong>wakes</strong> (<em>List, default=[], [None]</em>) &#8211; wake contributions to rotor wind speed [nwake][n].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ws_array</strong> &#8211;
+the rotor wind speed [n].</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array, [m/s]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericWindFarm">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericWindFarm</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericWindFarm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericWindFarm" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_direction</strong> (<em>Float, default=0.0, [deg]</em>) &#8211; Inflow wind direction at hub height.</li>
+<li><strong>wt_layout</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout object at 0x080607B0&gt;, [None]</em>) &#8211; wind turbine properties and layout.</li>
+<li><strong>wind_speed</strong> (<em>Float, default=0.0, [m/s]</em>) &#8211; Inflow wind speed at hub height.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>power</strong> (<em>Float, [kW]</em>) &#8211;
+Total wind farm power production.</li>
+<li><strong>wt_power</strong> (<em>Array, [None]</em>) &#8211;
+The power production of each wind turbine.</li>
+<li><strong>thrust</strong> (<em>Float, [N]</em>) &#8211;
+Total wind farm thrust.</li>
+<li><strong>wt_thrust</strong> (<em>Array, [None]</em>) &#8211;
+The thrust of each wind turbine.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericWindRoseCaseGenerator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericWindRoseCaseGenerator</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericWindRoseCaseGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericWindRoseCaseGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component prepare all the wind speeds, directions and frequencies inputs to the AEP calculation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>all_wind_directions</strong> (<em>List, [deg]</em>) &#8211;
+The different wind directions to run [nWD*nWS].</li>
+<li><strong>all_wind_speeds</strong> (<em>List, [m/s]</em>) &#8211;
+The different wind speeds to run [nWD*nWS].</li>
+<li><strong>all_frequencies</strong> (<em>List, [None]</em>) &#8211;
+The different wind directions to run [nWD*nWS].</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.GenericWindTurbine">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">GenericWindTurbine</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#GenericWindTurbine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.GenericWindTurbine" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>hub_wind_speed</strong> (<em>Float, default=0.0, [None]</em>) &#8211; None.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>power</strong> (<em>Float, [W]</em>) &#8211;
+The wind turbine power.</li>
+<li><strong>c_t</strong> (<em>Float, [None]</em>) &#8211;
+The wind turbine thrust coefficient.</li>
+<li><strong>thrust</strong> (<em>Float, [N]</em>) &#8211;
+The wind turbine thrust.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.HubCenterWSPosition">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">HubCenterWSPosition</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#HubCenterWSPosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.HubCenterWSPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the positions at the center of the wind turbine rotor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wt_xy</strong> (<em>List, default=[0.0, 0.0], [m]</em>) &#8211; The x,y position of the wind turbine.</li>
+<li><strong>wt_desc</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindTurbineVT object at 0x0806FE70&gt;, [None]</em>) &#8211; None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ws_positions</strong> &#8211;
+the position [n,3] of the ws_array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array, [m]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">HubCenterWSPosition</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWSPosition</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.MultipleWindRosesCaseGenerator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">MultipleWindRosesCaseGenerator</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#MultipleWindRosesCaseGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.MultipleWindRosesCaseGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component prepare all the wind speeds, directions and frequencies inputs to the AEP calculation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wt_layout</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout object at 0x0806F180&gt;, [None]</em>) &#8211; the wind farm layout.</li>
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>all_wind_directions</strong> (<em>List, [deg]</em>) &#8211;
+The different wind directions to run [nWD*nWS].</li>
+<li><strong>all_wind_speeds</strong> (<em>List, [m/s]</em>) &#8211;
+The different wind speeds to run [nWD*nWS].</li>
+<li><strong>all_frequencies</strong> (<em>List, [None]</em>) &#8211;
+The different wind directions to run [nWD*nWS][nWT].</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">MultipleWindRosesCaseGenerator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWindRoseCaseGenerator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.PostProcessMultipleWindRoses">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">PostProcessMultipleWindRoses</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#PostProcessMultipleWindRoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.PostProcessMultipleWindRoses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a different wind rose for each wind turbine</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>frequencies</strong> (<em>List, default=[], [None]</em>) &#8211; The different wind directions to run [nWD*nWS][nWT].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+<li><strong>powers</strong> (<em>List, default=[], [kW*h]</em>) &#8211; The different wind directions to run [nWD*nWS][nWT].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production.</li>
+<li><strong>wt_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per turbine [nWT].</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">PostProcessMultipleWindRoses</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericPostProcessWindRose</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.PostProcessSingleWindRose">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">PostProcessSingleWindRose</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#PostProcessSingleWindRose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.PostProcessSingleWindRose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using the same wind rose for all the wind turbines</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>frequencies</strong> (<em>List, default=[], [None]</em>) &#8211; The different wind directions to run [nWD*nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+<li><strong>powers</strong> (<em>List, default=[], [kW*h]</em>) &#8211; The different wind directions to run [nWD*nWS].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Annual Energy Production.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">PostProcessSingleWindRose</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericPostProcessWindRose</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.SingleWindRoseCaseGenerator">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">SingleWindRoseCaseGenerator</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#SingleWindRoseCaseGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.SingleWindRoseCaseGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component prepare all the wind speeds, directions and frequencies inputs to the AEP calculation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_rose</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Probability distribution of wind speed, wind direction [nWS, nWD].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>all_wind_directions</strong> (<em>List, [deg]</em>) &#8211;
+The different wind directions to run [nWD*nWS].</li>
+<li><strong>all_wind_speeds</strong> (<em>List, [m/s]</em>) &#8211;
+The different wind speeds to run [nWD*nWS].</li>
+<li><strong>all_frequencies</strong> (<em>List, [None]</em>) &#8211;
+The different wind directions to run [nWD*nWS].</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">SingleWindRoseCaseGenerator</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWindRoseCaseGenerator</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.WeibullWindRose">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">WeibullWindRose</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WeibullWindRose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WeibullWindRose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frequency_array using a weibull distribution</p>
+<dl class="method">
+<dt id="fusedwind.plant_flow.comp.WeibullWindRose.execute">
+<tt class="descname">execute</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WeibullWindRose.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WeibullWindRose.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the new wind_rose</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.comp.WeibullWindRose.n_wd">
+<tt class="descname">n_wd</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WeibullWindRose.n_wd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WeibullWindRose.n_wd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of wind direction bins</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fusedwind.plant_flow.comp.WeibullWindRose.n_ws">
+<tt class="descname">n_ws</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WeibullWindRose.n_ws"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WeibullWindRose.n_ws" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of wind speed bins</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fusedwind.plant_flow.comp.WeibullWindRose.test_consistency_inputs">
+<tt class="descname">test_consistency_inputs</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WeibullWindRose.test_consistency_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WeibullWindRose.test_consistency_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the consistency of the inputs. This will be optimized away in production</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fusedwind.plant_flow.comp.WeibullWindRose.test_consistency_outputs">
+<tt class="descname">test_consistency_outputs</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WeibullWindRose.test_consistency_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WeibullWindRose.test_consistency_outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the consistency of the outputs. This will be optimized away in production</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.comp.WindTurbinePowerCurve">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.comp.</tt><tt class="descname">WindTurbinePowerCurve</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/comp.html#WindTurbinePowerCurve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.comp.WindTurbinePowerCurve" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>wt_desc needs to contain:</dt>
+<dd><ul class="first last simple">
+<li>power_curve</li>
+<li>c_t_curve</li>
+<li>rotor_diameter</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>density</strong> (<em>Float, default=1.225, [None]</em>) &#8211; Air density.</li>
+<li><strong>hub_wind_speed</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Wind Speed at hub height.</li>
+<li><strong>wt_desc</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindTurbinePowerCurveVT object at 0x0809B360&gt;, [None]</em>) &#8211; The wind turbine description.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>power</strong> (<em>Float, [None]</em>) &#8211;
+The wind turbine power.</li>
+<li><strong>c_t</strong> (<em>Float, [None]</em>) &#8211;
+The wind turbine thrust coefficient.</li>
+<li><strong>thrust</strong> (<em>Float, [None]</em>) &#8211;
+The wind turbine thrust.</li>
+<li><strong>a</strong> (<em>Float, [None]</em>) &#8211;
+The wind turbine induction factor.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">WindTurbinePowerCurve</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">GenericWindTurbine</span></tt></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fusedwind.plant_flow.asym">
+<span id="assemblies"></span><h2>Assemblies<a class="headerlink" href="#module-fusedwind.plant_flow.asym" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="fusedwind.plant_flow.asym.AEPMultipleWindRoses">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.asym.</tt><tt class="descname">AEPMultipleWindRoses</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/asym.html#AEPMultipleWindRoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.asym.AEPMultipleWindRoses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class to calculate Annual Energy Production (AEP) of a wind farm.
+Implement the same interface as <cite>BaseAEPModel</cite> and <cite>AEPWindRose</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wt_layout</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout object at 0x08084570&gt;, [None]</em>) &#8211; wind turbine properties and layout.</li>
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+<li><strong>wt_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per turbine [nWT].</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">AEPMultipleWindRoses</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel</span></tt></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wt_layout</strong> (<em>VarTree, default=&lt;fusedwind.plant_flow.vt.GenericWindFarmTurbineLayout object at 0x08084570&gt;, [None]</em>) &#8211; wind turbine properties and layout.</li>
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+<li><strong>wt_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per turbine [nWT].</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">AEPMultipleWindRoses</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel</span></tt>, <tt class="docutils literal"><span class="pre">AEPWindRose</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.asym.AEPSingleWindRose">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.asym.</tt><tt class="descname">AEPSingleWindRose</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/fusedwind/plant_flow/asym.html#AEPSingleWindRose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.asym.AEPSingleWindRose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class to calculate Annual Energy Production (AEP) of a wind farm.
+Implement the same interface as <cite>BaseAEPModel</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_rose</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Probability distribution of wind speed, wind direction [nWD, nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">AEPSingleWindRose</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel</span></tt></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_rose</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Probability distribution of wind speed, wind direction [nWD, nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">AEPSingleWindRose</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel</span></tt>, <tt class="docutils literal"><span class="pre">AEPWindRose</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.asym.AEPWindRose">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.asym.</tt><tt class="descname">AEPWindRose</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/asym.html#AEPWindRose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.asym.AEPWindRose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class to calculate Annual Energy Production (AEP) of a wind farm.
+Implement the same interface as <cite>BaseAEPModel</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wind_speeds</strong> (<em>List, default=[], [m/s]</em>) &#8211; The different wind speeds to run [nWS].</li>
+<li><strong>wind_directions</strong> (<em>List, default=[], [deg]</em>) &#8211; The different wind directions to run [nWD].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>array_aep</strong> (<em>Array, [kW*h]</em>) &#8211;
+The energy production per sector [nWD, nWS].</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">AEPWindRose</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.asym.BaseAEPModel">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.asym.</tt><tt class="descname">BaseAEPModel</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/asym.html#BaseAEPModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.asym.BaseAEPModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Most basic AEP class which only provides key AEP outputs - flexible for use with any energy production model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.asym.BaseAEPModel_NoFlow">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.asym.</tt><tt class="descname">BaseAEPModel_NoFlow</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/asym.html#BaseAEPModel_NoFlow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.asym.BaseAEPModel_NoFlow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic AEP model that provides base outputs but also assumes no flow model is used so that loss factors and turbine number must be used to get full plant energy output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>array_losses</strong> (<em>Float, default=0.059, [None]</em>) &#8211; energy losses due to turbine interactions - across entire plant.</li>
+<li><strong>availability</strong> (<em>Float, default=0.94, [None]</em>) &#8211; average annual availbility of wind turbines at plant.</li>
+<li><strong>other_losses</strong> (<em>Float, default=0.0, [None]</em>) &#8211; energy losses due to blade soiling, electrical, etc.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=100, [None]</em>) &#8211; total number of wind turbines at the plant.</li>
+<li><strong>machine_rating</strong> (<em>Float, default=5000.0, [None]</em>) &#8211; machine rating of turbine.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+Capacity factor for wind plant.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">BaseAEPModel_NoFlow</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel</span></tt></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="basic-aep-module">
+<h2>Basic AEP Module<a class="headerlink" href="#basic-aep-module" title="Permalink to this headline">¶</a></h2>
+<p>This set of components and assemblies implements a basic set of aep estimation tools for two different cases: 1) aep estimation where the input is the single turbine aep or 2) aep estimation where the input is a single turbine power curve and the site wind resource characteristics.  In both cases, losses are applied to the energy production as well as a multiplier for the number of turbines in the site.</p>
+<span class="target" id="module-fusedwind.plant_flow.basic_aep"></span><p>aep_csm_component.py</p>
+<p>Created by NWTC Systems Engineering Sub-Task on 2012-08-01.
+Copyright (c) NREL. All rights reserved.</p>
+<dl class="class">
+<dt id="fusedwind.plant_flow.basic_aep.BasicAEP">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.basic_aep.</tt><tt class="descname">BasicAEP</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/basic_aep.html#BasicAEP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.basic_aep.BasicAEP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic component for aep estimation for an entire wind plant based on the AEP input from one turbine.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>AEP_one_turbine</strong> (<em>Float, default=0.0, [kW*h]</em>) &#8211; None.</li>
+<li><strong>array_losses</strong> (<em>Float, default=0.059, [None]</em>) &#8211; energy losses due to turbine interactions - across entire plant.</li>
+<li><strong>availability</strong> (<em>Float, default=0.94, [None]</em>) &#8211; average annual availbility of wind turbines at plant.</li>
+<li><strong>other_losses</strong> (<em>Float, default=0.0, [None]</em>) &#8211; energy losses due to blade soiling, electrical, etc.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=100, [None]</em>) &#8211; total number of wind turbines at the plant.</li>
+<li><strong>machine_rating</strong> (<em>Float, default=5000.0, [None]</em>) &#8211; machine rating of turbine.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+plant capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">BasicAEP</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPAggregator_NoFlow</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.basic_aep.RayleighCDF">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.basic_aep.</tt><tt class="descname">RayleighCDF</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/basic_aep.html#RayleighCDF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.basic_aep.RayleighCDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rayleigh cumulative distribution function</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.basic_aep.WeibullCDF">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.basic_aep.</tt><tt class="descname">WeibullCDF</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/basic_aep.html#WeibullCDF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.basic_aep.WeibullCDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weibull cumulative distribution function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>A</strong> (<em>Float, default=0.0, [None]</em>) &#8211; scale factor.</li>
+<li><strong>k</strong> (<em>Float, default=0.0, [None]</em>) &#8211; shape or form factor.</li>
+<li><strong>x</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; input curve.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>F</strong> &#8211;
+probabilities out.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Array, [None]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">WeibullCDF</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">CDFBase</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.basic_aep.aep_assembly">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.basic_aep.</tt><tt class="descname">aep_assembly</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/basic_aep.html#aep_assembly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.basic_aep.aep_assembly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic assembly for aep estimation for an entire wind plant based on the AEP input from one turbine.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>AEP_one_turbine</strong> (<em>Float, default=0.0, [kW*h]</em>) &#8211; None.</li>
+<li><strong>array_losses</strong> (<em>Float, default=0.059, [None]</em>) &#8211; energy losses due to turbine interactions - across entire plant.</li>
+<li><strong>availability</strong> (<em>Float, default=0.94, [None]</em>) &#8211; average annual availbility of wind turbines at plant.</li>
+<li><strong>other_losses</strong> (<em>Float, default=0.0, [None]</em>) &#8211; energy losses due to blade soiling, electrical, etc.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=100, [None]</em>) &#8211; total number of wind turbines at the plant.</li>
+<li><strong>machine_rating</strong> (<em>Float, default=5000.0, [None]</em>) &#8211; machine rating of turbine.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+plant capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">aep_assembly</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel_NoFlow</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.basic_aep.aep_component">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.basic_aep.</tt><tt class="descname">aep_component</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/basic_aep.html#aep_component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.basic_aep.aep_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic component for aep estimation for an entire wind plant with the wind resource and single turbine power curve as inputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>array_losses</strong> (<em>Float, default=0.059, [None]</em>) &#8211; energy losses due to turbine interactions - across entire plant.</li>
+<li><strong>availability</strong> (<em>Float, default=0.94, [None]</em>) &#8211; average annual availbility of wind turbines at plant.</li>
+<li><strong>other_losses</strong> (<em>Float, default=0.0, [None]</em>) &#8211; energy losses due to blade soiling, electrical, etc.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=100, [None]</em>) &#8211; total number of wind turbines at the plant.</li>
+<li><strong>power_curve</strong> (<em>Array, default=&lt;undefined&gt;, [W]</em>) &#8211; power curve (power).</li>
+<li><strong>CDF_V</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; None.</li>
+<li><strong>machine_rating</strong> (<em>Float, default=0.0, [kW]</em>) &#8211; machine power rating.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [None]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+plant capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [None]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">aep_component</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPAggregator_NoFlow</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.plant_flow.basic_aep.aep_weibull_assembly">
+<em class="property">class </em><tt class="descclassname">fusedwind.plant_flow.basic_aep.</tt><tt class="descname">aep_weibull_assembly</tt><a class="reference internal" href="_modules/fusedwind/plant_flow/basic_aep.html#aep_weibull_assembly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.plant_flow.basic_aep.aep_weibull_assembly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basic assembly for aep estimation for an entire wind plant with the wind resource and single turbine power curve as inputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>array_losses</strong> (<em>Float, default=0.059, [None]</em>) &#8211; energy losses due to turbine interactions - across entire plant.</li>
+<li><strong>wind_curve</strong> (<em>Array, default=&lt;undefined&gt;, [m/s]</em>) &#8211; wind curve.</li>
+<li><strong>availability</strong> (<em>Float, default=0.94, [None]</em>) &#8211; average annual availbility of wind turbines at plant.</li>
+<li><strong>other_losses</strong> (<em>Float, default=0.0, [None]</em>) &#8211; energy losses due to blade soiling, electrical, etc.</li>
+<li><strong>turbine_number</strong> (<em>Int, default=100, [None]</em>) &#8211; total number of wind turbines at the plant.</li>
+<li><strong>A</strong> (<em>Float, default=0.0, [None]</em>) &#8211; scale factor.</li>
+<li><strong>power_curve</strong> (<em>Array, default=&lt;undefined&gt;, [W]</em>) &#8211; power curve (power).</li>
+<li><strong>k</strong> (<em>Float, default=0.0, [None]</em>) &#8211; shape or form factor.</li>
+<li><strong>machine_rating</strong> (<em>Float, default=0.0, [kW]</em>) &#8211; machine power rating.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>net_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Net Annual Energy Production after availability and loss impacts.</li>
+<li><strong>capacity_factor</strong> (<em>Float, [None]</em>) &#8211;
+plant capacity factor.</li>
+<li><strong>gross_aep</strong> (<em>Float, [kW*h]</em>) &#8211;
+Gross Annual Energy Production before availability and loss impacts.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<p class="last"><tt class="docutils literal"><span class="pre">aep_weibull_assembly</span></tt> implements the following interfaces: <tt class="docutils literal"><span class="pre">BaseAEPModel_NoFlow</span></tt></p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

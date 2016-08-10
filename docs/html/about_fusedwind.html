@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Software Overview &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="next" title="Tutorials" href="tutorial.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Software Overview</a><ul>
+<li><a class="reference internal" href="#target-audience">Target Audience</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#basic-concepts">Basic Concepts</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="installation.html" title="Previous Chapter: Installation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Installation</span>
+    </a>
+  </li>
+  <li>
+    <a href="tutorial.html" title="Next Chapter: Tutorials"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Tutorials &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="software-overview">
+<span id="about-label"></span><h1>Software Overview<a class="headerlink" href="#software-overview" title="Permalink to this headline">¶</a></h1>
+<p>Framework for Unified Systems Engineering and Design of Wind Plants (FUSED-Wind) is a framework for integrated system modeling of wind plants.
+FUSED-Wind was started as a collaboration between DTU Wind Energy and NREL to help standardize the way wind turbine and plant software models are integrated together for holistic systems analysis, design and optimization.
+FUSED-Wind does <em>not</em> provide any analysis models or interfaces to specific codes.
+Instead, the aim with FUSED-Wind is to provide a variety of <em>generalized</em> interfaces for integrating wind turbine and plant specific software models together so that these models can be mixed and matched for a huge variety of different analyses.
+FUSED-Wind is built on <a class="reference external" href="http://openmdao.org/">OpenMDAO</a> which is an open-source software from NASA Glenn Laboratories for multi-disciplinary design analysis and optimization (MDAO) of complex technical systems.
+It is designed specifically to support advanced analyses that combine several models of potentially varying levels of complexity together for MDAO, uncertainty quantification, design of experiments, and many more applications!</p>
+<p>FUSED-Wind is a free open-source software released under the <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2</a> license, which is very permissive, allowing users of the framework to use it for any purpose, to modify it and re-distribute it as part of their own software.
+The framework is released under this license to encourage community contributions with the belief that as a community we can create something better and more widely applicapable than on our own.</p>
+<div class="section" id="target-audience">
+<h2>Target Audience<a class="headerlink" href="#target-audience" title="Permalink to this headline">¶</a></h2>
+<p>Since FUSED-Wind itself does not contain any analysis codes, FUSED-Wind is primarily targetted at model developers who wish to use their model in an multidisciplinary analysis and optimization context.
+You need to have some knowledge of software development, be familiar with Python and need to have made yourself acquainted with OpenMDAO and its concepts.
+Are you a user with no desire to develop your own models, both NREL and DTU have developed more user friendly software packages based on OpenMDAO and FUSED-Wind that enable complex analysis of wind energy systems based on simple user interfaces that do not require programming experience, see for example <a class="reference external" href="http://nwtc.nrel.gov/WISDEM">WISDEM</a> or <a class="reference external" href="https://zenodo.org/search?f=keyword&amp;p=%22TOPFARM%22&amp;ln=en">TOPFARM</a>.</p>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>The current version of FUSED-Wind is organized into three primary modules:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Plant Flow</dt>
+<dd><p class="first last">Interfaces related to wind turbine plant scale flow codes and wake models.
+The interfaces provide the basis for wind farm layout optimization.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Plant Cost</dt>
+<dd><p class="first last">Interfaces and configure methods related to wind turbine and plant financial analysis models, such as capital costs, balance of station costs, operational expenditures and finance.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Turbine</dt>
+<dd><p class="first last">Interfaces related to turbine related analysis codes, such as aerodynamic, aeroelastic and structural codes.
+The module also contains parameterizations for the turbine geometry suited for conceptual design.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="basic-concepts">
+<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
+<p>Since FUSED-Wind builds on OpenMDAO, the framework operates with the same basic building blocks as OpenMDAO.
+The interfaces defined in the framework consist of three primary parts:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Variable Trees</dt>
+<dd><p class="first last">FUSED-Wind defines key input and output variables for different types of analysis of wind plants.
+Variables are grouped logically into <em>Variable Trees</em>, that makes it easier to pass sets of
+I/O between codes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Components</dt>
+<dd><p class="first last">A <em>Component</em> in OpenMDAO is a class that takes a set of inputs and performs some operation on these, resulting
+in a set of outputs.
+FUSED-Wind defines a range of base classes with pre-defined sets of inputs and outputs commonly used in different types of analysis of wind energy systems.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Assemblies</dt>
+<dd><p class="first last">An OpenMDAO Assembly is a container for a specific <em>workflow</em> defined by a series of components whose inputs and outputs are connected in a specific manner to perform a certain type of analysis.
+FUSED-Wind defines a range of commonly used workflows of varying complexity such as AEP calculation of a wind farm, or cost analysis of a wind turbine.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Based on these sets of component interfaces and workflows, users can develop a model that <em>implements</em> specific FUSED-Wind interfaces, making this model compatible with the rest of the framework, and other models also interfaced to the framework.
+While adhering to a certain interface may seem very restrictive when developing a stand-alone model, we believe that this restriction is far outweighed by the host of other models that will become available through this effort.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

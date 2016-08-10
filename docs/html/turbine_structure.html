@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Airfoil and Blade Geometry &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="index.html" />
+    <link rel="up" title="Turbine" href="turbine.html" />
+    <link rel="next" title="Aero-Elastic Turbine Definition" href="turbine_aeroelastic.html" />
+    <link rel="prev" title="Turbine" href="turbine.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Airfoil and Blade Geometry</a><ul>
+<li><a class="reference internal" href="#geometry-vt-py">geometry_vt.py</a></li>
+<li><a class="reference internal" href="#geometry-py">geometry.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#blade-structure">Blade Structure</a><ul>
+<li><a class="reference internal" href="#structure-vt-py">structure_vt.py</a></li>
+<li><a class="reference internal" href="#blade-structure-py">blade_structure.py</a></li>
+<li><a class="reference internal" href="#module-fusedwind.turbine.configurations">configurations.py</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="turbine.html" title="Previous Chapter: Turbine"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Turbine</span>
+    </a>
+  </li>
+  <li>
+    <a href="turbine_aeroelastic.html" title="Next Chapter: Aero-Elastic Turbine Definition"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Aero-Elastic Tur... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="airfoil-and-blade-geometry">
+<span id="sec-blade-geometry-label"></span><h1>Airfoil and Blade Geometry<a class="headerlink" href="#airfoil-and-blade-geometry" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="geometry-vt-py">
+<span id="index-0"></span><span id="id1"></span><h2>geometry_vt.py<a class="headerlink" href="#geometry-vt-py" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="geometry-py">
+<span id="index-1"></span><span id="id2"></span><h2>geometry.py<a class="headerlink" href="#geometry-py" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="blade-structure">
+<span id="sec-blade-structure-label"></span><h1>Blade Structure<a class="headerlink" href="#blade-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="structure-vt-py">
+<span id="index-2"></span><span id="id3"></span><h2>structure_vt.py<a class="headerlink" href="#structure-vt-py" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-fusedwind.turbine.structure_vt"></span><dl class="class">
+<dt id="fusedwind.turbine.structure_vt.BeamStructureVT">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">BeamStructureVT</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#BeamStructureVT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.BeamStructureVT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>A</strong> (<em>Array, default=&lt;undefined&gt;, [m**2]</em>) &#8211; cross sectional area.</li>
+<li><strong>E</strong> (<em>Array, default=&lt;undefined&gt;, [N/m**2]</em>) &#8211; modulus of elasticity.</li>
+<li><strong>G</strong> (<em>Array, default=&lt;undefined&gt;, [N/m**2]</em>) &#8211; shear modulus of elasticity.</li>
+<li><strong>I_x</strong> (<em>Array, default=&lt;undefined&gt;, [m**4]</em>) &#8211; area moment of inertia with respect to principal bending xe axis.</li>
+<li><strong>I_y</strong> (<em>Array, default=&lt;undefined&gt;, [m**4]</em>) &#8211; area moment of inertia with respect to principal bending ye axis.</li>
+<li><strong>J</strong> (<em>Array, default=&lt;undefined&gt;, [m**4/rad]</em>) &#8211; torsional stiffness constant with respect to ze axis at the shear center.</li>
+<li><strong>dm</strong> (<em>Array, default=&lt;undefined&gt;, [kg/m]</em>) &#8211; Mass per unit length.</li>
+<li><strong>k_x</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; shear factor for force in principal bending xe direction.</li>
+<li><strong>k_y</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; shear factor for force in principal bending ye direction.</li>
+<li><strong>pitch</strong> (<em>Array, default=&lt;undefined&gt;, [deg]</em>) &#8211; structural pitch relative to main axis..</li>
+<li><strong>ri_x</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; radius of gyration relative to elastic center..</li>
+<li><strong>ri_y</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; radius of gyration relative to elastic center.</li>
+<li><strong>s</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; Running curve length of beam.</li>
+<li><strong>x_cg</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; x-distance from blade axis to center of mass.</li>
+<li><strong>x_e</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; x-distance from main axis to center of elasticity.</li>
+<li><strong>x_sh</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; x-distance from blade axis to shear center.</li>
+<li><strong>y_cg</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; y-distance from blade axis to center of mass.</li>
+<li><strong>y_e</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; y-distance from main axis to center of elasticity.</li>
+<li><strong>y_sh</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; y-distance from blade axis to shear center.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.BladeStructureVT3D">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">BladeStructureVT3D</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#BladeStructureVT3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.BladeStructureVT3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>Variable tree for the structural definition of a blade.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>DPs</strong> (<em>List, default=[], [None]</em>) &#8211; Names of division point curves.</li>
+<li><strong>iwebs</strong> (<em>List, default=[], [None]</em>) &#8211; List of DP indices connecting webs to the surface.</li>
+<li><strong>materials</strong> (<em>Dict, default={}, [None]</em>) &#8211; None.</li>
+<li><strong>regions</strong> (<em>List, default=[], [None]</em>) &#8211; List of names of regions.</li>
+<li><strong>webs</strong> (<em>List, default=[], [None]</em>) &#8211; List of names of webs.</li>
+<li><strong>x</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; spanwise discretization of blade.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fusedwind.turbine.structure_vt.BladeStructureVT3D.add_material">
+<tt class="descname">add_material</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#BladeStructureVT3D.add_material"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.BladeStructureVT3D.add_material" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a material to the blade</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name: string</strong></p>
+<blockquote>
+<div><p>name of material to add</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MaterialProps: object</p>
+<blockquote class="last">
+<div><p>VariableTree with material properties to set by user</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.ConcentratedMass">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">ConcentratedMass</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#ConcentratedMass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.ConcentratedMass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p><strong>TODO</strong>: fill in this doc</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mass</strong> (<em>Float, default=0.0, [kg]</em>) &#8211; Concentrated mass.</li>
+<li><strong>moment_of_inertia</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Ixx, Iyy, Izz moments of inertia.</li>
+<li><strong>offset</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; x, y, z offset relative to node.</li>
+<li><strong>s</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Non-dimens the inertia is attached.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.CrossSectionStructureVT">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">CrossSectionStructureVT</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#CrossSectionStructureVT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.CrossSectionStructureVT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>Container for a cross-sectional definition of the
+internal structure of a blade.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>DPs</strong> (<em>List, default=[], [None]</em>) &#8211; Region division points (nregion + 1).</li>
+<li><strong>airfoil</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Cross sectional shape.</li>
+<li><strong>materials</strong> (<em>Dict, default={}, [None]</em>) &#8211; Dictionary of MaterialProps vartrees.</li>
+<li><strong>regions</strong> (<em>List, default=[], [None]</em>) &#8211; List of names of regions in the cross section.</li>
+<li><strong>s</strong> (<em>Float, default=0.0, [None]</em>) &#8211; None.</li>
+<li><strong>webs</strong> (<em>List, default=[], [None]</em>) &#8211; List of names of regions in the cross section.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.Layer">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">Layer</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#Layer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.Layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>A layer represents a stack of multidirectional plies and is assigned
+an apparent set of material properties based on the
+properties of the constituent materials, pre-computed using
+simple micromechanics equations and classical lamination theory.</p>
+<p>Layers are stacked in a region</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>angle</strong> (<em>Float, default=0.0, [None]</em>) &#8211; None.</li>
+<li><strong>materialname</strong> (<em>Str, default=, [None]</em>) &#8211; None.</li>
+<li><strong>plyname</strong> (<em>Str, default=, [None]</em>) &#8211; None.</li>
+<li><strong>thickness</strong> (<em>Float, default=0.0, [None]</em>) &#8211; None.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.Layer3D">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">Layer3D</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#Layer3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.Layer3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>Same as Layer, except for being a function of span</p>
+<p>A layer thickness can go to zero if material disappears at
+a certain spanwise location.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>angle</strong> (<em>Array, default=&lt;undefined&gt;, [deg]</em>) &#8211; layup angle.</li>
+<li><strong>thickness</strong> (<em>Array, default=&lt;undefined&gt;, [m]</em>) &#8211; layer thickness.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.MassProperties">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">MassProperties</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#MassProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.MassProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>mass and mass moments of inertia of a component</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>Ixx</strong> (<em>Float, default=0.0, [kg*m**2]</em>) &#8211; mass moment of inertia about x-axis.</li>
+<li><strong>Ixy</strong> (<em>Float, default=0.0, [kg*m**2]</em>) &#8211; mass x-y product of inertia.</li>
+<li><strong>Ixz</strong> (<em>Float, default=0.0, [kg*m**2]</em>) &#8211; mass x-z product of inertia.</li>
+<li><strong>Iyy</strong> (<em>Float, default=0.0, [kg*m**2]</em>) &#8211; mass moment of inertia about y-axis.</li>
+<li><strong>Iyz</strong> (<em>Float, default=0.0, [kg*m**2]</em>) &#8211; mass y-z product of inertia.</li>
+<li><strong>Izz</strong> (<em>Float, default=0.0, [kg*m**2]</em>) &#8211; mass moment of inertia about z-axis.</li>
+<li><strong>mass</strong> (<em>Float, default=0.0, [kg]</em>) &#8211; mass of object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.MaterialProps">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">MaterialProps</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#MaterialProps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.MaterialProps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>Material properties</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>C1a</strong> (<em>Float, default=1.0, [None]</em>) &#8211; influence of ageing.</li>
+<li><strong>C2a</strong> (<em>Float, default=1.0, [None]</em>) &#8211; influence of temperature.</li>
+<li><strong>C3a</strong> (<em>Float, default=1.0, [None]</em>) &#8211; influence of manufacturing technique.</li>
+<li><strong>C4a</strong> (<em>Float, default=1.0, [None]</em>) &#8211; influence of curing technique.</li>
+<li><strong>E1</strong> (<em>Float, default=0.0, [GPa]</em>) &#8211; Youngs modulus in the radial direction.</li>
+<li><strong>E2</strong> (<em>Float, default=0.0, [GPa]</em>) &#8211; Youngs modulus in the tangential direction.</li>
+<li><strong>E3</strong> (<em>Float, default=0.0, [GPa]</em>) &#8211; Youngs modulus in the axial direction.</li>
+<li><strong>G12</strong> (<em>Float, default=0.0, [GPa]</em>) &#8211; Shear modulus in radial-tangential direction.</li>
+<li><strong>G13</strong> (<em>Float, default=0.0, [GPa]</em>) &#8211; Shear modulus in radial-axial direction.</li>
+<li><strong>G23</strong> (<em>Float, default=0.0, [GPa]</em>) &#8211; Shear modulus in tangential-axial direction.</li>
+<li><strong>e11_c</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum tensile strain in the 1 direction.</li>
+<li><strong>e11_t</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum compressive strain in the 1 direction.</li>
+<li><strong>e22_c</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum tensile strain in the 2 direction.</li>
+<li><strong>e22_t</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum compressive strain in the 2 direction.</li>
+<li><strong>e33_c</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum tensile strain in the 3 direction.</li>
+<li><strong>e33_t</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum compressive strain in the 3 direction.</li>
+<li><strong>failure_criterium</strong> (<em>Enum, default=maximum_strain, [None]</em>) &#8211; None.</li>
+<li><strong>g12</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum shear strain in the 12 plane .</li>
+<li><strong>g13</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum shear strain in the 13 plane.</li>
+<li><strong>g23</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; maximum shear strain in the 23 plane.</li>
+<li><strong>gM0</strong> (<em>Float, default=0.25, [None]</em>) &#8211; Material safety factor.</li>
+<li><strong>materialname</strong> (<em>Str, default=, [None]</em>) &#8211; Material name.</li>
+<li><strong>nu12</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Poissons ratio in the radial-tangential direction.</li>
+<li><strong>nu13</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Poissons ratio in the radial-axial direction.</li>
+<li><strong>nu23</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Poissons ratio in the tangential-axial direction.</li>
+<li><strong>rho</strong> (<em>Float, default=0.0, [kg/m**3]</em>) &#8211; Mass density.</li>
+<li><strong>s11_c</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; compressive strength in the 1 direction.</li>
+<li><strong>s11_t</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; tensile strength in the 1 direction.</li>
+<li><strong>s22_c</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; compressive strength in the 2 direction.</li>
+<li><strong>s22_t</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; tensile strength in the 2 direction.</li>
+<li><strong>s33_c</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; compressive strength in the 3 direction.</li>
+<li><strong>s33_t</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; tensile strength in the 3 direction.</li>
+<li><strong>t12</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; shear strength in the 12 plane.</li>
+<li><strong>t13</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; shear strength in the 13 plane.</li>
+<li><strong>t23</strong> (<em>Float, default=1000000.0, [None]</em>) &#8211; shear strength in the 23 plane.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.Region">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">Region</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#Region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.Region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>A region covers a fraction of the curve length along the surface of
+a cross section.</p>
+<p>A region consists of a number of layers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>layers</strong> (<em>List, default=[], [None]</em>) &#8211; None.</li>
+<li><strong>s0</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Chordwise curve fraction starting point.</li>
+<li><strong>s1</strong> (<em>Float, default=1.0, [None]</em>) &#8211; Chordwise curve fraction end point.</li>
+<li><strong>thickness</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Total thickness of region.</li>
+<li><strong>width</strong> (<em>Float, default=0.0, [None]</em>) &#8211; Width of the region.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fusedwind.turbine.structure_vt.Region3D">
+<em class="property">class </em><tt class="descclassname">fusedwind.turbine.structure_vt.</tt><tt class="descname">Region3D</tt><big>(</big><em>iotype=''</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/structure_vt.html#Region3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.structure_vt.Region3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">openmdao.main.vartree.VariableTree</span></tt></p>
+<p>Same as region except for being a function of span</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>layers</strong> (<em>List, default=[], [None]</em>) &#8211; List of names of layers.</li>
+<li><strong>thickness</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Total thickness distribution as function of span.</li>
+<li><strong>width</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; Width as function of span (for convenience).</li>
+<li><strong>x</strong> (<em>Array, default=&lt;undefined&gt;, [None]</em>) &#8211; spanwise discretization of section.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="index-3"></span></div>
+<div class="section" id="blade-structure-py">
+<h2>blade_structure.py<a class="headerlink" href="#blade-structure-py" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-4"></span></div>
+<div class="section" id="module-fusedwind.turbine.configurations">
+<span id="configurations-py"></span><h2>configurations.py<a class="headerlink" href="#module-fusedwind.turbine.configurations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="fusedwind.turbine.configurations.configure_bladestructure">
+<tt class="descclassname">fusedwind.turbine.configurations.</tt><tt class="descname">configure_bladestructure</tt><big>(</big><em>cls</em>, <em>file_base</em>, <em>planform_nC=8</em>, <em>structure_nC=8</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/configurations.html#configure_bladestructure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.configurations.configure_bladestructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>method for configuring an assembly with
+blade geometry and structural parameterization
+of a blade.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class instance</em>) &#8211; Instance of an OpenMDAO Assembly that the analysis is run from</li>
+<li><strong>file_base</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; path + filebase to the blade structure files, e.g. data/DTU10MW</li>
+<li><strong>planform_nC</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; number of spline control points for the planform variables</li>
+<li><strong>structure_nC</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; number of spline control points for the structural variables</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fusedwind.turbine.configurations.configure_bladesurface">
+<tt class="descclassname">fusedwind.turbine.configurations.</tt><tt class="descname">configure_bladesurface</tt><big>(</big><em>cls</em>, <em>planform_nC</em><big>)</big><a class="reference internal" href="_modules/fusedwind/turbine/configurations.html#configure_bladesurface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fusedwind.turbine.configurations.configure_bladesurface" title="Permalink to this definition">¶</a></dt>
+<dd><p>method that adds a <tt class="docutils literal"><span class="pre">LoftedBladeSurface</span></tt> instance to the assembly</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class instance</em>) &#8211; Instance of an OpenMDAO Assembly that the analysis is run from</li>
+<li><strong>planform_nC</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; number of spline control points for the planform variables</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

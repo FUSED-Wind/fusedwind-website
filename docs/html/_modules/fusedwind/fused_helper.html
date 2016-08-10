@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.fused_helper &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.fused_helper</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">VariableTree</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.driver</span> <span class="kn">import</span> <span class="n">Driver</span>
+<span class="kn">from</span> <span class="nn">openmdao.lib.drivers.api</span> <span class="kn">import</span> <span class="n">CaseIteratorDriver</span>
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">VarTree</span><span class="p">,</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Instance</span><span class="p">,</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Str</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="n">base_keys</span> <span class="o">=</span> <span class="n">Assembly</span><span class="o">.</span><span class="n">__base_traits__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">+</span> <span class="n">Driver</span><span class="o">.</span><span class="n">__base_traits__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">+</span> \
+    <span class="n">CaseIteratorDriver</span><span class="o">.</span><span class="n">__base_traits__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+<span class="c"># from pygraphviz import AGraph # kld windows issues</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">sort</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+
+
+<span class="kn">from</span> <span class="nn">openmdao.main.interfaces</span> <span class="kn">import</span> <span class="n">Interface</span><span class="p">,</span> <span class="n">implements</span>
+<span class="kn">from</span> <span class="nn">zope.interface</span> <span class="kn">import</span> <span class="n">implementer</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="c"># FUSED Framework ----------------------------------</span>
+
+
+<span class="c"># Creating the svg representation for dot_graphs</span>
+<span class="k">def</span> <span class="nf">_repr_svg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s">&#39;star.svg&#39;</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s">&quot;dot&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;star.svg&#39;</span><span class="p">)</span>
+
+<span class="c"># AGraph.svg = property(lambda self: _repr_svg_(self)) # kld windows issues</span>
+
+<span class="n">add2key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">key</span><span class="p">,</span> <span class="n">dico</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="p">[(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dico</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()])</span>
+
+
+<span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="viewcode-block" id="flatten"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.flatten">[docs]</a>    <span class="sd">&quot;&quot;&quot;Flatten a nested dictionary&quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="n">add2key</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">flatten</span><span class="p">(</span><span class="n">v</span><span class="p">))</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<span class="c"># Neat tree dictionary</span>
+
+
+<span class="k">class</span> <span class="nc">dictree</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span></div>
+<div class="viewcode-block" id="dictree"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.dictree">[docs]</a>
+    <span class="sd">&quot;&quot;&quot;Transform a dictionary into a tree&quot;&quot;&quot;</span>
+    <span class="n">__getattr__</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">__getitem__</span>
+    <span class="n">__setattr__</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">__setitem__</span>
+
+    <span class="c"># def __init__(self, *args, **kwargs):</span>
+    <span class="c">#    if len(args)&gt;0:</span>
+    <span class="c"># Detecting if it&#39;s looking like a VariableTree (duck typing style!)</span>
+    <span class="c">#        if &#39;items&#39; in dir(args[0]):</span>
+    <span class="c"># We initialise the instance using an OpenMDAO VariableTree</span>
+    <span class="c">#            super(dict, self).__init__(dict(args[0].items()))</span>
+    <span class="c">#        else:</span>
+    <span class="c">#            super(dict, self).__init__(*args, **kwargs)</span>
+    <span class="c">#    else:</span>
+    <span class="c">#        super(dict, self).__init__(*args, **kwargs)</span>
+
+    <span class="k">def</span> <span class="nf">VariableTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="dictree.VariableTree"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.dictree.VariableTree">[docs]</a>        <span class="sd">&quot;&quot;&quot; Creates an openMDAO VariableTree and fills it with the dic content</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">cls</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">list_vars</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">dictree</span><span class="p">):</span>
+                    <span class="n">v</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">VariableTree</span><span class="p">(</span>
+                        <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div>
+        <span class="n">new_dic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">dictree</span><span class="p">):</span>
+                <span class="n">new_dic</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ndarray</span><span class="p">):</span>
+                <span class="n">new_dic</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">new_dic</span>
+
+    <span class="k">def</span> <span class="nf">_repr_json_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">serialize</span><span class="p">(),</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">separators</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_repr_json_</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="dictree.df"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.dictree.df">[docs]</a>        <span class="sd">&quot;&quot;&quot;return a flatten pandas DataFrame of the dictree&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+
+<span class="k">class</span> <span class="nc">defaultdictree</span><span class="p">(</span><span class="n">defaultdict</span><span class="p">,</span> <span class="n">dictree</span><span class="p">):</span></div></div>
+<div class="viewcode-block" id="defaultdictree"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.defaultdictree">[docs]</a>
+    <span class="sd">&quot;&quot;&quot;Same as dictree, but with defaultdict as a base&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__missing__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># Avoid all kind of private function calls</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;_&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">defaultdict</span><span class="o">.</span><span class="n">__missing__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="c"># Create an automatic tree generator</span>
+<span class="c"># &gt;&gt;&gt; t = tree()</span>
+<span class="c"># &gt;&gt;&gt; t.hello = &#39;world&#39;</span>
+<span class="c"># &gt;&gt;&gt; t.kitty.hello = &#39;world&#39;</span>
+<span class="c"># &gt;&gt;&gt; t.json</span>
+<span class="c">#</span>
+<span class="c"># Out[0]</span>
+<span class="c">#        {</span>
+<span class="c">#          &quot;hello&quot;: &quot;world&quot;,</span>
+<span class="c">#          &quot;kitty&quot;: {</span>
+<span class="c">#            &quot;hello&quot;: &quot;world&quot;</span>
+<span class="c">#          }</span>
+<span class="c">#        }</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">defaultdictree</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="list_ios"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.list_ios">[docs]</a>    <span class="sd">&quot;&quot;&quot; Only list the I/Os that are not in the base Assembly class&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">iotype</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_vars</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base_keys</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">iotype</span> <span class="o">==</span> <span class="s">&#39;in&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;list_inputs&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base_keys</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">iotype</span> <span class="o">==</span> <span class="s">&#39;out&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;list_outputs&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base_keys</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+<span class="n">black_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;gradient_options&#39;</span><span class="p">]</span></div>
+
+
+<span class="k">def</span> <span class="nf">my_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;list_containers&#39;</span><span class="p">):</span>
+        <span class="n">containers</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_containers</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">black_list</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="p">[</span><span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Component</span><span class="p">,</span> <span class="n">Driver</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">)])]</span>
+        <span class="k">return</span> <span class="n">dictree</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iotype</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[(</span><span class="n">c</span><span class="p">,</span> <span class="n">my_tree</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">iotype</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">containers</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">List</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">my_tree</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">iotype</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+
+<span class="k">def</span> <span class="nf">_repr_tree_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">my_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">json</span>
+
+
+<span class="k">def</span> <span class="nf">disp</span><span class="p">(</span><span class="n">comp</span><span class="p">):</span>
+<div class="viewcode-block" id="disp"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.disp">[docs]</a>    <span class="sd">&quot;&quot;&quot;Display a Container&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">pprint</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+
+<span class="k">def</span> <span class="nf">my_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></div>
+<div class="viewcode-block" id="my_call"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.my_call">[docs]</a>    <span class="sd">&quot;&quot;&quot;Partial function of the Component/Assembly</span>
+<span class="sd">    Returns a tree dictionary containing the inputs, outputs and nested result dictionaries from the containers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">return</span> <span class="bp">self</span>
+
+
+<span class="k">def</span> <span class="nf">my_str</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></div>
+<div class="viewcode-block" id="my_str"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.my_str">[docs]</a>    <span class="sd">&quot;&quot;&quot;String representation for generating graphs&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="s">&#39;{&#39;</span> <span class="o">+</span> <span class="s">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">parent</span> <span class="o">+</span> <span class="s">&#39;&gt; &#39;</span> <span class="o">+</span> <span class="n">parent</span> <span class="o">+</span> <span class="s">&#39;|{&#39;</span> <span class="o">+</span> \
+            <span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">my_str</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">var</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span> <span class="o">+</span> <span class="s">&#39;}}&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">parent</span> <span class="o">+</span> <span class="s">&#39;&gt; &#39;</span> <span class="o">+</span> <span class="n">parent</span> <span class="o">+</span> <span class="s">&#39;=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">parent</span> <span class="o">+</span> <span class="s">&#39;&gt; &#39;</span> <span class="o">+</span> <span class="n">parent</span>
+    <span class="c"># print out</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">out_graph_component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></div>
+<div class="viewcode-block" id="out_graph_component"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.out_graph_component">[docs]</a>    <span class="sd">&quot;&quot;&quot;Generate the dot_graph for a component</span>
+
+<span class="sd">    parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    * graph: a pygraphviz AGraph instance</span>
+<span class="sd">    * value: print the value (default False)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">|{{</span><span class="si">%s</span><span class="s">}|{</span><span class="si">%s</span><span class="s">}}&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span>
+                                                   <span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                                                       <span class="p">[</span><span class="n">my_str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">)]),</span>
+                                                   <span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">my_str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;out&#39;</span><span class="p">)])),</span> <span class="n">shape</span><span class="o">=</span><span class="s">&quot;record&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;rounded,filled&#39;</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s">&#39;lightblue&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">out_graph_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></div>
+<div class="viewcode-block" id="out_graph_driver"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.out_graph_driver">[docs]</a>    <span class="sd">&quot;&quot;&quot;Generate the dot_graph for a driver</span>
+
+<span class="sd">    parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    * graph: a pygraphviz AGraph instance</span>
+<span class="sd">    * value: print the value (default False)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">add_subgraph</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s">&#39;cluster_&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;rounded&#39;</span><span class="p">)</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;_in&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Inputs|</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">my_str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">)])),</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;rounded&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s">&quot;record&quot;</span><span class="p">)</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;_out&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Outputs|</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">my_str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;out&#39;</span><span class="p">)])),</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;rounded&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s">&quot;record&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">get_names</span><span class="p">():</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">out_graph</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">out_graph_assembly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></div>
+<div class="viewcode-block" id="out_graph_assembly"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.out_graph_assembly">[docs]</a>    <span class="sd">&quot;&quot;&quot;Generate the dot_graph for an Assembly</span>
+
+<span class="sd">    parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    * graph: a pygraphviz AGraph instance</span>
+<span class="sd">    * value: print the value (default False)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Assembly_&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">add_subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;cluster_&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="c"># Draw the inputs / outputs</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;_in&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Inputs|</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">my_str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">)])),</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;rounded&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s">&quot;record&quot;</span><span class="p">)</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;_out&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Outputs|</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="s">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">my_str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;out&#39;</span><span class="p">)])),</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;rounded&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s">&quot;record&quot;</span><span class="p">)</span>
+    <span class="c"># Draw the drivers</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">out_graph</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="c"># Draw the connections</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_depgraph</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="s">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="s">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">e00</span><span class="p">,</span> <span class="n">e01</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+            <span class="n">e10</span><span class="p">,</span> <span class="n">e11</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">e_</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Assembly</span><span class="o">.</span><span class="n">__base_traits__</span> <span class="k">for</span> <span class="n">e_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">e00</span><span class="p">,</span> <span class="n">e01</span><span class="p">,</span> <span class="n">e10</span><span class="p">,</span> <span class="n">e11</span><span class="p">]]):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e00</span><span class="p">),</span> <span class="n">Driver</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e00</span><span class="p">),</span> <span class="n">Assembly</span><span class="p">):</span>
+                    <span class="n">e00</span> <span class="o">=</span> <span class="n">e00</span> <span class="o">+</span> <span class="s">&#39;_out&#39;</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e10</span><span class="p">),</span> <span class="n">Driver</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e10</span><span class="p">),</span> <span class="n">Assembly</span><span class="p">):</span>
+                    <span class="n">e10</span> <span class="o">=</span> <span class="n">e10</span> <span class="o">+</span> <span class="s">&#39;_in&#39;</span>
+                <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">e00</span><span class="p">,</span> <span class="n">e10</span><span class="p">,</span> <span class="n">tailport</span><span class="o">=</span><span class="n">e01</span><span class="p">,</span> <span class="n">headport</span><span class="o">=</span><span class="n">e11</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="s">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">e10</span><span class="p">,</span> <span class="n">e11</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">e_</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Assembly</span><span class="o">.</span><span class="n">__base_traits__</span> <span class="k">for</span> <span class="n">e_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e10</span><span class="p">,</span> <span class="n">e11</span><span class="p">]]):</span>
+                <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_ios</span><span class="p">(</span><span class="s">&#39;in&#39;</span><span class="p">):</span>
+                    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;_in&#39;</span><span class="p">,</span> <span class="n">e10</span><span class="p">,</span> <span class="n">tailport</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">headport</span><span class="o">=</span><span class="n">e11</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="s">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">e00</span><span class="p">,</span> <span class="n">e01</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">e_</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Assembly</span><span class="o">.</span><span class="n">__base_traits__</span> <span class="k">for</span> <span class="n">e_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">e00</span><span class="p">,</span> <span class="n">e01</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]]):</span>
+                <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_ios</span><span class="p">(</span><span class="s">&#39;out&#39;</span><span class="p">):</span>
+                    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span>
+                        <span class="n">e00</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;_out&#39;</span><span class="p">,</span> <span class="n">tailport</span><span class="o">=</span><span class="n">e01</span><span class="p">,</span> <span class="n">headport</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">make_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;Graph&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></div>
+<div class="viewcode-block" id="make_graph"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.make_graph">[docs]</a>    <span class="sd">&quot;&quot;&quot;Make the dot_graph of an OpenMDAO Component/Driver/Assembly instance&quot;&quot;&quot;</span>
+    <span class="n">g1</span> <span class="o">=</span> <span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s">&#39;LR&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_graph</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">g1</span>
+
+
+<span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;Graph&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span></div>
+<div class="viewcode-block" id="draw_graph"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.draw_graph">[docs]</a>    <span class="sd">&quot;&quot;&quot;Draw the SVG dot_graph of an OpenMDAO Component/Driver/Assembly instance&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_graph</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">svg</span>
+
+
+<span class="kn">from</span> <span class="nn">IPython.html.widgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span></div>
+<span class="kn">from</span> <span class="nn">IPython.html</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+
+<span class="k">def</span> <span class="nf">interactive_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="interactive_graph"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.interactive_graph">[docs]</a>    <span class="sd">&quot;&quot;&quot;Create an interative graph using Ipython widgets</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">basedict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__base_traits__</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">basedict</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="s">&#39;low&#39;</span><span class="p">),</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">basedict</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="s">&#39;high&#39;</span><span class="p">)))</span>
+                   <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">my_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">draw_graph</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">interactive_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div>
+<div class="viewcode-block" id="interactive_output"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.interactive_output">[docs]</a>    <span class="sd">&quot;&quot;&quot;Create an interative graph using Ipython widgets</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">basedict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__base_traits__</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">basedict</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="s">&#39;low&#39;</span><span class="p">),</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">basedict</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="s">&#39;high&#39;</span><span class="p">)))</span>
+                   <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">my_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">my_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">)</span>
+    <span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">interactive_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div>
+<div class="viewcode-block" id="interactive_plot"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.interactive_plot">[docs]</a>    <span class="sd">&quot;&quot;&quot;Create an interative plot using Ipython widgets</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">basedict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__base_traits__</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">basedict</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="s">&#39;low&#39;</span><span class="p">),</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">basedict</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="s">&#39;high&#39;</span><span class="p">)))</span>
+                   <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">list_ios</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">my_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">())</span>
+    <span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="c"># Create a flat tree from a Component or Assembly</span>
+<span class="n">flatree</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="bp">None</span><span class="p">:</span> <span class="n">my_tree</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span></div>
+
+
+<span class="k">class</span> <span class="nc">pandasMDAO</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="pandasMDAO"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.pandasMDAO">[docs]</a>
+    <span class="sd">&quot;&quot;&quot;Create a pandas memorizer to a component or an Assembly.</span>
+<span class="sd">    Each time the memorizer is run, it will look in the DataFrame if the inputs are already there,</span>
+<span class="sd">    if they are it will update the component or assembly with the corresponding outputs, otherwise</span>
+<span class="sd">    it will run the component or assembly and append the results to the DataFrame</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">flatree</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flatree</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">==</span> <span class="n">v</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">==</span> <span class="n">v</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">bool_arr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">flatree</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="p">)</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()])</span>
+
+    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bool_arr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">run_callback</span><span class="o">=</span><span class="s">&#39;run&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&#39;returning&#39;</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">bool_arr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])}</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">state</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">state</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="c"># return state</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;calculating&#39;</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">run_callback</span><span class="p">)()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="c"># return {k: v for k,v in zip(self.df.keys(),</span>
+            <span class="c"># self.df[self.bool_arr(a, iotype=&#39;in&#39;).all(0)].values[0])}</span>
+
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">pandas_memoized</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="pandas_memoized"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.pandas_memoized">[docs]</a>    <span class="sd">&quot;&quot;&quot;Decorator to add a pandas memorizer to a component or an assembly</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="s">&#39;_pmdao&#39;</span><span class="p">):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">_pmdao</span> <span class="o">=</span> <span class="n">pandasMDAO</span><span class="p">(</span><span class="n">cls</span><span class="p">())</span>
+        <span class="c"># The usual run function is moved to _run</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">_run</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">run</span>
+        <span class="c"># The new run function is calling the pandas memoized object</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">run</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pmdao</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_run&#39;</span><span class="p">)</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_pmdao</span><span class="o">.</span><span class="n">plot</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pmdao</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cls</span>
+
+
+<span class="k">def</span> <span class="nf">lconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span></div>
+<div class="viewcode-block" id="lconnect"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.lconnect">[docs]</a>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    lazy_connect function.</span>
+<span class="sd">    try to connect the outputs of a to the inputs of b that have the same name.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    self    Assembly</span>
+<span class="sd">            The assembly containing the components to connect</span>
+
+<span class="sd">    a       str</span>
+<span class="sd">            The name of the component output a to connect.</span>
+<span class="sd">            If a == &#39;&#39;, then self.inputs is used</span>
+
+<span class="sd">    b       str</span>
+<span class="sd">            The name of the component inputs a to connect.</span>
+<span class="sd">            If b == &#39;&#39;, then self.outputs is used</span>
+
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">black_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">Assembly</span><span class="p">()</span><span class="o">.</span><span class="n">list_vars</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">_a</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">set_a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_a</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">())</span> <span class="o">-</span> <span class="n">black_set</span>
+        <span class="n">str_a</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_a</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">set_a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_a</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">())</span> <span class="o">-</span> <span class="n">black_set</span>
+        <span class="n">str_a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span>
+
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">_b</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">set_b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_b</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">())</span> <span class="o">-</span> <span class="n">black_set</span>
+        <span class="n">str_b</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_b</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">set_b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_b</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">())</span> <span class="o">-</span> <span class="n">black_set</span>
+        <span class="n">str_b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span>
+
+    <span class="k">print</span> <span class="s">&#39;trying some lazy connection between &quot;</span><span class="si">%s</span><span class="s">&quot; and &quot;</span><span class="si">%s</span><span class="s">&quot; on&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">set_a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set_b</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">set_a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set_b</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">str_a</span> <span class="o">+</span> <span class="n">v</span><span class="p">,</span> <span class="n">str_b</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">print</span> <span class="n">str_a</span> <span class="o">+</span> <span class="n">v</span><span class="p">,</span> <span class="s">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">str_b</span> <span class="o">+</span> <span class="n">v</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c"># No crash when the connection is failing, just a warning printing</span>
+            <span class="c"># the error</span>
+            <span class="k">print</span> <span class="n">str_a</span> <span class="o">+</span> <span class="n">v</span><span class="p">,</span> <span class="s">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">str_b</span> <span class="o">+</span> <span class="n">v</span><span class="p">,</span> <span class="s">&#39;(&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="s">&#39;)&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">init_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></div>
+<div class="viewcode-block" id="init_container"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.init_container">[docs]</a>    <span class="sd">&quot;&quot;&quot;Initialise a container with a dictionary of inputs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c"># Deal with the array -&gt; list issue</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ndarray</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="bp">self</span>
+
+
+<span class="k">def</span> <span class="nf">fused_autodoc</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+<div class="viewcode-block" id="fused_autodoc"><a class="viewcode-back" href="../../interfaces.html#fusedwind.fused_helper.fused_autodoc">[docs]</a>    <span class="sd">&quot;&quot;&quot;Decorator to automatically document the inputs and outputs of an Assembly / Component</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">clsname</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cls</span><span class="o">.</span><span class="n">__doc__</span><span class="p">:</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="s">&#39;**TODO**: fill in this doc</span><span class="se">\n\n</span><span class="s">&#39;</span>
+    
+    <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">iotype</span> <span class="o">==</span> <span class="s">&#39;in&#39;</span>
+              <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Component</span><span class="o">.</span><span class="n">__class_traits__</span>
+              <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Assembly</span><span class="o">.</span><span class="n">__class_traits__</span>
+              <span class="ow">and</span> <span class="n">k</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_items&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">iotype</span> <span class="o">==</span> <span class="s">&#39;out&#39;</span>
+              <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Component</span><span class="o">.</span><span class="n">__class_traits__</span>
+              <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Assembly</span><span class="o">.</span><span class="n">__class_traits__</span>
+              <span class="ow">and</span> <span class="n">k</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_items&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">VariableTree</span><span class="o">.</span><span class="n">__class_traits__</span>
+                    <span class="ow">and</span> <span class="n">k</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_items&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">variables</span> <span class="o">=</span> <span class="n">sort</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
+    <span class="c">#print inputs</span>
+    <span class="n">el</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">    &#39;</span>
+    <span class="k">def</span> <span class="nf">addl</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">__doc__</span><span class="o">+=</span><span class="n">x</span><span class="o">+</span><span class="n">el</span>
+    <span class="n">addl</span><span class="p">()</span>
+    <span class="n">addl</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">Component</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">addl</span><span class="p">(</span><span class="s">&#39;Parameters&#39;</span><span class="p">)</span>
+            <span class="n">addl</span><span class="p">(</span><span class="s">&#39;----------&#39;</span><span class="p">)</span>
+            <span class="n">addl</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span> <span class="o">+</span> <span class="s">&#39;:    &#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">trait_type</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span>
+                          <span class="s">&#39;, default=&#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">default</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span> <span class="o">+</span>
+                          <span class="s">&#39;, [</span><span class="si">%s</span><span class="s">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">units</span><span class="p">)</span> <span class="o">+</span>
+                          <span class="n">el</span><span class="o">+</span><span class="s">&#39;   &#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span><span class="o">+</span><span class="s">&#39;.&#39;</span><span class="o">+</span><span class="n">el</span>
+                          <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">]))</span>
+            <span class="n">addl</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">addl</span><span class="p">(</span><span class="s">&#39;Parameters&#39;</span><span class="p">)</span>
+            <span class="n">addl</span><span class="p">(</span><span class="s">&#39;----------&#39;</span><span class="p">)</span>
+            <span class="n">addl</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span> <span class="o">+</span> <span class="s">&#39;:    &#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">trait_type</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span>
+                              <span class="s">&#39;, default=&#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">default</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span> <span class="o">+</span>
+                              <span class="s">&#39;, [</span><span class="si">%s</span><span class="s">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">units</span><span class="p">)</span> <span class="o">+</span>
+                              <span class="n">el</span><span class="o">+</span><span class="s">&#39;   &#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span><span class="o">+</span><span class="s">&#39;.&#39;</span><span class="o">+</span><span class="n">el</span>
+                              <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">]))</span>
+            <span class="n">addl</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">Component</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;Returns&#39;</span><span class="p">)</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;-------&#39;</span><span class="p">)</span>
+        <span class="n">addl</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span> <span class="o">+</span> <span class="s">&#39;:    &#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">trait_type</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span>
+                          <span class="s">&#39;, [</span><span class="si">%s</span><span class="s">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">units</span><span class="p">)</span> <span class="o">+</span>
+                          <span class="n">el</span><span class="o">+</span><span class="s">&#39;   &#39;</span> <span class="o">+</span> <span class="n">cls</span><span class="o">.</span><span class="n">__class_traits__</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span><span class="o">+</span><span class="s">&#39;.&#39;</span><span class="o">+</span><span class="n">el</span>
+                          <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outputs</span><span class="p">]))</span>
+
+    <span class="c"># Check if the class has some base:</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="s">&#39;_fused_base&#39;</span><span class="p">):</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;Notes&#39;</span><span class="p">)</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;-----&#39;</span><span class="p">)</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;``</span><span class="si">%s</span><span class="s">``&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">clsname</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; implements the following interfaces: &#39;</span> <span class="o">+</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;``</span><span class="si">%s</span><span class="s">``&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_fused_base</span><span class="p">]))</span>
+        <span class="n">addl</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cls</span>
+
+<span class="k">def</span> <span class="nf">_register</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span></div>
+    <span class="k">if</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;Component&#39;</span><span class="p">:</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">out_graph</span> <span class="o">=</span> <span class="n">out_graph_component</span>
+    <span class="k">elif</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;Assembly&#39;</span><span class="p">:</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">out_graph</span> <span class="o">=</span> <span class="n">out_graph_assembly</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">lconnect</span> <span class="o">=</span> <span class="n">lconnect</span>
+    <span class="k">elif</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;VariableTree&#39;</span><span class="p">:</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">my_tree</span><span class="p">)</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">_repr_json_</span> <span class="o">=</span> <span class="n">_repr_tree_</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">init</span> <span class="o">=</span> <span class="n">init_container</span>
+    <span class="k">elif</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;Driver&#39;</span><span class="p">:</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">out_graph</span> <span class="o">=</span> <span class="n">out_graph_driver</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">init</span> <span class="o">=</span> <span class="n">init_container</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">==</span> <span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;Component&#39;</span><span class="p">,</span> <span class="s">&#39;Driver&#39;</span><span class="p">,</span> <span class="s">&#39;Assembly&#39;</span><span class="p">]]):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">my_tree</span><span class="p">)</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">make_graph</span> <span class="o">=</span> <span class="n">make_graph</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">draw_graph</span> <span class="o">=</span> <span class="n">draw_graph</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">__call__</span> <span class="o">=</span> <span class="n">my_call</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">list_ios</span> <span class="o">=</span> <span class="n">list_ios</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">interactive_graph</span> <span class="o">=</span> <span class="n">interactive_graph</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">interactive_output</span> <span class="o">=</span> <span class="n">interactive_output</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">interactive_plot</span> <span class="o">=</span> <span class="n">interactive_plot</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">_repr_json_</span> <span class="o">=</span> <span class="n">_repr_tree_</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">init</span> <span class="o">=</span> <span class="n">init_container</span>
+
+
+<span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">list_cls</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">list_cls</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">cls</span> <span class="ow">in</span> <span class="n">list_cls</span><span class="p">:</span>
+            <span class="n">_register</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_register</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+
+<span class="c"># Registering some extra functions to base classes</span>
+<span class="n">register</span><span class="p">([</span><span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">Driver</span><span class="p">,</span> <span class="n">VariableTree</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

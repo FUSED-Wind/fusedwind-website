@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.plant_cost.fused_bos_costs &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.plant_cost.fused_bos_costs</h1><div class="highlight"><pre>
+<span class="c"># KLD: _cost model for FUSED_Wind - most basic structure</span>
+
+<span class="kn">from</span> <span class="nn">openmdao.lib.datatypes.api</span> <span class="kn">import</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">VarTree</span>
+<span class="kn">from</span> <span class="nn">openmdao.main.api</span> <span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">VariableTree</span>
+
+<span class="kn">from</span> <span class="nn">fusedwind.plant_cost.fused_tcc</span> <span class="kn">import</span> <span class="n">BaseTurbineCostModel</span>
+<span class="kn">from</span> <span class="nn">fusedwind.interface</span> <span class="kn">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">implement_base</span>
+
+<span class="c">##########################################################</span>
+<span class="c"># Plant Balance of Station and CAPEX Models</span>
+
+<span class="c"># Balance of Station Cost Model</span>
+<span class="c"># Base Variable Trees, Components and Assemblies</span>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseBOSCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.BaseBOSCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">BaseBOSCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base balance of station cost aggregator for doing some auxiliary cost calculations needed to get a full wind plant balance of station cost estimate.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant balance of station/system costs up to point of comissioning&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseBOSCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.BaseBOSCostModel">[docs]</a><span class="k">class</span> <span class="nc">BaseBOSCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant balance of station/system costs up to point of comissioning&#39;</span><span class="p">)</span>
+    </div>
+<div class="viewcode-block" id="configure_base_bos"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.configure_base_bos">[docs]</a><span class="k">def</span> <span class="nf">configure_base_bos</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base configure method for a balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.  It adds a default balance of station cost aggregator component.    &quot;&quot;&quot;</span>
+      
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bos&#39;</span><span class="p">,</span> <span class="n">BaseBOSCostAggregator</span><span class="p">())</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bos&#39;</span><span class="p">)</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bos.bos_costs&#39;</span><span class="p">,</span><span class="s">&#39;bos_costs&#39;</span><span class="p">)</span>
+
+<span class="c">#Extended Variable Trees, Components and Assemblies</span></div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BOSVarTree"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.BOSVarTree">[docs]</a><span class="k">class</span> <span class="nc">BOSVarTree</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base balance of station cost variable tree based on the DOE/NREL system cost breakdown structure.    &quot;&quot;&quot;</span>
+
+    <span class="n">development_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant balance of station/system costs up to point of comissioning&#39;</span><span class="p">)</span>
+    <span class="n">preparation_and_staging_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Site preparation and staging&#39;</span><span class="p">)</span>
+    <span class="n">transportation_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Any transportation costs to site / staging site&#39;</span><span class="p">)</span> <span class="c">#BOS or turbine cost?</span>
+    <span class="n">foundation_and_substructure_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Foundation and substructure costs&#39;</span><span class="p">)</span>
+    <span class="n">electrical_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Collection system, substation, transmission and interconnect costs&#39;</span><span class="p">)</span>
+    <span class="n">assembly_and_installation_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Assembly and installation costs&#39;</span><span class="p">)</span>
+    <span class="n">soft_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Contingencies, bonds, reserves, decommissioning, profits, and construction financing costs&#39;</span><span class="p">)</span>
+    <span class="n">other_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Bucket for any other costs not captured above&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseBOSCostAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedBOSCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.ExtendedBOSCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">ExtendedBOSCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended balance of station cost aggregator for doing some auxiliary cost calculations needed to get a full wind plant balance of station cost estimate as well as a detailed cost breakdown.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">bos_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">BOSVarTree</span><span class="p">(),</span> <span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;BOS cost breakdown&#39;</span><span class="p">)</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant balance of station/system costs up to point of comissioning&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseBOSCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="ExtendedBOSCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.ExtendedBOSCostModel">[docs]</a><span class="k">class</span> <span class="nc">ExtendedBOSCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate as well as a detailed cost breakdown.    &quot;&quot;&quot;</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">bos_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">BOSVarTree</span><span class="p">(),</span> <span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;BOS cost breakdown&#39;</span><span class="p">)</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant balance of station/system costs up to point of comissioning&#39;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="configure_extended_bos"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.configure_extended_bos">[docs]</a><span class="k">def</span> <span class="nf">configure_extended_bos</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Extended configure method for a balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.  It replaces the base balance of station cost aggregator component with an extended version which contains the full balance of station variable tree.    &quot;&quot;&quot;</span>
+
+    <span class="n">configure_base_bos</span><span class="p">(</span><span class="n">assembly</span><span class="p">)</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;bos&#39;</span><span class="p">,</span> <span class="n">ExtendedBOSCostAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bos.bos_breakdown&#39;</span><span class="p">,</span><span class="s">&#39;bos_breakdown&#39;</span><span class="p">)</span>
+
+<span class="c"># Full Variable Trees, Components and Assemblies</span></div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="FullBOSVarTree"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.FullBOSVarTree">[docs]</a><span class="k">class</span> <span class="nc">FullBOSVarTree</span><span class="p">(</span><span class="n">VariableTree</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full balance of station cost variable tree based on the DOE/NREL system cost breakdown structure.    &quot;&quot;&quot;</span>
+
+    <span class="n">management_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Project management costs&#39;</span><span class="p">)</span>
+    <span class="n">development_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant balance of station/system costs up to point of comissioning&#39;</span><span class="p">)</span>
+    <span class="n">preparation_and_staging_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Site preparation and staging&#39;</span><span class="p">)</span>
+    <span class="n">transportation_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Any transportation costs to site / staging site&#39;</span><span class="p">)</span>
+    <span class="n">foundation_and_substructure_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Foundation and substructure costs&#39;</span><span class="p">)</span>
+    <span class="n">collection_and_substation_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Collection system and onsite substation costs&#39;</span><span class="p">)</span>
+    <span class="n">transmission_and_interconnection_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Transmission and grid interconnection costs&#39;</span><span class="p">)</span>
+    <span class="n">assembly_and_installation_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Assembly and installation costs&#39;</span><span class="p">)</span>
+    <span class="n">contingencies_and_insurance_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Contingencies, bonds, reserves for project&#39;</span><span class="p">)</span>
+    <span class="n">decommissioning_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;_costs associated with plant decommissioning at end of life&#39;</span><span class="p">)</span>
+    <span class="n">construction_financing_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Construction financing costs&#39;</span><span class="p">)</span>
+    <span class="n">other_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Bucket for any other costs not captured above&#39;</span><span class="p">)</span>
+    <span class="n">developer_profits</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s">&#39;Developer profits&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseBOSCostAggregator</span><span class="p">)</span>
+<div class="viewcode-block" id="FullBOSCostAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.FullBOSCostAggregator">[docs]</a><span class="k">class</span> <span class="nc">FullBOSCostAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full balance of station cost aggregator for doing some auxiliary cost calculations needed to get a full wind plant balance of station cost estimate as well as a detailed cost breakdown.    &quot;&quot;&quot;</span>
+
+    <span class="c"># outputs</span>
+    <span class="n">bos_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">FullBOSVarTree</span><span class="p">(),</span> <span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;BOS cost breakdown&#39;</span><span class="p">)</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Output BOS cost elements&#39;</span><span class="p">)</span>
+</div>
+<span class="nd">@implement_base</span><span class="p">(</span><span class="n">BaseBOSCostModel</span><span class="p">)</span>
+<div class="viewcode-block" id="FullBOSCostModel"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.FullBOSCostModel">[docs]</a><span class="k">class</span> <span class="nc">FullBOSCostModel</span><span class="p">(</span><span class="n">Assembly</span><span class="p">):</span>
+	  
+    <span class="c"># outputs</span>
+    <span class="n">bos_breakdown</span> <span class="o">=</span> <span class="n">VarTree</span><span class="p">(</span><span class="n">FullBOSVarTree</span><span class="p">(),</span> <span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;BOS cost breakdown&#39;</span><span class="p">)</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Output BOS cost elements&#39;</span><span class="p">)</span>	  
+</div>
+<div class="viewcode-block" id="configure_full_bos"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.configure_full_bos">[docs]</a><span class="k">def</span> <span class="nf">configure_full_bos</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Full configure method for a balance of station cost assembly for coupling models to get a full wind plant balance of station cost estimate.  It replaces the extended or base balance of station cost aggregator component with an full version which contains the full balance of station variable tree.    &quot;&quot;&quot;</span>
+
+    <span class="n">configure_base_bos</span><span class="p">(</span><span class="n">assembly</span><span class="p">)</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;bos&#39;</span><span class="p">,</span> <span class="n">FullBOSCostAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bos.bos_breakdown&#39;</span><span class="p">,</span><span class="s">&#39;bos_breakdown&#39;</span><span class="p">)</span>
+
+
+<span class="c"># CAPEX Variable Trees, Components and Assemblies</span></div>
+<span class="nd">@base</span>
+<div class="viewcode-block" id="BaseCAPEXAggregator"><a class="viewcode-back" href="../../../plantcost.html#fusedwind.plant_cost.fused_bos_costs.BaseCAPEXAggregator">[docs]</a><span class="k">class</span> <span class="nc">BaseCAPEXAggregator</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+
+    <span class="c"># Inputs</span>
+    <span class="n">turbine_cost</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s">&#39;A Wind Turbine Capital _cost&#39;</span><span class="p">)</span>
+    <span class="n">bos_costs</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;A Wind Plant Balance of Station _cost Model&#39;</span><span class="p">)</span>
+    
+    <span class="c"># Parameters</span>
+    <span class="n">turbine_number</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="n">iotype</span> <span class="o">=</span> <span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s">&#39;number of turbines at plant&#39;</span><span class="p">)</span>
+
+    <span class="c"># Outputs</span>
+    <span class="n">capex</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="n">iotype</span><span class="o">=</span><span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s">&#39;Overall wind plant capital expenditures including turbine and balance of station costs&#39;</span><span class="p">)</span> 
+</div>
+<span class="k">def</span> <span class="nf">configure_capex</span><span class="p">(</span><span class="n">assembly</span><span class="p">):</span>
+
+    <span class="c"># To be replaced by actual models        </span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;tcc&#39;</span><span class="p">,</span><span class="n">BaseTurbineCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;bos&#39;</span><span class="p">,</span><span class="n">BaseBOSCostModel</span><span class="p">())</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;cap_ex&#39;</span><span class="p">,</span><span class="n">BaseCAPEXAggregator</span><span class="p">())</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s">&#39;tcc&#39;</span><span class="p">,</span><span class="s">&#39;bos&#39;</span><span class="p">,</span><span class="s">&#39;capex&#39;</span><span class="p">])</span>
+
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;turbine_number&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;bos.turbine_number&#39;</span><span class="p">,</span> <span class="s">&#39;cap_ex.turbine_number&#39;</span><span class="p">])</span>     
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;tcc.turbine_cost&#39;</span><span class="p">,</span> <span class="s">&#39;cap_ex.turbine_cost&#39;</span><span class="p">)</span>
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;bos.bos_costs&#39;</span><span class="p">,</span> <span class="s">&#39;cap_ex.bos_costs&#39;</span><span class="p">)</span>
+    
+    <span class="n">assembly</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;cap_ex.capex&#39;</span><span class="p">,</span><span class="s">&#39;capex&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

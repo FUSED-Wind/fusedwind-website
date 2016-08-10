@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fusedwind.runSuite.runCaseGenerator &mdash; FUSED-Wind  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/cerulean/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="FUSED-Wind  documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          FUSED-Wind</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<div class="">
+<h3>Versions</h3>
+
+<div class="list-group">
+  <a href="https://github.com/FUSED-Wind/fusedwind" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Development</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">0.1.dev Github</p>
+  </a>
+  <a href="../../../installation.html" target="_blank" class="list-group-item">
+    <h4 class="list-group-item-heading">Stable</h4>
+    <p class="list-group-item-text" href="https://github.com/FUSED-Wind/fusedwind">Coming soon!</p>
+  </a>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<h3>Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about_fusedwind.html">Software Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Source Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for fusedwind.runSuite.runCaseGenerator</h1><div class="highlight"><pre>
+<span class="c"># combine and streamline sampler.py and distn_input.py</span>
+
+
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module allows for sampling of distributions encountered in wind energy research using a flexible </span>
+<span class="sd">text input file specification.  The distributions currently available are:</span>
+
+<span class="sd">- Weibull</span>
+<span class="sd">- Gamma</span>
+<span class="sd">- vonMises</span>
+<span class="sd">- uniform</span>
+<span class="sd">- normal</span>
+<span class="sd">- bivariate normal</span>
+
+<span class="sd">In addition, we allow for &quot;enumeration&quot; of sets of variables, and their cartesian product.</span>
+
+<span class="sd">The impetus is the desire for a generic representation of rows in Table 1 of IEC document 88_329</span>
+<span class="sd">describing design standards for loads analysis, where what is being represented are the</span>
+<span class="sd">distributions of wind/wave environment parameters.</span>
+<span class="sd">We can assume these all boil down to distributions of _numerical_ (rather than discrete) parameters.</span>
+<span class="sd">A twist is that some of the parameters depend on eachother, that is, the distributions are conditional distributions.</span>
+
+<span class="sd">In principle all we need to say is  :math:`\{v_i\} \sim D_k (\{p_j(v)\})`</span>
+<span class="sd">where :math:`\{v_i\}` are the random variables we&#39;re defining (including multivariate distributions),</span>
+<span class="sd">:math:`D_k` are distributions, and :math:`\{p_j\}` are parameters to these distributions.</span>
+<span class="sd">Currently :math:`p_j` can only depend on :math:`v_i` for :math:`i&lt;j`, but otherwise</span>
+<span class="sd">the dependence can be expressed as an arbitrary python math expression.</span>
+
+<span class="sd">An example of the input this system can handle is::</span>
+
+<span class="sd">    #--WW4Ddist--</span>
+<span class="sd">    Vhub = W(2.120, 9.767)</span>
+<span class="sd">    WaveDir = VM(0.029265 + 0.119759 * Vhub, -0.620138 + 0.030709 * Vhub)</span>
+<span class="sd">    Hs = G(4.229440 + 0.222745 * WaveDir  + 0.328602 * Vhub, 0.145621 + -0.006188 * WaveDir  + 0.007561 * Vhub)</span>
+<span class="sd">    Tp = G(19.677865 + 6.617868 * Hs  + -0.532952 * Vhub, 0.202077 + 0.286631 / Hs  + -0.004321 * Vhub)</span>
+
+<span class="sd">which causes the code to sample the joint distribution of hub height wind speed (Weibull), wave direction (von Mises), </span>
+<span class="sd">wave height (Gamma), and wave period (Gamma) for a recent study.</span>
+
+<span class="sd">Or::</span>
+
+<span class="sd">    #--WW4Ddist--</span>
+<span class="sd">    Vhub = {5,15,25}</span>
+<span class="sd">    Hs = {1,5}</span>
+<span class="sd">    </span>
+<span class="sd">which causes the code to generate the cartesian product {(5,1),(5,5),(15,1),(15,1),(25,1),(25,5)}.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c">### This is some more of the thinking that was part of development, so not included in the docstring:</span>
+<span class="c">#Some cases:</span>
+<span class="c">#x = 7</span>
+<span class="c">#x ~ unif({7})</span>
+
+<span class="c">#x ~ N(0,1)</span>
+<span class="c">#y = x</span>
+<span class="c">#y ~ delta(x)</span>
+
+<span class="c">#x = 7</span>
+<span class="c">#y = E[y|x] = \int{ p(y|x) dy }</span>
+<span class="c">#requires</span>
+<span class="c">#p(y|x), eg</span>
+<span class="c">#y|x ~ N(2x/7, 1)</span>
+
+<span class="c">#x,y &quot;jointly distributed&quot;</span>
+<span class="c">#x,y ~ N([0,0], [[sigmx, covxy],[covxy,sigy]])</span>
+
+<span class="c">#Given these specifications, we can then sample the distn&#39;s however we want</span>
+<span class="c">#ie we end up with variables like</span>
+<span class="c">#d = Distn()</span>
+<span class="c">#d.type = &quot;gaussian&quot;</span>
+<span class="c">#d.var = &quot;x&quot;</span>
+<span class="c">#d.mean = 7</span>
+<span class="c">#d.var = 11</span>
+
+<span class="c">#d = Distn()</span>
+<span class="c">#d.type = &quot;joint_gaussian&quot;</span>
+<span class="c">#d.var = [&quot;x&quot;,&quot;y&quot;]</span>
+<span class="c">#d.mean = [mux, muy]</span>
+<span class="c">#d.varcovar = [[etc.][]]</span>
+
+<span class="c">#or then a whole class hierarchy for distributions</span>
+<span class="c">#d = JointGaussian(variables, means, varcovarmatrix)</span>
+<span class="c">#d = JointUniform(vars,[[x1,x2][y1,y2])</span>
+<span class="c">#d = DiscreteUniform(var, {a,b,c})   (for enumerations)</span>
+
+<span class="c">#or special d = Enumeration(var, {a,b,c})</span>
+
+<span class="c">#There are enumerations and distributions</span>
+<span class="c">#Enumerations have fixed set of values returned by d.sample()</span>
+<span class="c">#Distributions have a number of samples returned by d.sample()</span>
+
+<span class="c">#Then we take </span>
+<span class="c">#d1.sample() X d2.sample() X ...</span>
+<span class="c">#until all the relevant variables are specified</span>
+
+
+<span class="n">teststr</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">x ~ {7,8}</span>
+<span class="s">sigy = 1</span>
+<span class="s">y = N(2*x, sigy)</span>
+<span class="s">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">npr</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">vonmises</span><span class="p">,</span> <span class="n">gamma</span>
+<span class="c"># this is not available until scipy 0.14:</span>
+<span class="c">#from scipy.stats import  multivariate_normal</span>
+<span class="c"># so we have to us numpy.multivariate_normal (at least on my mac)</span>
+<span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="kn">as</span> <span class="nn">linalg</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">matrix</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">isnan</span><span class="p">,</span> <span class="n">exp</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">vonmises</span><span class="p">,</span> <span class="n">gamma</span>
+
+<span class="k">global</span> <span class="n">gIgnoreJointDistn</span>
+<span class="n">gIgnoreJointDistn</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">draw_uniform</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">npr</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">val</span>
+
+<span class="k">def</span> <span class="nf">draw_normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>            
+    <span class="n">val</span> <span class="o">=</span> <span class="n">npr</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">val</span>
+
+<span class="k">def</span> <span class="nf">draw_weibull</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">weibull</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">weibull</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">draw_gamma</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="c">#    print &quot;gamma params:&quot;, shape, scale</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span><span class="n">scale</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nsamples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">draw_vonmises</span><span class="p">(</span><span class="n">kappa</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="c">#    print &quot;kappa, loc: &quot;, kappa, loc</span>
+<span class="c">#    x = 180/pi * vonmises.rvs(kappa, loc=loc, size=nsamples)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">vonmises</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">kappa</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nsamples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">draw_multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span><span class="p">):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">npr</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span><span class="p">)</span>
+<span class="c">#    val = multivariate_normal.rvs(mean, cov)</span>
+    <span class="k">return</span> <span class="n">val</span>
+
+<span class="c">############</span>
+
+<span class="k">def</span> <span class="nf">prob_uniform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">prob_normal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">val</span>    
+
+<span class="k">def</span> <span class="nf">prob_weibull</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">shape</span><span class="o">/</span><span class="n">scale</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">scale</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">shape</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">scale</span><span class="p">)</span><span class="o">**</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span>
+
+<span class="k">def</span> <span class="nf">prob_gamma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">1e-1</span><span class="p">,</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">shape</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span>
+
+<span class="k">def</span> <span class="nf">prob_vonmises</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kappa</span><span class="p">,</span> <span class="n">loc</span><span class="p">):</span>
+<span class="c">#    print &quot;kappa, loc: &quot;, kappa, loc</span>
+<span class="c">#    p = vonmises.pdf(x*pi/180.0,kappa, loc=loc)</span>
+<span class="c">#    p = [vonmises.pdf(x*pi/180.0 + m,kappa, loc=loc) for m in [-2*pi, 0, 2*pi]]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">vonmises</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">m</span><span class="p">,</span><span class="n">kappa</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">]]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span>
+
+<span class="k">def</span> <span class="nf">prob_multivariate_normal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<span class="c">## not in scipy &lt; 0.14:</span>
+<span class="c">#    p = multivariate_normal.pdf(x,mean,cov)</span>
+<span class="c">#    return p</span>
+<span class="c"># instead:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span> <span class="o">==</span> <span class="n">sigma</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
+        <span class="n">det</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">det</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s">&quot;The covariance matrix can&#39;t be singular&quot;</span><span class="p">)</span>
+        <span class="n">norm_const</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span><span class="nb">float</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">det</span><span class="p">,</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">x_mu</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span>
+        <span class="n">inv</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">.</span><span class="n">I</span>        
+        <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_mu</span> <span class="o">*</span> <span class="n">inv</span> <span class="o">*</span> <span class="n">x_mu</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">norm_const</span> <span class="o">*</span> <span class="n">result</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s">&quot;The dimensions of the input don&#39;t match&quot;</span><span class="p">)</span>
+
+
+<span class="c">###############################</span>
+<span class="c">###############################</span>
+
+<span class="c">#def math_op(op,v1,v2):</span>
+<span class="c">#    if (op == &quot;+&quot;):</span>
+<span class="c">#        return v1+v2</span>
+<span class="c">#    elif (op == &quot;-&quot;):</span>
+<span class="c">#        return v1-v2</span>
+<span class="c">#    elif (op == &quot;*&quot;):</span>
+<span class="c">#        return v1*v2</span>
+<span class="c">#    elif (op == &quot;/&quot;):</span>
+<span class="c">#        return v1/v2</span>
+<span class="c">#    else:</span>
+<span class="c">#        raise ValueError, &quot;unknown math op %s&quot; % op</span>
+
+<span class="k">def</span> <span class="nf">is_float</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+
+<span class="k">def</span> <span class="nf">parse_arg</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">shlex</span> <span class="kn">import</span> <span class="n">shlex</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">shlex</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">wordchars</span> <span class="o">+=</span> <span class="s">&quot;.&quot;</span> <span class="c"># enables parsing decimals</span>
+    <span class="n">alist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="c">#    print &quot;parsed &quot;, a, &quot;to &quot;, alist</span>
+<span class="c">#eg: parsed  10 + Vhub/100 - 0.02*(WaveDir+1) to  [&#39;10&#39;, &#39;+&#39;, &#39;Vhub&#39;, &#39;/&#39;, &#39;100&#39;, &#39;-&#39;, &#39;0.02&#39;, &#39;*&#39;, &#39;(&#39;, &#39;WaveDir&#39;, &#39;+&#39;, &#39;1&#39;, &#39;)&#39;]</span>
+    <span class="k">return</span> <span class="n">alist</span>
+
+<span class="k">def</span> <span class="nf">merge_dicts</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span>  <span class="p">{</span><span class="n">key</span><span class="p">:</span><span class="n">d1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d2</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">d2</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">d</span>
+
+
+<span class="k">class</span> <span class="nc">Distribution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vstr</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vstr</span> <span class="o">=</span> <span class="n">vstr</span> <span class="c"># what variable is being defined</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">ctx</span>
+
+    <span class="k">def</span> <span class="nf">get_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">get_partitions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vstr</span>
+    <span class="k">def</span> <span class="nf">calc_prob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    
+    
+<div class="viewcode-block" id="EnumDistn"><a class="viewcode-back" href="../../../runbatch_ex.html#fusedwind.runSuite.runCaseGenerator.EnumDistn">[docs]</a><span class="k">class</span> <span class="nc">EnumDistn</span><span class="p">(</span><span class="n">Distribution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; class for distributions that are just list of numbers or single numbers,</span>
+<span class="sd">    &#39;sampling&#39; is just going to return all values&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vstr</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">EnumDistn</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">vstr</span><span class="p">,</span> <span class="n">ctx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">items</span>
+
+    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="c">#        res = []</span>
+<span class="c">#        for i in range(nsample):</span>
+<span class="c">#        res.append(random.choice(self.items))</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">resolve_value</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+<div class="viewcode-block" id="EnumDistn.get_bounds"><a class="viewcode-back" href="../../../runbatch_ex.html#fusedwind.runSuite.runCaseGenerator.EnumDistn.get_bounds">[docs]</a>    <span class="k">def</span> <span class="nf">get_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; assumes numbers &quot;&quot;&quot;</span>
+        <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)]</span>
+</div>
+    <span class="k">def</span> <span class="nf">get_partitions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        
+    
+</div>
+<div class="viewcode-block" id="FnDistn"><a class="viewcode-back" href="../../../runbatch_ex.html#fusedwind.runSuite.runCaseGenerator.FnDistn">[docs]</a><span class="k">class</span> <span class="nc">FnDistn</span><span class="p">(</span><span class="n">Distribution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; class for &#39;real&#39; distributions like Gaussians, etc. </span>
+<span class="sd">    the keys in &#39;items&#39; are the names of the distributions, assumed to be known </span>
+<span class="sd">    and sample-able. items = e.g. {&quot;N&quot;: [&quot;2x&quot;,&quot;sig1&quot;} &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vstr</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FnDistn</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">vstr</span><span class="p">,</span><span class="n">ctx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">=</span> <span class="n">fn</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+
+    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">argvals</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">argvals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">resolve_value</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;N&quot;</span><span class="p">):</span>
+<span class="c">#            print &quot; need to sample normal with args = &quot;, argvals</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">draw_normal</span><span class="p">(</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;N2&quot;</span><span class="p">):</span>
+<span class="c">#            print &quot; need to sample 2D normal with args = &quot;, argvals</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">draw_multivariate_normal</span><span class="p">([</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="n">argvals</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">4</span><span class="p">]],[</span><span class="n">argvals</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">3</span><span class="p">]]])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;U&quot;</span><span class="p">):</span>
+<span class="c">#            print &quot; need to sample uniform with args = &quot;, argvals</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">draw_uniform</span><span class="p">(</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;G&quot;</span><span class="p">):</span>
+<span class="c">#            print &quot; need to sample gamma with args = &quot;, argvals</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">draw_gamma</span><span class="p">(</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;VM&quot;</span><span class="p">):</span>
+<span class="c">#            print &quot; need to sample von Mises with args = &quot;, argvals</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">draw_vonmises</span><span class="p">(</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;W&quot;</span><span class="p">):</span>
+<span class="c">#            print &quot; need to sample Wiebull with args = &quot;, argvals</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">draw_weibull</span><span class="p">(</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span>  <span class="s">&quot;unknown distribution </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn</span>
+
+        <span class="k">return</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">calc_prob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="c">#        print &quot;calc_prob&quot;, self.fn, x</span>
+<span class="c">#        x = x[0]</span>
+        <span class="n">argvals</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">argvals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">resolve_value</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;N&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">prob_normal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;N2&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">prob_multivariate_normal</span><span class="p">(</span><span class="n">x</span><span class="p">,[</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="n">argvals</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">4</span><span class="p">]],[</span><span class="n">argvals</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">3</span><span class="p">]]])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;U&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">prob_uniform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;G&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">prob_gamma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;VM&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">prob_vonmises</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn</span> <span class="o">==</span> <span class="s">&quot;W&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">prob_weibull</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">argvals</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argvals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span>  <span class="s">&quot;unknown distribution </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val</span><span class="p">)):</span>
+            <span class="k">print</span> <span class="s">&quot;NAN&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn</span><span class="p">,</span> <span class="n">argvals</span>
+        <span class="k">return</span> <span class="n">val</span>
+
+</div>
+<span class="k">class</span> <span class="nc">DistnParser</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dlist_map</span> <span class="o">=</span> <span class="p">{}</span>
+        
+    <span class="k">def</span> <span class="nf">parse_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fname</span><span class="p">):</span>
+        <span class="n">mystr</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">mystr</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mystr</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">mystr</span><span class="p">:</span>
+            <span class="n">ln</span> <span class="o">=</span> <span class="n">ln</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">newdist</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ln</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">ln</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;#&quot;</span><span class="p">):</span>
+                <span class="c"># first get rid of anything past any &quot;#&quot; on the right</span>
+                <span class="n">ln</span> <span class="o">=</span> <span class="n">ln</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;#&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+ <span class="c">#               print &quot;your line: &quot;, ln</span>
+                <span class="c"># separate vars from the distn</span>
+                <span class="n">tok</span> <span class="o">=</span> <span class="n">ln</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;=&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">#                    print &quot;found distn: &quot;, tok                </span>
+                    <span class="n">vtok</span> <span class="o">=</span> <span class="n">tok</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+                    <span class="c"># parse out the vars in question:</span>
+                    <span class="n">vstr</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+                    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vtok</span><span class="p">:</span>
+                        <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">):</span>
+                            <span class="k">print</span> <span class="s">&quot;ERROR: Variable </span><span class="si">%s</span><span class="s"> is doubly defined&quot;</span> <span class="o">%</span><span class="n">v</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                        <span class="n">vstr</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">v</span>
+                    <span class="c"># now parse the distn spec.</span>
+                    <span class="n">dspec</span> <span class="o">=</span> <span class="n">tok</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="c">#                    print &quot;look at&quot;, dspec</span>
+                    <span class="n">q</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&quot;([^(]+)(\(.*\))&quot;</span><span class="p">,</span> <span class="n">dspec</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">q</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+                        <span class="c"># found a function-like defn</span>
+                        <span class="n">dist</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+                        <span class="n">args</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">#                        print &quot;split &quot;, dspec , &quot;into &quot;, dist, args</span>
+                        <span class="c">#eg: split  G(10 + Vhub/100 - 0.02*(WaveDir+1),.25) into  G (10 + Vhub/100 - 0.02*(WaveDir+1),.25)</span>
+                        <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&quot;(&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&quot;)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+                        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+                        <span class="c"># now parse variables out of expressions</span>
+                        <span class="c"># simple math allowed: &lt;val&gt; := &lt;number&gt; | &lt;val&gt; &lt;op&gt; &lt;val&gt; where &lt;op&gt; = +-*/</span>
+                        <span class="n">arglist</span> <span class="o">=</span> <span class="p">[]</span>
+                        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+                            <span class="n">alist</span> <span class="o">=</span> <span class="n">parse_arg</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                            <span class="n">arglist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>    
+<span class="c">#                        print &quot;found dist=&quot;, dist, &quot; arglist=&quot;, arglist</span>
+                        <span class="n">newdist</span> <span class="o">=</span> <span class="n">FnDistn</span><span class="p">(</span><span class="n">vstr</span><span class="p">,</span><span class="n">dist</span><span class="p">,</span><span class="n">arglist</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">newdist</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">dspec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;{&quot;</span><span class="p">:</span>
+                        <span class="c"># found a set</span>
+                        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">dspec</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&quot;{&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&quot;}&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)]</span>
+<span class="c">#                        args = [float(s) for s in args]</span>
+<span class="c">#                        print &quot;found set &quot;, args</span>
+                        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_arg</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+<span class="c">#                        print &quot;FOUND set &quot;, args</span>
+                        <span class="n">newdist</span> <span class="o">=</span> <span class="n">EnumDistn</span><span class="p">(</span><span class="n">vstr</span><span class="p">,</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">newdist</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">arg</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_arg</span><span class="p">(</span><span class="n">dspec</span><span class="p">)]</span>
+                            <span class="c"># found a value. TODO: tuples</span>
+<span class="c">#                            print &quot;found number &quot;, arg</span>
+                            <span class="n">newdist</span> <span class="o">=</span> <span class="n">EnumDistn</span><span class="p">(</span><span class="n">vstr</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">newdist</span><span class="p">)</span>
+                        <span class="k">except</span><span class="p">:</span>
+                            <span class="k">print</span> <span class="s">&quot;cannot parse distribution spec &quot;</span><span class="p">,</span> <span class="n">dspec</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">newdist</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dlist_map</span><span class="p">[</span><span class="n">vstr</span><span class="p">]</span> <span class="o">=</span> <span class="n">newdist</span>
+                        
+        <span class="k">print</span> <span class="s">&quot;defined distns. for vars &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span>
+<span class="c">#        print self.dlist       </span>
+<span class="c">#        print &quot;dlist map = &quot;, self.dlist_map</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span>
+
+    <span class="k">def</span> <span class="nf">clear_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">gIgnoreJointDistn</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">gIgnoreJointDistn</span><span class="p">):</span>
+            <span class="c"># also deconstruct joint distribution values into their individual variables</span>
+            <span class="c"># e.g. Hs.Tp: [1,3] -&gt; Hs: 1, Tp:3</span>
+            <span class="n">subv</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subv</span><span class="p">)):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">subv</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">set_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_values</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="c">#            print &quot;sampled &quot;, d.vstr, &quot; and got &quot;, s</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">vstr</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_enum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slist</span><span class="p">,</span> <span class="n">enum</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        slist = list of samples we&#39;re building</span>
+<span class="sd">        enum = distn with enum.items list of possible values</span>
+<span class="sd">        output = slist X enum.items</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">newlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c">#        print &quot;add enum, slist, enum.items&quot;, slist, enum.items</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slist</span><span class="p">:</span> 
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">enum</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                    <span class="n">item</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">y</span><span class="p">])</span>
+<span class="c">#                item[enum.vstr] = self.resolve_value(x)</span>
+                <span class="n">item</span><span class="p">[</span><span class="n">enum</span><span class="o">.</span><span class="n">vstr</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>  <span class="c"># not resolved yet!</span>
+                <span class="n">newlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>                
+<span class="c">#                print &quot;appended item to newlist&quot; , item, newlist</span>
+<span class="c">#        print newlist</span>
+        <span class="k">return</span> <span class="n">newlist</span>
+
+    <span class="k">def</span> <span class="nf">expand_enums</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; return list of dicts &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_values</span><span class="p">()</span>
+        <span class="n">slist</span> <span class="o">=</span> <span class="p">[{}]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s">&quot;items&quot;</span><span class="p">)):</span>  <span class="c">#### bad programming!</span>
+                <span class="n">slist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_enum</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">slist</span><span class="p">),</span> <span class="n">d</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">slist</span>
+
+    <span class="k">def</span> <span class="nf">sample_fns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; return list of dicts &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s">&quot;fn&quot;</span><span class="p">)):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="c">#                print &quot;sampled &quot;, d.vstr, &quot; and got &quot;, s</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">vstr</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="k">def</span> <span class="nf">multi_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numsamples</span><span class="p">,</span> <span class="n">expand_enums</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="n">slist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">expand_enums</span><span class="p">):</span>
+<span class="c">#            print &quot;expanding set variables, then sampling %d times&quot; % numsamples</span>
+            <span class="c"># make slist of product space of set vars.</span>
+            <span class="n">enum_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expand_enums</span><span class="p">()</span>
+<span class="c">#            print &quot;enum_list&quot;, enum_list</span>
+            <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">enum_list</span><span class="p">:</span>
+<span class="c">#                self.clear_values()</span>
+<span class="c">#                self.set_values(e)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numsamples</span><span class="p">):</span>
+                    <span class="c"># now truly sampled vars to each of them                    </span>
+                    <span class="c"># combine real samples to enum cases</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">clear_values</span><span class="p">()</span>
+
+                    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+ <span class="c">#                       print &quot;scanning &quot;, d.vstr</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s">&quot;fn&quot;</span><span class="p">)):</span>
+                            <span class="n">s</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+                            <span class="c">#print &quot;sampled &quot;, d.vstr, &quot; and got &quot;, s</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">vstr</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+                        
+                        <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s">&quot;items&quot;</span><span class="p">)):</span>  <span class="c">#### bad programming!</span>
+                            <span class="n">maxiter</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                            <span class="n">tries</span> <span class="o">=</span> <span class="mi">0</span>
+                            <span class="k">while</span> <span class="p">(</span><span class="n">tries</span> <span class="o">&lt;</span> <span class="n">maxiter</span><span class="p">):</span>
+                                <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">e</span><span class="p">:</span>  <span class="c"># find this var and resolve it here</span>
+<span class="c">#                                    print it, e[it]</span>
+                                    <span class="c"># this is some crazy stuff: try (maybe out of order b/c of dict) until we succeed</span>
+                                    <span class="c"># to resolve everything</span>
+                                    <span class="k">try</span><span class="p">:</span>
+                                        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_value</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">it</span><span class="p">])</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="n">val</span><span class="p">)</span>
+<span class="c">#                                        print &quot;succes resolving &quot;, e[it]</span>
+                                    <span class="k">except</span><span class="p">:</span>
+<span class="c">#                                        print &quot;failed resolving &quot;, e[it]</span>
+                                        <span class="k">pass</span>
+                                    <span class="n">tries</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">slist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c">#                    vals = self.sample_fns()</span>
+<span class="c">#                    print vals, e</span>
+<span class="c">#                    vals = merge_dicts(vals, e)</span>
+<span class="c">#                    slist.append(vals)</span>
+        <span class="k">else</span><span class="p">:</span>            
+<span class="c">#            print &quot;sampling %d times&quot; % numsamples</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numsamples</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">clear_values</span><span class="p">()</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="c">#                print &quot;sample %d = &quot; % i, self.values</span>
+                <span class="n">slist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">slist</span>
+
+    <span class="k">def</span> <span class="nf">resolve_one_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+<span class="c">#        print &quot;resolve_one_value()&quot;, a        </span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">is_float</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">d</span><span class="o">.</span><span class="n">vstr</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="c">#            raise ValueError, &quot;did not find variable:%s: in dlist&quot; % a </span>
+        <span class="k">return</span> <span class="n">a</span>
+
+    <span class="k">def</span> <span class="nf">resolve_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+<span class="c">#        print &quot;resolving:&quot;, a</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_one_value</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+<span class="c">#        print vals</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_float</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="c">#        print &quot;evaluating:&quot;, s</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="c">#        print &quot;= &quot;, val</span>
+        <span class="k">return</span> <span class="n">val</span>
+<span class="c">#        if (len(a) == 1):</span>
+<span class="c">#            return self.resolve_one_value(a[0])</span>
+<span class="c">#        else:</span>
+<span class="c">#            v1 = self.resolve_one_value(a[0])</span>
+<span class="c">#            v2 = self.resolve_one_value(a[2])</span>
+<span class="c">#            op = a[1]</span>
+<span class="c">#            print &quot;2&quot;,a</span>
+<span class="c">#            v1 = self.resolve_one_value(a[-1])</span>
+<span class="c">#            v2 = self.resolve_value(a[:-2])</span>
+<span class="c">#            op = a[-2]</span>
+<span class="c">#            return math_op(op, v1, v2)</span>
+
+    <span class="k">def</span> <span class="nf">get_num_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>  <span class="c"># kludge: sample once to get NumSamples set, if it exists</span>
+        <span class="k">if</span> <span class="s">&quot;NumSamples&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s">&#39;NumSamples&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">get_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; assume all enum distns, get their bounds for conversion to dakota &quot;&quot;&quot;</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+            <span class="n">bounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_bounds</span><span class="p">())</span>
+        <span class="n">low</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bounds</span><span class="p">]</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bounds</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get_partitions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; assume all enum, get their length, assume uniform incrs to convert to dakota &quot;&quot;&quot;</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+            <span class="n">part</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_partitions</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">part</span>
+
+    <span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; get names of all the distn&#39;s (what vars are defined), for mapping from dakota variable list &quot;&quot;&quot;</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist</span><span class="p">:</span>
+            <span class="n">part</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_name</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">part</span>
+
+    <span class="k">def</span> <span class="nf">calc_prob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samp</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; calc probability of samp according to parsed distribution &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_values</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="n">samp</span><span class="p">)</span>        
+        <span class="c"># for each key/value, need to find the distribution it belongs to</span>
+        <span class="c"># plan on using a pre-prepared mapping</span>
+        <span class="n">ptot</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c">#        print &quot;calc prob for &quot;, samp</span>
+        <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist_map</span><span class="p">):</span>
+                <span class="n">dist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dlist_map</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+<span class="c">#                print &quot;for &quot;, var</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">calc_prob</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">var</span><span class="p">])</span>
+                <span class="n">ptot</span> <span class="o">*=</span> <span class="n">p</span>
+        <span class="k">return</span> <span class="n">ptot</span>
+
+
+<span class="k">def</span> <span class="nf">get_options</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">OptionParser</span><span class="p">()</span>    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&quot;-i&quot;</span><span class="p">,</span> <span class="s">&quot;--input&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;main_input&quot;</span><span class="p">,</span>  <span class="nb">type</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;runbatch-dist.txt&quot;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s">&quot;main input file describing distribution, ie cases to run&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&quot;-n&quot;</span><span class="p">,</span> <span class="s">&quot;--nsamples&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;nsamples&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;how many samples to generate&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;int&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&quot;-o&quot;</span><span class="p">,</span> <span class="s">&quot;--output&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;main_output&quot;</span><span class="p">,</span>  <span class="nb">type</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;runcases.txt&quot;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s">&quot;output file (where to write the run cases)&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&quot;-p&quot;</span><span class="p">,</span> <span class="s">&quot;--probfile&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;old_samples&quot;</span><span class="p">,</span>  <span class="nb">type</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s">&quot;an input file of samples whose probabilities we want to calculat w.r.t input distn&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&quot;-a&quot;</span><span class="p">,</span> <span class="s">&quot;--augment&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;augment&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;goes with -p, will include _both_ given and newly calculated probs to the output samples&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+            
+    <span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">options</span><span class="p">,</span> <span class="n">args</span>
+
+<span class="k">def</span> <span class="nf">read_samples</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">hdr</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">dat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">dat</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ln</span><span class="o">.</span><span class="n">split</span><span class="p">()])</span>
+    <span class="k">return</span> <span class="n">hdr</span><span class="p">,</span> <span class="n">dat</span>
+
+<span class="k">def</span> <span class="nf">gen_cases</span><span class="p">():</span>
+    <span class="n">options</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">get_options</span><span class="p">()</span>
+    
+    <span class="n">dparser</span> <span class="o">=</span> <span class="n">DistnParser</span><span class="p">()</span>
+    <span class="n">dparser</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">main_input</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">old_samples</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="c"># in this mode, we are given a distribution and, separately, a set of old samples.  Our job is to calculate the</span>
+        <span class="c"># probabilities for the samples w.r.t. the given distribution</span>
+        <span class="n">old_hdr</span><span class="p">,</span> <span class="n">old_samples</span> <span class="o">=</span> <span class="n">read_samples</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">old_samples</span><span class="p">)</span>
+        <span class="n">pidx</span> <span class="o">=</span> <span class="n">old_hdr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;Prob&quot;</span><span class="p">)</span>
+        <span class="n">new_hdr</span> <span class="o">=</span> <span class="n">old_hdr</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">augment</span><span class="p">):</span>
+            <span class="n">new_hdr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;Prob2&quot;</span><span class="p">)</span>
+            <span class="n">pidx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_hdr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">new_samples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">old_samples</span><span class="p">:</span>
+            <span class="n">samp</span> <span class="o">=</span> <span class="p">{</span><span class="n">old_hdr</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))}</span>
+<span class="c">#            print &quot;sample &quot;, samp</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">dparser</span><span class="o">.</span><span class="n">calc_prob</span><span class="p">(</span><span class="n">samp</span><span class="p">)</span>
+<span class="c">#            print &quot;prob &quot;, p</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">augment</span><span class="p">):</span>
+                <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">s</span><span class="p">[</span><span class="n">pidx</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+            <span class="n">new_samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="n">fout</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">main_output</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">new_hdr</span><span class="p">:</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">new_samples</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%.16e</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="n">val</span><span class="p">)</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">print</span> <span class="s">&quot;Calculated probabilities of samples in </span><span class="si">%s</span><span class="s"> w.r.t. distribution in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">old_samples</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">main_input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">augment</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&quot;Augmented output with these probs as Prob2 in field (0-based) </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pidx</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Replaced old probs with new probs in output&quot;</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">numsamples</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">nsamples</span>
+        <span class="n">slist</span> <span class="o">=</span> <span class="n">dparser</span><span class="o">.</span><span class="n">multi_sample</span><span class="p">(</span><span class="n">numsamples</span><span class="p">,</span> <span class="n">expand_enums</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%d</span><span class="s"> samples, SAMPLING set/enumeration variables:&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">numsamples</span><span class="p">)</span>
+        <span class="n">fout</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">main_output</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">slist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;Prob</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">slist</span><span class="p">)):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">slist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">p</span> <span class="o">=</span>  <span class="n">dparser</span><span class="o">.</span><span class="n">calc_prob</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="c">#        print &quot;sample %d = &quot; % i, s, p</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%.16e</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="n">s</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;   </span><span class="si">%.16e</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="p">)</span>
+        <span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">print</span> <span class="s">&quot;wrote </span><span class="si">%d</span><span class="s"> samples (run cases) from distribution in </span><span class="se">\&#39;</span><span class="si">%s</span><span class="se">\&#39;</span><span class="s"> to </span><span class="se">\&#39;</span><span class="si">%s</span><span class="se">\&#39;</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">numsamples</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">main_input</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">main_output</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">gen_cases</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40451380-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
